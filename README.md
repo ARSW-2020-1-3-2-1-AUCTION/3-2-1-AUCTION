@@ -36,23 +36,23 @@ Para satisfacer el requisito de una **interfaz gráfica** agradable y sencilla, 
 
 Interfaz de la página principal:
 
-![](/img/InterfazUsuario1.jpg)
+![](/img/InterfazUsuario1.PNG)
 
 Interfaz del login de usuario:
 
-![](/img/InterfazUsuario2.jpg)
+![](/img/InterfazUsuario2.PNG)
 
 Interfaz para crear una cuenta:
 
-![](/img/InterfazUsuario3.jpg)
+![](/img/InterfazUsuario3.PNG)
 
 Interfaz de la búsqueda de un artículo usando algunos filtros
 
-![](/img/InterfazUsuario4.jpg)
+![](/img/InterfazUsuario4.PNG)
 
 Interfaz para realizar una oferta sobre un artículo:
 
-![](/img/InterfazUsuario5.jpg)
+![](/img/InterfazUsuario5.PNG)
 
 ##### Historias de usuario
 
