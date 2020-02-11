@@ -65,7 +65,7 @@ Interfaz para realizar una oferta sobre un artículo:
 
 - Como vendedor:
 
--Ofrecer productos: COMO vendedor QUIERO ofrecer productos que no requiero PARA PODER obetener un beneficio monetario sobre ellos.
+- Ofrecer productos: COMO vendedor QUIERO ofrecer productos que no requiero PARA PODER obetener un beneficio monetario sobre ellos.
 - Conocer precios similares de lo que voy a publicar: COMO vendedor QUIERO conocer los precios de articulos similares al que estoy ofreciendo PARA PODER tener una idea acertada sobre el precio que debo brindar par maximizar mis ganancias.
 - Extender el tiempo de la subasta: COMO vendedor QUIERO extender el tiempo de la subasta si mucha gente esta ofertando PARA PODER obtener la mayor oferta posible
 
