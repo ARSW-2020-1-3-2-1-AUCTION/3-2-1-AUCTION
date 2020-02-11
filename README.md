@@ -56,3 +56,15 @@ Interfaz para realizar una oferta sobre un artículo:
 
 #### **Historias de usuario**
 
+- Como Comprador:
+-- Ofertar por articulos de interes: COMO comprador QUIERO ofertar por los articulos de interes PARA PODER adquirir un bien.
+-- Cargar dinero a mi cuenta: COMO comprador QUIERO cargar dinero a mi cuenta PARA PODER ofertar por los articulos de mi interes.
+-- Publicar posibles articulos de interes: COMO comprador QUIERO publicar los posibles articulos que deseo PARA PODER dar a conocer a las personas que existe una necesidad que pueden suplir.
+-- Tener recomendaciones sobre cuando subir la oferta: COMO comprador QUIERO tener un sistema personalizado que me recomiende cuando pujar PARA PODER tener una orientación correcta que me lleve a la adquisición de un bien
+
+- Como vendedor:
+--Ofrecer productos: COMO vendedor QUIERO ofrecer productos que no requiero PARA PODER obetener un beneficio monetario sobre ellos.
+-- Conocer precios similares de lo que voy a publicar: COMO vendedor QUIERO conocer los precios de articulos similares al que estoy ofreciendo PARA PODER tener una idea acertada sobre el precio que debo brindar par maximizar mis ganancias.
+-- Extender el tiempo de la subasta: COMO vendedor QUIERO extender el tiempo de la subasta si mucha gente esta ofertando PARA PODER obtener la mayor oferta posible
+
+
