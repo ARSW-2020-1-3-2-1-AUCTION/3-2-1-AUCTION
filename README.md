@@ -6,7 +6,7 @@
 
 #### **Resumen:**
 
-
+Es una aplicación de subastas en tiempo real que permite a los usuarios ofertar por los diferentes artículos de su interes. Así mismo este sistema implementará un sistema de inteligencia artificial que permitirá a los usuarios tener una experiencia mas dinámica que se ajuste a sus intereses y a su tiempo.
     
 #### **Descripción**
 
