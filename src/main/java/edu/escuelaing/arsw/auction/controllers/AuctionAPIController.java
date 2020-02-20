@@ -27,7 +27,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 public class AuctionAPIController {
 	
-	 //@Autowired
+    
+	 //@Autowired 
     
 	 @RequestMapping(method = RequestMethod.GET)
 	    public ResponseEntity<?> manejadorGetRecursoBlueprintAPI(){
