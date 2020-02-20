@@ -1,6 +1,7 @@
 
-package edu.escuelaing.arsw.auction.controllers;
+package edu.escuelaing.arsw.auctions.controllers;
 
+import edu.escuelaing.arsw.auctions.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 /**
