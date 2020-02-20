@@ -10,7 +10,11 @@
 
 #### **CircleCi**
 
-[![CircleCi](https://camo.githubusercontent.com/be46aee4f8d55e322c3e7db60ea23a4deb5427c9/68747470733a2f2f6865726f6b752d62616467652e6865726f6b756170702e636f6d2f3f6170703d6865726f6b752d6261646765)](https://circleci.com/gh/ARSW-2020-1-3-2-1-AUCTION/3-2-1-AUCTION)
+[![CircleCI](https://circleci.com/gh/ARSW-Project-2020-think/modeler.svg?style=svg)](https://circleci.com/gh/ARSW-2020-1-3-2-1-AUCTION/3-2-1-AUCTION)
+
+#### **Codacy**
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b0345040f09d4a62b18c1560633bdee3)](https://app.codacy.com/gh/ARSW-2020-1-3-2-1-AUCTION/3-2-1-AUCTION/dashboard)
 
 #### **Resumen:**
 
