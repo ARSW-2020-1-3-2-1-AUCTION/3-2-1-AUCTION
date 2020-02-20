@@ -26,15 +26,35 @@ La idea surge cuando se percibe que algunos objetos que poseemos ya no son usado
 
 Aunque existen varias páginas que realizan esta operación, no se tiene una que sea un claro referente para las personas que no están sumergidas en este mundo, por lo que se establece que existe una motivación suficiente para desarrollar puntos diferenciales y nuevos comportamientos que innoven en este sistema de ventas.
 
-Observando páginas que operan con este sistema de ventas, notamos puntos débiles como que la variedad de productos es muy amplia, lo cual deriva en dos problemas puntuales: El primero es que varias de las categorias están vacias, no poseen productos para subastar. El segundo es que no se puede estudiar concretamente un público objetivo; al acotar dicho público, se puede personalizar y brindar un funcionamiento más agradable para los usuarios, lo cual, al mismo tiempo impulsaría que no se tengan categorías vacías. Se observa también que muchas páginas tinen una interfaz muy sobrecargada de información, lo cual la hace menos llamativa para el usuario:
-
-![](/img/sobrecarga.jpg)
+Observando páginas que operan con este sistema de ventas, notamos puntos débiles como que la variedad de productos es muy amplia, lo cual deriva en dos problemas puntuales: El primero es que varias de las categorias están vacias, no poseen productos para subastar. El segundo es que no se puede estudiar concretamente un público objetivo; al acotar dicho público, se puede personalizar y brindar un funcionamiento más agradable para los usuarios, lo cual, al mismo tiempo impulsaría que no se tengan categorías vacías. Se observa también que muchas páginas tinen una interfaz muy sobrecargada de información, lo cual la hace menos llamativa para el usuario.
 
 Debido a esto, queremos desarrollar una página web la cual modifique la forma de ver e interactuar las subastas en línea que se tiene actualmente, ofreciendo una interfaz sencilla y agradable para los usuarios, que posea características únicas en su funcionamiento y de este modo ser la predilecta para realizar este tipo de negocios.
 
-Se realizó un **diagrama de casos de uso** con las funcionalidades más destacadas del funcionamiento previsto:
+Se realizó un **Diagrama de Casos de Uso** con las funcionalidades más destacadas del funcionamiento previsto:
 
-![](/img/CasosDeUso.jpg)
+##### Comprador:
+
+![](/img/CasosComprador.jpg)
+
+COMO Comprador
+
+-  QUIERO ofertar por los articulos de interes PARA PODER adquirir un bien.
+- QUIERO cargar dinero a mi cuenta PARA PODER ofertar por los articulos de mi interes.
+- QUIERO publicar los posibles articulos que deseo PARA PODER dar a conocer a las personas que existe una necesidad que pueden suplir.
+- QUIERO pujar automaticamente por un articulo de mi interes PARA PODER competir por él cuando no pueda estar presente en el tiempo de subasta.
+- QUIERO ver un evento con la fecha y hora en un calendario de los artículos de mi interés PARA PODER organizar mi participaón en su subasta.
+- QUIERO tener tiempo adicional según la cantidad de pujas PARA PODER tener ventaja sobre cierta cantidad de clientes.
+
+
+##### Vendedor:
+
+![](/img/CasosVendedor.jpg)
+
+- QUIERO ofrecer productos que no requiero PARA PODER obetener un beneficio monetario sobre ellos.
+- QUIERO conocer los precios de articulos similares al que estoy ofreciendo PARA PODER tener una idea acertada sobre el precio que debo brindar par maximizar mis ganancias.
+- QUIERO extender el tiempo de la subasta si mucha gente esta ofertando PARA PODER obtener la mayor oferta posible.
+
+
 
 Se ha planteado un **digrama de clases** inicial el cual está orientado a resolver los conflictos ya descritos como sigue:
 
@@ -66,19 +86,9 @@ Interfaz para realizar una oferta sobre un artículo:
 
 ![](/img/InterfazUsuario5.PNG)
 
-#### **Historias de usuario**
 
-- Como Comprador:
 
-- Ofertar por articulos de interes: COMO comprador QUIERO ofertar por los articulos de interes PARA PODER adquirir un bien.
-- Cargar dinero a mi cuenta: COMO comprador QUIERO cargar dinero a mi cuenta PARA PODER ofertar por los articulos de mi interes.
-- Publicar posibles articulos de interes: COMO comprador QUIERO publicar los posibles articulos que deseo PARA PODER dar a conocer a las personas que existe una necesidad que pueden suplir.
-- Tener recomendaciones sobre cuando subir la oferta: COMO comprador QUIERO tener un sistema personalizado que me recomiende cuando pujar PARA PODER tener una orientación correcta que me lleve a la adquisición de un bien
 
-- Como vendedor:
 
-- Ofrecer productos: COMO vendedor QUIERO ofrecer productos que no requiero PARA PODER obetener un beneficio monetario sobre ellos.
-- Conocer precios similares de lo que voy a publicar: COMO vendedor QUIERO conocer los precios de articulos similares al que estoy ofreciendo PARA PODER tener una idea acertada sobre el precio que debo brindar par maximizar mis ganancias.
-- Extender el tiempo de la subasta: COMO vendedor QUIERO extender el tiempo de la subasta si mucha gente esta ofertando PARA PODER obtener la mayor oferta posible
 
 
