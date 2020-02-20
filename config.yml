@@ -1,9 +1,9 @@
-version: 2.1
+machine:
+  java:
+    version: oraclejdk8
 
-orbs:
-  maven: circleci/maven@0.0.12
-
-workflows:
-  maven_test:
-    jobs:
-      - maven/test # checkout, build, test, and upload test results
+deployment:
+  staging:
+    branch: master
+    heroku: 
+      appname: auctionsaplication
