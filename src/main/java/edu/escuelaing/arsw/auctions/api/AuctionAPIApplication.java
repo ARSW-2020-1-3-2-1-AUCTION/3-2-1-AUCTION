@@ -1,5 +1,5 @@
 
-package edu.escuelaing.arsw.auction.api;
+package edu.escuelaing.arsw.auctions.api;
 
 /**
  *
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"edu.escuelaing.arsw.auction"})
+@ComponentScan(basePackages = {"edu.escuelaing.arsw.auctions"})
 public class AuctionAPIApplication {
 
 	public static void main(String[] args) {
