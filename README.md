@@ -1,4 +1,5 @@
-# 3-2-1-AUCTION
+ <p align="center"> <img src="https://user-images.githubusercontent.com/48091593/75041796-48653100-548b-11ea-8450-0f920ea54f67.jpg"> </p>
+
 ## **Desarrollado por:**
 - [David Eduardo Caycedo Moyano](https://github.com/Drakocedo)
 - [David Mateo González Grimaldos](https://github.com/mateu20)
@@ -27,7 +28,7 @@ La idea surge cuando se percibe que algunos objetos que poseemos ya no son usado
 Aunque existen varias páginas que realizan esta operación, no se tiene una que sea un claro referente para las personas que no están sumergidas en este mundo, por lo que se establece que existe una motivación suficiente para desarrollar puntos diferenciales y nuevos comportamientos que innoven en este sistema de ventas.
 
 Observando páginas que operan con este sistema de ventas, notamos puntos débiles como que la variedad de productos es muy amplia, lo cual deriva en dos problemas puntuales: El primero es que varias de las categorias están vacias, no poseen productos para subastar. El segundo es que no se puede estudiar concretamente un público objetivo; al acotar dicho público, se puede personalizar y brindar un funcionamiento más agradable para los usuarios, lo cual, al mismo tiempo impulsaría que no se tengan categorías vacías. Se observa también que muchas páginas tinen una interfaz muy sobrecargada de información, lo cual la hace menos llamativa para el usuario.
-
+   
 Debido a esto, queremos desarrollar una página web la cual modifique la forma de ver e interactuar las subastas en línea que se tiene actualmente, ofreciendo una interfaz sencilla y agradable para los usuarios, que posea características únicas en su funcionamiento y de este modo ser la predilecta para realizar este tipo de negocios.
 
 Se realizó un **Diagrama de Casos de Uso** con las funcionalidades más destacadas del funcionamiento previsto:
