@@ -80,9 +80,9 @@ Para satisfacer el requisito de una **interfaz gráfica** agradable y sencilla, 
 
 ![](/img/mazda.jpg)
 
-- Artículos favoritos seleccionados:
+- Artículos favoritos seleccionados, mostrando un calendario con los artículos de interés:
 
-![](/img/articulos.jpg)
+![](/img/favoritos.jpg)
 
 - Información básica para publicar un artículo:
 
