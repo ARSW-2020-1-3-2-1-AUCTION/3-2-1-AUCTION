@@ -62,31 +62,38 @@ Se definieron **diagramas de secuencia** de alto nivel con las funcionalidades m
 
 
 
-Para satisfacer el requisito de una **interfaz gráfica** agradable y sencilla, se usó la herramienta Mockflow para diseñar su apariencia:
+**Diagrama de componentes**
 
-- Interfaz del login de usuario:
+![](/img/componentes.jpg)
 
-![](/img/InterfazUsuario2.PNG)
+Para satisfacer el requisito de una **interfaz gráfica** agradable y sencilla, se usó la herramienta NinjaMock para diseñar su apariencia, algunas de sus vistas más importantes son:
 
-- Interfaz para crear una cuenta:
+- Menú inicial en donde se muestran las categorias disponibles:
 
-![](/img/InterfazUsuario3.PNG)
+![](/img/categorias.jpg)
 
-- Interfaz de la página principal:
+- Seleccionando la categoría automóviles:
 
-![](/img/InterfazUsuario1.PNG)
+![](/img/automoviles.jpg)
 
-- Interfaz de la búsqueda de un artículo usando algunos filtros
+- Vista de un producto en específico en donde se ver las opciones de pujas manuales y automáticas:
 
-![](/img/InterfazUsuario4.PNG)
+![](/img/mazda.jpg)
 
-- Interfaz para realizar una oferta sobre un artículo:
+- Artículos favoritos seleccionados:
 
-![](/img/InterfazUsuario5.PNG)
+![](/img/articulos.jpg)
 
+- Información básica para publicar un artículo:
 
+![](/img/publicar1.jpg)
 
+- Segunda vista para publicar un artículo mostrando sugerencias:
 
+![](/img/publicar2.jpg)
 
+- Fomulario para la sugerencia de nuevos artículos:
 
+![](/img/interes.jpg)
 
+Para ver los Mockups completos: https://ninjamock.com/s/DMX1QGx
