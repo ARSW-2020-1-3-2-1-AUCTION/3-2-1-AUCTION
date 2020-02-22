@@ -56,7 +56,7 @@ COMO Comprador
 
 Se ha planteado un **digrama de clases** inicial el cual está orientado a resolver los conflictos ya descritos como sigue:
 
-![](/img/DiagramaDeClases.jpg)
+![](/img/Clases.jpg)
 
 Se definieron **diagramas de secuencia** de alto nivel con las funcionalidades más importantes:
 
