@@ -60,9 +60,9 @@ Se ha planteado un **digrama de clases** inicial el cual está orientado a resol
 
 ![](/img/Clases.jpg)
 
-Se definieron **diagramas de secuencia** de alto nivel con las funcionalidades más importantes:
+Diagrama Entidad-Relación generado por PostgresQL:
 
-
+![](/img/entidadRelacion.jpg)
 
 **Diagrama de componentes**
 
