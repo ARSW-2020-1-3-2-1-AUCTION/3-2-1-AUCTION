@@ -40,11 +40,12 @@ Se realizó un **Diagrama de Casos de Uso** con las funcionalidades más destaca
 COMO Comprador
 
 - QUIERO ofertar por los articulos de interes PARA PODER adquirir un bien.
-- QUIERO cargar dinero a mi cuenta PARA PODER ofertar por los articulos de mi interes.
-- **QUIERO** publicar los posibles articulos que deseo PARA PODER dar a conocer a las personas que existe una necesidad que pueden suplir.
-- **QUIERO** pujar automaticamente por un articulo de mi interes PARA PODER competir por él cuando no pueda estar presente en el tiempo de subasta.
-- **QUIERO** ver un evento con la fecha y hora en un calendario de los artículos de mi interés PARA PODER organizar mi participaón en su subasta.
-- **QUIERO** tener tiempo adicional según la cantidad de pujas PARA PODER tener ventaja sobre cierta cantidad de clientes.
+- QUIERO publicar los posibles articulos que deseo PARA PODER dar a conocer a las personas que existe una necesidad que pueden suplir.
+- QUIERO pujar automaticamente por un articulo de mi interes PARA PODER competir por él cuando no pueda estar presente en el tiempo de subasta.
+- QUIERO ver un evento con la fecha y hora en un calendario de los artículos de mi interés PARA PODER organizar mi participaón en su subasta.
+- QUIERO tener tiempo adicional según la cantidad de pujas PARA PODER tener ventaja sobre cierta cantidad de clientes.
+- QUIERO Ver los diferentes productos por los que estoy ofertando en una sola pantalla PARA PODER llevar un control claro de mis pujas
+- QUIERO Recibir notificaciones cuando me quiten un producto PARA PODER aumentar inmediatamente el monto y recuperarlo
 
 
 ### Vendedor:
@@ -53,6 +54,7 @@ COMO Comprador
 
 - QUIERO ofrecer los productos de mi pertenencia PARA PODER lograr un beneficio económico
 - QUIERO Conocer información sobre los precios de productos similares al que voy a publicar PARA PODER establecer un precio base competente y coherente, además de estimar el precio de venta final
+- QUIERO publicar otro producto similar al que estoy subastando el cual está siendo muy apetecido PARA PODER maximizar los beneficios obtenidos
 
 Se ha planteado un **digrama de clases** inicial el cual está orientado a resolver los conflictos ya descritos como sigue:
 
@@ -91,6 +93,10 @@ Para satisfacer el requisito de una **interfaz gráfica** agradable y sencilla, 
 - Segunda vista para publicar un artículo mostrando sugerencias:
 
 ![](/img/publicar2.jpg)
+
+- Ventana con las subastas en curso y una notificación de aumento de precio:
+
+![](/img/pujasEnCurso.jpg)
 
 - Fomulario para la sugerencia de nuevos artículos:
 
