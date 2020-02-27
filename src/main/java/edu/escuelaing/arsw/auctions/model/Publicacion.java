@@ -6,7 +6,13 @@ import java.util.Date;
 
 public class Publicacion implements Serializable{     
 	
-    	@Id
+    	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
+		@Id
         @Column(name="ID")
     	int ID;
         
@@ -41,7 +47,7 @@ public class Publicacion implements Serializable{
 		return ID;
 	}
 
-	public void setUsername(String username) {
+	public void setUsername(int ID) {
 		this.ID = ID;
 	}
  
@@ -57,7 +63,7 @@ public class Publicacion implements Serializable{
 		return Descripcion;
 	}
 
-	public void setDescripcion(String Descrpicion) {
+	public void setDescripcion(String Descripcion) {
 		this.Descripcion = Descripcion;
 	}
 	public Date getFechadeSubasta() {

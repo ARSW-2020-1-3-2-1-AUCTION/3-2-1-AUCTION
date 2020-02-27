@@ -1,7 +1,7 @@
 package edu.escuelaing.arsw.auctions.model;
-import javax.persistence.Table;
 
-import javax.persistence.Entity;
+
+
 import javax.persistence.Id;
 import javax.persistence.*;
 
@@ -10,7 +10,13 @@ import java.util.Date;
 
 public class Oferta implements Serializable{     
 	
-    	@Id
+    	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
+		@Id
         @Column(name="ID")
     	int ID;
         
@@ -50,7 +56,7 @@ public class Oferta implements Serializable{
 		return Fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(Date Fecha) {
 		this.Fecha = Fecha;
 	}
 	public int getValorOfertaAutomatica() {

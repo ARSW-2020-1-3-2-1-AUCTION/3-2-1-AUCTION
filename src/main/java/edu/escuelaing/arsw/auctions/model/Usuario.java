@@ -1,7 +1,5 @@
 package edu.escuelaing.arsw.auctions.model;
-import javax.persistence.Table;
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.*;
 
@@ -10,7 +8,13 @@ import java.util.List;
 
 public class Usuario implements Serializable{     
 	
-    	@Id
+    	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
+		@Id
         @Column(name="userName")
     	private String userName;
         
@@ -29,10 +33,10 @@ public class Usuario implements Serializable{
         private int Puntuacion;
         
         @Column(name="Comprados")
-        private List Comprados;
+        private List<?> Comprados;
         
         @Column(name="Vendidos")
-        private List Vendidos;
+        private List<?> Vendidos;
         
         
         
@@ -75,18 +79,18 @@ public class Usuario implements Serializable{
 		this.Puntuacion  = puntuacion;
 	}
 	
-	public List getComprados() {
+	public List<?> getComprados() {
 		return Comprados;
 	}
 
-	public void setComprados(List Comprados) {
+	public void setComprados(List<?> Comprados) {
 		this.Comprados = Comprados;
 	}
-	public List getVendidos() {
+	public List<?> getVendidos() {
 		return Vendidos;
 	}
 
-	public void setVendidos(List Vendidos) {
+	public void setVendidos(List<?> Vendidos) {
 		this.Vendidos  = Vendidos;
 	}
 }
