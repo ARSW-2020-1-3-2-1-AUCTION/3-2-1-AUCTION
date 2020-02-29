@@ -94,14 +94,7 @@ Para satisfacer el requisito de una **interfaz gráfica** agradable y sencilla, 
 
 ![](/img/publicar2.jpg)
 
-- Ventana con las subastas en curso y una notificación de aumento de precio:
-
-![](/img/pujasEnCurso.jpg)
-
 - Funcionalidad para publicar un artículo similar solo si su estado es "En Subasta", y notificación con la misma funcionalidad inmediatamente se relice una puja por dicho artículo:
-
-![](/img/misPublicaciones.jpg)
-
 Los posibles estados de los artículos son:
 
 	- **Activo:** El artículo es visible por todos pero no ha iniciado el timepo de subasta
@@ -109,6 +102,12 @@ Los posibles estados de los artículos son:
 	- **En Subasta:** El artículo es visible para todos y se puede ofertar por él, está dentro del tiempo de subasta. 
 
 	- **Inactivo:** La subasta del artículo ha finalizado, se puede visualizar el artículo y sus resultados finales únicamente en el histórico del vendedor y el comprador.
+
+![](/img/misPublicaciones.jpg)
+
+- Ventana con las subastas en curso y una notificación de aumento de precio:
+
+![](/img/pujasEnCurso.jpg)
 
 - Fomulario para la sugerencia de nuevos artículos:
 
