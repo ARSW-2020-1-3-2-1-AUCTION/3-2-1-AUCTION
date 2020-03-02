@@ -1,5 +1,5 @@
 
-package edu.escuelaing.arsw.auctions.api;
+package edu.escuelaing.arsw.auctionsApi;
 
 /**
  *

@@ -6,13 +6,11 @@
 package edu.escuelaing.arsw.auctions.controllers;
 
 
-import edu.escuelaing.arsw.auctions.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,20 +24,22 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author david.gonzalez-g
  */
-public class AuctionAPIController {
+public class AuctionController {
 	
     
-	 //@Autowired 
+	 @Autowired 
     
 	 @RequestMapping(method = RequestMethod.GET)
 	    public ResponseEntity<?> manejadorGetRecursoBlueprintAPI(){
 		    try {
-		    	String data = "dsgerhg";
+		    	String data = "Categorias";
 		        return new ResponseEntity<>(data,HttpStatus.ACCEPTED);
 		    } catch (Exception ex) {
-		        return new ResponseEntity<>("Error bla bla bla",HttpStatus.NOT_FOUND);
+		        return new ResponseEntity<>("Not Found",HttpStatus.NOT_FOUND);
 		    }  
 		    
 	    }
+	 
+	 
 	
 }

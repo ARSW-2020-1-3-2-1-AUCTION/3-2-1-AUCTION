@@ -3,16 +3,14 @@ package edu.escuelaing.arsw.auctions.model;
 
 
 import javax.persistence.Id;
+
 import javax.persistence.*;
 
 import java.io.Serializable;
 import java.util.Date;
 
 public class Oferta implements Serializable{     
-	
-    	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 
