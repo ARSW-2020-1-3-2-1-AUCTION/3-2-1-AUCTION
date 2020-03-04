@@ -35,6 +35,19 @@ public class UsuarioController {
 	        }
 	    }
 	  
+
+	    
+	    @RequestMapping(path = "/{userName}", method = RequestMethod.GET)
+	    public ResponseEntity<?> getUsuario(@PathVariable(name = "userName") String userName) {
+	        try {
+	            Usuario usuario = user.getUsuario(userName);
+	            return new ResponseEntity<>(usuario, HttpStatus.ACCEPTED);
+
+	        } catch (Exception ex) {
+	            return new ResponseEntity<>("400 bad request", HttpStatus.NOT_FOUND);
+	        }
+	    }  
+
 	  
 	
 	 @GetMapping(path = "/{usuarioEmail}")
