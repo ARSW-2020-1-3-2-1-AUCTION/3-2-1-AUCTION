@@ -16,7 +16,6 @@ import edu.escuelaing.arsw.auctions.services.UsuarioServices;
 public class UsuarioServiceImpl implements UsuarioServices {
 	
 	@Autowired
-	@Qualifier("UsuarioRepositoryImpl")
 	private UsuarioRepository userRepo;
 
 	@Override

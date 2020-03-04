@@ -12,7 +12,6 @@ import javax.persistence.PersistenceContext;
 import edu.escuelaing.arsw.auctions.Repository.custom.UsuarioRepositoryCustom;
 import edu.escuelaing.arsw.auctions.model.Usuario;
 
-@Component("UsuarioRepositoryImpl")
 public class UsuarioRepositoryImpl implements UsuarioRepositoryCustom {
 	
 	@PersistenceContext
