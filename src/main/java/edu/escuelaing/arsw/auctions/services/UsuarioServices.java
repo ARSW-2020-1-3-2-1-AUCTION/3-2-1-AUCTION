@@ -21,6 +21,8 @@ public interface UsuarioServices {
 	    public Usuario getUsuario(String userName) throws AuctionNotFoundException;
 	    
 	    public Usuario getSaldo(String userName) throws AuctionNotFoundException;
+	    
+	    void updateSaldo(int saldo, Usuario usuario) throws AuctionPersistanceException;
 	}
 
 
