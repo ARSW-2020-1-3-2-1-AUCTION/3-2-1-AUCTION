@@ -20,6 +20,10 @@ public interface OfertaServices {
     
     public void addOferta(Oferta oferta);
     
+    public void updateOferta(Oferta of,int id);
+    
+    
+    
     
 }
 

@@ -17,6 +17,8 @@ public interface VentaServices {
     void saveVenta(Venta venta) throws AuctionPersistanceException;
     
     Venta findSaleByUser(String userName) throws AuctionPersistanceException;
+
+	public void addVenta(Venta venta);
     
     
 

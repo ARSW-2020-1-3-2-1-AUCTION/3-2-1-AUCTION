@@ -14,6 +14,12 @@ public interface ImagenServices {
     public Imagen getImagen(int id) throws AuctionNotFoundException;
 
     void saveImagen(Imagen imagen) throws AuctionPersistanceException;
+
+	public void addImagen(Imagen imagen);
+
+	public void updateOferta(Imagen im, int id);
+
+	public void deleteImagen(int id);
 	
 
 }
