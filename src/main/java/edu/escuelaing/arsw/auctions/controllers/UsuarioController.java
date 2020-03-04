@@ -38,7 +38,7 @@ public class UsuarioController {
 	
 	    
 	    @RequestMapping(path = "/{userName}", method = RequestMethod.GET)
-	    public ResponseEntity<?> getUsuario(@PathVariable(name = "usuario") String userName) {
+	    public ResponseEntity<?> getUsuario(@PathVariable(name = "userName") String userName) {
 	        try {
 	            Usuario usuario = user.getUsuario(userName);
 	            return new ResponseEntity<>(usuario, HttpStatus.ACCEPTED);
