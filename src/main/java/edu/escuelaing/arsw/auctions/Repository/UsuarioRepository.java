@@ -1,0 +1,16 @@
+package edu.escuelaing.arsw.auctions.Repository;
+
+import org.springframework.stereotype.Repository;
+
+import edu.escuelaing.arsw.auctions.model.Usuario;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+@Repository
+public interface UsuarioRepository extends JpaRepository<Usuario, String>{
+        @Override
+	List<Usuario> findAll();
+
+}
