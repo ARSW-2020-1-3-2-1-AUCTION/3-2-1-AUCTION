@@ -2,6 +2,8 @@ package edu.escuelaing.arsw.auctions.Repository.impl;
 
 import javax.persistence.Query;
 
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -10,6 +12,7 @@ import javax.persistence.PersistenceContext;
 import edu.escuelaing.arsw.auctions.Repository.custom.UsuarioRepositoryCustom;
 import edu.escuelaing.arsw.auctions.model.Usuario;
 
+@Component("UsuarioRepositoryImpl")
 public class UsuarioRepositoryImpl implements UsuarioRepositoryCustom {
 	
 	@PersistenceContext

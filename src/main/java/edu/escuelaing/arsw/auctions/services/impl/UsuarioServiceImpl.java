@@ -3,6 +3,7 @@ package edu.escuelaing.arsw.auctions.services.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import edu.escuelaing.arsw.auctions.Repository.UsuarioRepository;
@@ -15,6 +16,7 @@ import edu.escuelaing.arsw.auctions.services.UsuarioServices;
 public class UsuarioServiceImpl implements UsuarioServices {
 	
 	@Autowired
+	@Qualifier("UsuarioRepositoryImpl")
 	private UsuarioRepository userRepo;
 
 	@Override
