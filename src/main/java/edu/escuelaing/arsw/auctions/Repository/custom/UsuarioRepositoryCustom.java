@@ -7,8 +7,5 @@ import javax.transaction.Transactional;
 import edu.escuelaing.arsw.auctions.model.Usuario;
 
 public interface UsuarioRepositoryCustom {
-	
-	@Transactional
-	public List<Usuario> findById(String userName);
 
 }

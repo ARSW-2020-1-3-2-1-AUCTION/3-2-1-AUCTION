@@ -18,7 +18,7 @@ public interface UsuarioServices {
 	    public List<Usuario> getAllUsers();
 	    
 	   
-	    public Usuario getUsuario(String userName) throws AuctionNotFoundException;
+	    public Usuario getUsuario(int id) throws AuctionNotFoundException;
 	    
 	    public Usuario getSaldo(String userName) throws AuctionNotFoundException;
 	    

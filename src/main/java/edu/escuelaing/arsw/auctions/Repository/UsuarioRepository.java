@@ -10,6 +10,6 @@ import edu.escuelaing.arsw.auctions.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, String>,UsuarioRepositoryCustom{
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
 
 }

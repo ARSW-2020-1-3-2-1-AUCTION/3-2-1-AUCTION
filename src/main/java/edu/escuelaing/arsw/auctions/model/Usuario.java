@@ -1,6 +1,5 @@
 package edu.escuelaing.arsw.auctions.model;
 
-import javax.persistence.Id;
 import javax.persistence.*;
 
 import java.io.Serializable;
@@ -15,11 +14,12 @@ public class Usuario implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 
-
 		@Id
+	    @Column(name="ID")
+		int ID;
+	
         @Column(name="userName")
     	private String userName;
-        
         
         @Column(name="Contrasena")
         private String Contrasena; 
@@ -34,10 +34,10 @@ public class Usuario implements Serializable{
         @Column(name="Puntuacion")
         private int Puntuacion;
         
-        @Column(name="Comprados")
+        //@Column(name="Comprados")
         private List<?> Comprados;
         
-        @Column(name="Vendidos")
+        //@Column(name="Vendidos")
         private List<?> Vendidos;
         
         

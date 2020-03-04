@@ -3,7 +3,7 @@ package edu.escuelaing.arsw.auctions.services.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import edu.escuelaing.arsw.auctions.Repository.UsuarioRepository;
@@ -49,8 +49,8 @@ public class UsuarioServiceImpl implements UsuarioServices {
 	}
 
 	@Override
-	public Usuario getUsuario(String userName) throws AuctionNotFoundException {
-		Usuario usuario = userRepo.findById(userName).get(0);
+	public Usuario getUsuario(int id) throws AuctionNotFoundException {
+		Usuario usuario = userRepo.findById(id).get(0);
 		return usuario;
 	}
 
