@@ -10,6 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
 public interface ImagenRepository extends JpaRepository<Imagen, String>{
-	List<Imagen> findAll();
+	
 
 }

@@ -10,7 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
 public interface OfertaRepository extends JpaRepository<Oferta, String>{
-        @Override
-	List<Oferta> findAll();
+       
 
 }

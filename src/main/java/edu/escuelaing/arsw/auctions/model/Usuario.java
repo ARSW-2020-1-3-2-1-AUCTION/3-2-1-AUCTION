@@ -5,7 +5,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
-@Entity
+@Entity(name="usuario")
 @Table(name="usuario")
 public class Usuario implements Serializable{     
 	
@@ -14,9 +14,9 @@ public class Usuario implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 
-		@Id
-	    @Column(name="ID")
-		int ID;
+	@Id
+	@Column(name="id")
+        int id;
 	
         @Column(name="userName")
     	private String userName;
@@ -40,6 +40,15 @@ public class Usuario implements Serializable{
         //@Column(name="Vendidos")
         private List<?> Vendidos;
         
+        
+        
+        public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
         
         
         

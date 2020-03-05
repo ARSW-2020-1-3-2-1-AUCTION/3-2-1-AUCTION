@@ -10,7 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
 public interface VentaRepository extends JpaRepository<Venta, String>{
-        @Override
-	List<Venta> findAll();
+     
 
 }

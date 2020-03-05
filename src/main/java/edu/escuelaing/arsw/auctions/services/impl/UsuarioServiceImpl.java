@@ -50,8 +50,9 @@ public class UsuarioServiceImpl implements UsuarioServices {
 
 	@Override
 	public Usuario getUsuario(int id) throws AuctionNotFoundException {
-		Usuario usuario = userRepo.findById(id).get(0);
-		return usuario;
+		//Usuario usuario = userRepo.findById(id).get(0);
+		//return usuario;
+                return null;
 	}
 
 	@Override
