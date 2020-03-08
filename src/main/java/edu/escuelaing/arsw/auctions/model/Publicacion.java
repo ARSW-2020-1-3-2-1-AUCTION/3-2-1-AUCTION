@@ -4,49 +4,79 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-@Entity(name="Publicacion")
-@Table(name="Publicacion")
+@Entity(name="publicacion")
+@Table(name="pulicacion")
 public class Publicacion implements Serializable{     
 
 	private static final long serialVersionUID = 1L;
 		@Id
-        @Column(name="ID")
-    	int ID;
+        @Column(name="id")
+    	int ID;      
         
-        
-        @Column(name="Nombre")
-        String Nombre; 
-        
-        
-        @Column(name="Descripcion")
+        @Column(name="descripcion")
         String Descripcion;
         
-        @Column(name="Valor")
+        @Column(name="valor")
         int Valor;
         
         @Column(name="fechaPublicacion")
         Date fechaPublicacion;
         
-        @Column(name="fechadeSubasta")
+        @Column(name="fechaDeSubasta")
         Date fechadeSubasta;
         
-        @Column(name="Estado")
-        String Estado;
-        
-        @Column(name="Usado")
+        @Column(name="usado")
         boolean Usado;
         
-        @Column(name="Ubicacion")
+        @Column(name="estado")
+        String Estado;
+        
+        @Column(name="oferta")
+        int Oferta;
+        
+    	@Column(name="categoria")
+        int Categoria;
+        
+        @Column(name="usuario")
+        int usuario;
+        
+        @Column(name="nombre")
+        String Nombre;
+        
+        @Column(name="ubicacion")
         String Ubicacion;
         
-        
-	public int getId() {
-		return ID;
-	}
+        public int getID() {
+			return ID;
+		}
 
-	public void setUsername(int ID) {
-		this.ID = ID;
-	}
+		public void setID(int iD) {
+			ID = iD;
+		}
+
+		public int getOferta() {
+			return Oferta;
+		}
+
+		public void setOferta(int oferta) {
+			Oferta = oferta;
+		}
+
+		public int getCategoria() {
+			return Categoria;
+		}
+
+		public void setCategoria(int categoria) {
+			Categoria = categoria;
+		}
+
+		public int getUsuario() {
+			return usuario;
+		}
+
+		public void setUsuario(int usuario) {
+			this.usuario = usuario;
+		}        
  
         public String getNombre() {
 		return Nombre;
@@ -85,8 +115,6 @@ public class Publicacion implements Serializable{
 	public void setValor(int Valor) {
 		this.Valor  = Valor;
 	}	
-	
-	
 	
 	public String getEstado() {
 		return Estado ;

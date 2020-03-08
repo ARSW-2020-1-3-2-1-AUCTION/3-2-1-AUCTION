@@ -19,17 +19,16 @@ import edu.escuelaing.arsw.auctions.model.Usuario;
 
 @RestController
 @RequestMapping(value="/usuario")
-
 public class UsuarioController {
 	
 	  @Autowired
 	  @Qualifier("UsuarioServices")
 	  UsuarioServices user;
 	  
-	  @GetMapping
+	  @RequestMapping(method = RequestMethod.GET)
 	    public ResponseEntity<?> getAllUser(){
 	        try{
-	            return new ResponseEntity<>(user,HttpStatus.ACCEPTED);
+	            return new ResponseEntity<>(user.getAllUsers(),HttpStatus.ACCEPTED);
 	        }catch (Exception ex){
 	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
 	        }
@@ -44,13 +43,14 @@ public class UsuarioController {
 	            return new ResponseEntity<>(usuario, HttpStatus.ACCEPTED);
 
 	        } catch (Exception ex) {
-	            return new ResponseEntity<>("400 bad request", HttpStatus.NOT_FOUND);
+	        	ex.printStackTrace(System.out);
+	            return new ResponseEntity<>("400 bad requestrr", HttpStatus.NOT_FOUND);
 	        }
 	    }  
 
 	  
 	
-	 @GetMapping(path = "/{usuarioEmail}")
+	 /*@GetMapping(path = "/{usuarioEmail}")
 	    public ResponseEntity<?> getUserByEmail(@PathVariable("usuario") String correoElectronico){
 	        
 	        try{
@@ -58,7 +58,7 @@ public class UsuarioController {
 	        }catch (Exception ex){
 	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.NOT_FOUND);
 	        }
-	    }
+	    }*/
 	 
 	 @RequestMapping(method = RequestMethod.POST)	
 	    public ResponseEntity<?> manejadorPostRecursoUsuario(@RequestBody Usuario usuario){	        

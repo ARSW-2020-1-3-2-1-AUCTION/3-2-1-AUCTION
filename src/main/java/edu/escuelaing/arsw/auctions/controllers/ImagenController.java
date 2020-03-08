@@ -19,14 +19,13 @@ import edu.escuelaing.arsw.auctions.services.ImagenServices;
 
 
 @RestController
-@RequestMapping(value = "/oferta")
+@RequestMapping(value = "/imagen")
 
 public class ImagenController {
 	
-
 	@Autowired
-  @Qualifier("ImagenServices")
-  ImagenServices is;
+    @Qualifier("ImagenServices")
+    ImagenServices is;
 	
 	@RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<?> getAllImagen(){
@@ -38,15 +37,15 @@ public class ImagenController {
     }
 	
 	 @RequestMapping(method = RequestMethod.POST)	
- public ResponseEntity<?> manejadorPostRecursoImagen(@RequestBody Imagen imagen){
-     try {
-         is.addImagen(imagen);
-         return new ResponseEntity<>(HttpStatus.CREATED);
-     } catch (Exception ex) {
-         Logger.getLogger(OfertaController.class.getName()).log(Level.SEVERE, null, ex);
-         return new ResponseEntity<>("Error al intentar crear el nuevo tiquete",HttpStatus.FORBIDDEN);            
-     }
- }
+	 public ResponseEntity<?> manejadorPostRecursoImagen(@RequestBody Imagen imagen){
+	     try {
+	         is.addImagen(imagen);
+	         return new ResponseEntity<>(HttpStatus.CREATED);
+	     } catch (Exception ex) {
+	         Logger.getLogger(OfertaController.class.getName()).log(Level.SEVERE, null, ex);
+	         return new ResponseEntity<>("Error al intentar crear el nuevo tiquete",HttpStatus.FORBIDDEN);            
+	     }
+	 }
 	 @RequestMapping(path = "/{imagenid}",method = RequestMethod.PUT)	
 	    public ResponseEntity<?> PutAtraccion(@PathVariable ("imagenid") int id,@RequestBody Imagen im ){
 	        

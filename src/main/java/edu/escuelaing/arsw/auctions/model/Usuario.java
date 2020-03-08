@@ -17,40 +17,33 @@ public class Usuario implements Serializable{
 	@Id
 	@Column(name="id")
         int id;
-	
-        @Column(name="userName")
-    	private String userName;
         
-        @Column(name="Contrasena")
+        @Column(name="contrasena")
         private String Contrasena; 
         
-        
-        @Column(name="Saldo")
+        @Column(name="saldo")
         private int Saldo;
         
         @Column(name="correoElectronico")
         private String correoElectronico;
         
-        @Column(name="Puntuacion")
+        @Column(name="puntuacion")
         private int Puntuacion;
         
-        //@Column(name="Comprados")
-        private List<?> Comprados;
+        @Column(name="userName")
+    	private String userName;
         
-        //@Column(name="Vendidos")
-        private List<?> Vendidos;
+        public Usuario() {
+            
+    	}
         
-        
-        
-        public int getId() {
+    public int getId() {
 		return id;
 	}
 
 	public void setId(int id) {
 		this.id = id;
-	}
-        
-        
+	}        
         
 	public String getUserName() {
 		return userName;
@@ -90,18 +83,4 @@ public class Usuario implements Serializable{
 		this.Puntuacion  = puntuacion;
 	}
 	
-	public List<?> getComprados() {
-		return Comprados;
-	}
-
-	public void setComprados(List<?> Comprados) {
-		this.Comprados = Comprados;
-	}
-	public List<?> getVendidos() {
-		return Vendidos;
-	}
-
-	public void setVendidos(List<?> Vendidos) {
-		this.Vendidos  = Vendidos;
-	}
 }

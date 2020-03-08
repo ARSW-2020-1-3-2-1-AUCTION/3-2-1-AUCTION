@@ -1,19 +1,19 @@
 package edu.escuelaing.arsw.auctions.model;
 
-import javax.persistence.Id;
 import javax.persistence.*;
 
 import java.io.Serializable;
 
-
+@Entity(name="preferencia")
+@Table(name="preferencia")
 public class Preferencia implements Serializable{     
 	private static final long serialVersionUID = 1L;
 		@Id        
-        @Column(name="IdUsuario")
+        @Column(name="usuario")
         private int IdUsuario; 
         
         
-        @Column(name="IdPublicacion")
+        @Column(name="publicacion")
         private int IdPublicacion;     
         
         public int getIdUsuario() {

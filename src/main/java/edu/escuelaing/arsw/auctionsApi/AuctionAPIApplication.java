@@ -17,16 +17,15 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @SpringBootApplication
-@ComponentScan(basePackages  = {"edu.eci.arsw.auctions.services","edu.eci.arsw.auctions.controllers"})
-//@ComponentScan(basePackages = {"edu.escuelaing.arsw.auctions"})
-@EnableJpaRepositories("edu.eci.arsw.auctions.Repository")
-@EntityScan("edu.eci.arsw.auctions.model")
-
+@ComponentScan(basePackages  = {"edu.escuelaing.arsw.auctions.services","edu.escuelaing.arsw.auctions.controllers"})
+@EnableJpaRepositories("edu.escuelaing.arsw.auctions.Repository")
+@EntityScan("edu.escuelaing.arsw.auctions.model")
 public class AuctionAPIApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AuctionAPIApplication.class, args);
 	}
+	
 }
     
 

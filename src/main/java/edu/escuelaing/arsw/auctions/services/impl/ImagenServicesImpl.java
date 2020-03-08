@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Service("ImagenServices")
 public class ImagenServicesImpl implements ImagenServices {
 
-        @Autowired
+    @Autowired
 	private ImagenRepository imagenRepo;
         
     

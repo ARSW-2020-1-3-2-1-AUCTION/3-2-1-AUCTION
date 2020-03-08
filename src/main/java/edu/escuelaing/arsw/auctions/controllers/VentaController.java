@@ -17,7 +17,7 @@ import edu.escuelaing.arsw.auctions.model.Venta;
 import edu.escuelaing.arsw.auctions.services.VentaServices;
 
 @RestController
-@RequestMapping(value = "/oferta")
+@RequestMapping(value = "/venta")
 
 public class VentaController {
 	

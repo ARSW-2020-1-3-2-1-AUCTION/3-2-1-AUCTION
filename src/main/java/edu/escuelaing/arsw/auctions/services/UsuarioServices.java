@@ -16,7 +16,6 @@ public interface UsuarioServices {
 	    Usuario findUserByEmail(String correoElectronico) throws AuctionPersistanceException;
 	    
 	    public List<Usuario> getAllUsers();
-	    
 	   
 	    public Usuario getUsuario(int id) throws AuctionNotFoundException;
 	    

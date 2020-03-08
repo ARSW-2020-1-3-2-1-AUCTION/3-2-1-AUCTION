@@ -1,29 +1,24 @@
 package edu.escuelaing.arsw.auctions.model;
 
-
-
-import javax.persistence.Id;
-
 import javax.persistence.*;
 
 import java.io.Serializable;
 import java.util.Date;
 
+@Entity(name="oferta")
+@Table(name="oferta")
 public class Oferta implements Serializable{     
 
 	private static final long serialVersionUID = 1L;
 
-
 		@Id
-        @Column(name="ID")
-    	int ID;
-        
+        @Column(name="id")
+    	int Id;
         
         @Column(name="valorOfrecido")
         int valorOfrecido; 
         
-        
-        @Column(name="Fecha")
+        @Column(name="fecha")
         Date Fecha;
         
         @Column(name="valorOfertaAutomatica")
@@ -32,14 +27,15 @@ public class Oferta implements Serializable{
         @Column(name="ofertaAutomatica")
         boolean ofertaAutomatica;
         
-        
-        
+        @Column(name="usuario")
+        int usuario;
+
 	public int getId() {
-		return ID;
+		return Id;
 	}
 
 	public void setId(int ID) {
-		this.ID = ID;
+		this.Id = ID;
 	}
  
         public int getValorOfrecido() {
@@ -70,5 +66,13 @@ public class Oferta implements Serializable{
 
 	public void setOfertaAutomatica(boolean ofertaAutomatica) {
 		this.ofertaAutomatica  = ofertaAutomatica;
+	}
+	
+	public int isUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(int usuario) {
+		this.usuario = usuario;
 	}
 }
