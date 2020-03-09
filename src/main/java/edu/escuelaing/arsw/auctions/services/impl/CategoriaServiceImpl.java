@@ -19,9 +19,9 @@ public class CategoriaServiceImpl implements CategoriaServices {
 	private CategoriaRepository categoriaRepo;
     
 	@Override
-	public List<Categoria> getAllCategorias() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Categoria> getAllCategorias() {                
+		return categoriaRepo.findAll()
+		;
 	}
 
 	@Override
