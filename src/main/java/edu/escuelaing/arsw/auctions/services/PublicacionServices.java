@@ -9,15 +9,11 @@ import edu.escuelaing.arsw.auctions.persistance.AuctionPersistanceException;
 
 public interface PublicacionServices {
 	
-    
     public List<Publicacion> getAllPublicaciones();
 
     public Publicacion getPublicacion(int id) throws AuctionNotFoundException;
     
-    public Usuario addPublicacion(Publicacion publicacion) throws AuctionPersistanceException;
-    
-    void savePublicacion(Publicacion publicacion) throws AuctionPersistanceException;
-    
+    public void addPublicacion(Publicacion publicacion) throws AuctionPersistanceException;
 
 	Publicacion getPublicacionByUsuario(String userName);
 	

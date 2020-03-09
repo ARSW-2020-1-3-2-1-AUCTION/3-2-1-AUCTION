@@ -15,31 +15,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Service("PublicacionServices")
 public class PublicacionServicesImpl implements PublicacionServices {
         
-        @Autowired
+    @Autowired
 	private PublicacionRepository publicacionRepo;
     
 	@Override
 	public List<Publicacion> getAllPublicaciones() {
-		// TODO Auto-generated method stub
-		return null;
+		return publicacionRepo.findAll();
 	}
 
 	@Override
 	public Publicacion getPublicacion(int id) throws AuctionNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		return publicacionRepo.findById(id).get();
 	}
 
 	@Override
-	public Usuario addPublicacion(Publicacion publicacion) throws AuctionPersistanceException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void savePublicacion(Publicacion publicacion) throws AuctionPersistanceException {
-		// TODO Auto-generated method stub
-
+	public void addPublicacion(Publicacion publicacion) throws AuctionPersistanceException {
+		publicacionRepo.addPublicacion(publicacion);
 	}
 
 	@Override
