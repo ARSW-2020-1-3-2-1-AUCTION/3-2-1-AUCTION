@@ -46,6 +46,9 @@ public class Publicacion implements Serializable{
         @Column(name="ubicacion")
         String Ubicacion;
         
+        @Column(name="marca")
+        String marca;
+        
         public int getID() {
 			return ID;
 		}

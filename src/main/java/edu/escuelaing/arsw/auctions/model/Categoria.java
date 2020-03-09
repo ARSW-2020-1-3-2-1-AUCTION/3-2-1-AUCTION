@@ -16,10 +16,7 @@ public class Categoria implements Serializable{
     	private int Id;
         
         @Column(name="categoria")
-        private String Categoria; 
-        
-        @Column(name="marca")
-        private String Marca;     
+        private String Categoria;    
         
         public int getId() {
     		return Id;
@@ -35,14 +32,6 @@ public class Categoria implements Serializable{
 
 	public void setCategoria(String Categoria) {
 		this.Categoria = Categoria;
-	}
-	
-	public String getMarca() {
-		return Marca;
-	}
-
-	public void setMarca(String Marca) {
-		this.Marca = Marca;
 	}
 	
 }

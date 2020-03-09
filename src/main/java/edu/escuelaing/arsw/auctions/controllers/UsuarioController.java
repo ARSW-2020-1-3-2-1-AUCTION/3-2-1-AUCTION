@@ -36,8 +36,8 @@ public class UsuarioController {
 	  
 
 	    
-	    @RequestMapping(path = "/{userName}", method = RequestMethod.GET)
-	    public ResponseEntity<?> getUsuario(@PathVariable(name = "userName") int id) {
+	    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
+	    public ResponseEntity<?> getUsuario(@PathVariable(name = "id") int id) {
 	        try {
 	            Usuario usuario = user.getUsuario(id);
 	            return new ResponseEntity<>(usuario, HttpStatus.ACCEPTED);
@@ -46,30 +46,35 @@ public class UsuarioController {
 	        	ex.printStackTrace(System.out);
 	            return new ResponseEntity<>("400 bad requestrr", HttpStatus.NOT_FOUND);
 	        }
-	    }  
+	    }
 
 	  
 	
-	 /*@GetMapping(path = "/{usuarioEmail}")
-	    public ResponseEntity<?> getUserByEmail(@PathVariable("usuario") String correoElectronico){
-	        
-	        try{
-	            return new ResponseEntity<>(user,HttpStatus.ACCEPTED);
-	        }catch (Exception ex){
-	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.NOT_FOUND);
-	        }
-	    }*/
-	 
-	 @RequestMapping(method = RequestMethod.POST)	
-	    public ResponseEntity<?> manejadorPostRecursoUsuario(@RequestBody Usuario usuario){	        
+	    @RequestMapping(value = "/{id}/{saldo}", method = RequestMethod.GET)
+	    public ResponseEntity<?> setSaldo(@PathVariable(name="id") int id,@PathVariable(name="saldo") int saldo) {
 	        try {
-	            user.addUser(usuario);
-	            return new ResponseEntity<>(HttpStatus.CREATED);
-	        } catch (Exception ex) {
-	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);            
-	        }        
+	            user.setSaldo(id,saldo);
+	            return new ResponseEntity<>(HttpStatus.ACCEPTED);
 
-	    }
+	        } catch (Exception ex) {
+	        	ex.printStackTrace(System.out);
+	            return new ResponseEntity<>("400 bad requestrr", HttpStatus.NOT_FOUND);
+	        }
+	    } 
+	 
+	    
+	 
+	    @RequestMapping(value = "getSaldo/{id}", method = RequestMethod.GET)
+	    public ResponseEntity<?> getSaldo(@PathVariable(name="id") int id){
+	        try {
+	            int saldo = user.getSaldo(id);
+	            return new ResponseEntity<>(saldo, HttpStatus.ACCEPTED);
+
+	        } catch (Exception ex) {
+	        	ex.printStackTrace(System.out);
+	            return new ResponseEntity<>("400 bad requestrr", HttpStatus.NOT_FOUND);
+	        }
+	    } 
 	 
 
 

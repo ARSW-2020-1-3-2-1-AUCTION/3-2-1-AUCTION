@@ -3,7 +3,6 @@ package edu.escuelaing.arsw.auctions.services.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import edu.escuelaing.arsw.auctions.Repository.UsuarioRepository;
@@ -17,55 +16,34 @@ public class UsuarioServiceImpl implements UsuarioServices {
 	
 	@Autowired
 	private UsuarioRepository userRepo;
-
-	@Override
-	public Usuario addUser(Usuario user) throws AuctionPersistanceException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Usuario addSaldo(Usuario Saldo) throws AuctionPersistanceException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void saveUser(Usuario usuario) throws AuctionPersistanceException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Usuario findUserByEmail(String correoElectronico) throws AuctionPersistanceException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	@Override
 	public List<Usuario> getAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println(userRepo.findAll());
+		return userRepo.findAll();
 	}
-
+	
 	@Override
 	public Usuario getUsuario(int id) throws AuctionNotFoundException {
 		System.out.println(id + "--------");
 		Usuario usuario = userRepo.findById(id).get();
 		if (usuario==null) System.out.println(id + "<--------");
 		return usuario;
-	}
+	}	
 
 	@Override
-	public Usuario getSaldo(String userName) throws AuctionNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void updateSaldo(int saldo, Usuario usuario) throws AuctionPersistanceException {
-		// TODO Auto-generated method stub
+	public void addUser(Usuario user) throws AuctionPersistanceException {
 		
+	}
+
+	@Override
+	public void setSaldo(int id, int saldo) throws AuctionPersistanceException {
+		userRepo.setSaldo(id,saldo);
+	}	
+
+	@Override
+	public int getSaldo(int id) throws AuctionNotFoundException {
+		return userRepo.getSaldo(id);
 	}
 
 }
