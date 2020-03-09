@@ -5,19 +5,26 @@ import javax.persistence.*;
 
 import java.io.Serializable;
 
-@Entity(name="categoria")
+@Entity//(name="categoria")
 @Table(name="categoria")
 public class Categoria implements Serializable{     
 	private static final long serialVersionUID = 1L;
 
-
-		@Id
+	@Id
         @Column(name="id")
-    	private int Id;
+    	private Integer Id;
         
-        @Column(name="categoria")
-        private String Categoria;    
+        @Column(name="nombre")
+        private String nombre; 
         
+        public Categoria(Integer Id,String nombre){
+            this.Id=Id;
+            this.nombre=nombre;
+        };
+        
+        public Categoria(){};
+        
+                
         public int getId() {
     		return Id;
     	}
@@ -26,12 +33,12 @@ public class Categoria implements Serializable{
     		this.Id = ID;
     	}
         
-        public String getCategoria() {
-		return Categoria;
+        public String getnombre() {
+		return nombre;
        }
 
-	public void setCategoria(String Categoria) {
-		this.Categoria = Categoria;
+	public void setnombre(String nombre) {
+		this.nombre = nombre;
 	}
 	
 }
