@@ -1,6 +1,5 @@
 package edu.escuelaing.arsw.auctions.Repository.custom;
 
-
 import javax.transaction.Transactional;
 
 public interface UsuarioRepositoryCustom {
