@@ -10,5 +10,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 @Repository
 public interface PublicacionRepository extends JpaRepository<Publicacion, Integer>,PublicacionRepositoryCustom{
         
-
 }

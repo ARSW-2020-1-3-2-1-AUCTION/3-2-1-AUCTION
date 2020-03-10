@@ -142,5 +142,13 @@ public class Publicacion implements Serializable{
 		this.Ubicacion  = Ubicacion;
 	}
 	
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+	
 	
 }

@@ -9,6 +9,6 @@ public interface UsuarioRepositoryCustom {
     public void setSaldo(int id, int saldo);
 	
 	@Transactional
-    public int getSaldo(int id);
+	public void setPuntuacion(int id,int puntos);
 
 }

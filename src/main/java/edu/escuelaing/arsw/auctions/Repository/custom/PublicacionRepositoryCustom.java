@@ -12,6 +12,9 @@ public interface PublicacionRepositoryCustom {
 	public void addPublicacion(Publicacion publicacion);
 	
 	@Transactional
-    public List<Publicacion> findListById(int id);
+	public List<Publicacion> getPublicacionByUsuario(String IdUsuario);
+	
+	@Transactional
+    public List<Publicacion> getPublicacionByCategoria(int IdCategoria);
 
 }

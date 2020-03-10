@@ -30,9 +30,6 @@ public class Usuario implements Serializable{
         @Column(name="puntuacion")
         private int Puntuacion;
         
-        @Column(name="userName")
-    	private String userName;
-        
         public Usuario() {
             
     	}
@@ -44,14 +41,6 @@ public class Usuario implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}        
-        
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUsername(String username) {
-		this.userName = username;
-	}
         
         public String getContrasena() {
 		return Contrasena;
@@ -68,13 +57,15 @@ public class Usuario implements Serializable{
 	public void setSaldo(int saldo) {
 		this.Saldo = saldo;
 	}
+
 	public String getCorreoElectronico() {
 		return correoElectronico;
 	}
 
-	public void setEmail(String correoElectronico) {
+	public void setCorreoElectronico(String correoElectronico) {
 		this.correoElectronico = correoElectronico;
 	}
+
 	public int getPuntuacion() {
 		return Puntuacion;
 	}

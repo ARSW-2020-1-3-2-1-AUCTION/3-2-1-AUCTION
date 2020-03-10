@@ -59,30 +59,30 @@ public class PublicacionController {
 		    }
 	 	 
 	 	 
-	 	@RequestMapping(value="/{username}",method=RequestMethod.GET)
-		public ResponseEntity<?> getPublicacionByUsuario(@PathVariable String username){
+	 	@RequestMapping(value="/ByUser/{IdUsuario}",method=RequestMethod.GET)
+		public ResponseEntity<?> getPublicacionByUsuario(@PathVariable(name="IdUsuario") String IdUsuario){
 			try {
-				return new ResponseEntity<>(publication.getPublicacionByUsuario(username),HttpStatus.ACCEPTED);
+				return new ResponseEntity<>(publication.getPublicacionByUsuario(IdUsuario),HttpStatus.ACCEPTED);
 			} catch (Exception e) {
 				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 			}
 		}
 	 	 
 	 	
-	 	@RequestMapping(value="/{categoria}",method=RequestMethod.GET)
-	 	public ResponseEntity<?> getPublicacionByCategoria(@PathVariable int id){
+	 	@RequestMapping(value="/ByCategoria/{IdCategoria}",method=RequestMethod.GET)
+	 	public ResponseEntity<?> getPublicacionByCategoria(@PathVariable(name="IdCategoria") int IdCategoria){
 			try {
-				return new ResponseEntity<>(publication.getPublicacionByCategoria(id),HttpStatus.ACCEPTED);
+				return new ResponseEntity<>(publication.getPublicacionByCategoria(IdCategoria),HttpStatus.ACCEPTED);
 			} catch (Exception e) {
 				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 			}
 		}
 	 	 
 	 	
-	 	@RequestMapping(path = "/{publicacion}",method = RequestMethod.DELETE)
-	    public ResponseEntity<?> deletePublicacion(@PathVariable (name = "publicacion") int publicacion) {
+	 	@RequestMapping(path = "/delete/{id}",method = RequestMethod.DELETE)
+	    public ResponseEntity<?> deletePublicacion(@PathVariable (name = "id") int id) {
 	    try {
-	    	publication.deletePublicacion(publicacion);
+	    	publication.deletePublicacion(id);
 	        return new ResponseEntity<>(HttpStatus.ACCEPTED); 
 	    } catch (Exception e) {
 	            Logger.getLogger(PublicacionController.class.getName()).log(Level.SEVERE, null, e);

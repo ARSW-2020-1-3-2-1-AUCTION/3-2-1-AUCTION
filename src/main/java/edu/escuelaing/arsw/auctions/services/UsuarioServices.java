@@ -15,8 +15,8 @@ public interface UsuarioServices {
 	public void addUser(Usuario user) throws AuctionPersistanceException;
 	    
 	public void setSaldo(int id, int saldo) throws AuctionPersistanceException;
-	    
-	public int getSaldo(int id) throws AuctionNotFoundException;
+	
+	public void setPuntuacion(int id,int puntos);
 	    
 }
 

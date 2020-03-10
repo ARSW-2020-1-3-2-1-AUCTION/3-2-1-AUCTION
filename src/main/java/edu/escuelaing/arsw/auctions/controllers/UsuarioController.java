@@ -30,6 +30,7 @@ public class UsuarioController {
 	        try{
 	            return new ResponseEntity<>(user.getAllUsers(),HttpStatus.ACCEPTED);
 	        }catch (Exception ex){
+	        	ex.printStackTrace(System.out);
 	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
 	        }
 	    }
@@ -44,13 +45,13 @@ public class UsuarioController {
 
 	        } catch (Exception ex) {
 	        	ex.printStackTrace(System.out);
-	            return new ResponseEntity<>("400 bad requestrr", HttpStatus.NOT_FOUND);
+	            return new ResponseEntity<>("400 bad request", HttpStatus.NOT_FOUND);
 	        }
 	    }
 
 	  
 	
-	    @RequestMapping(value = "/{id}/{saldo}", method = RequestMethod.GET)
+	    @RequestMapping(value = "/{id}/setSaldo/{saldo}", method = RequestMethod.PUT)
 	    public ResponseEntity<?> setSaldo(@PathVariable(name="id") int id,@PathVariable(name="saldo") int saldo) {
 	        try {
 	            user.setSaldo(id,saldo);
@@ -58,24 +59,21 @@ public class UsuarioController {
 
 	        } catch (Exception ex) {
 	        	ex.printStackTrace(System.out);
-	            return new ResponseEntity<>("400 bad requestrr", HttpStatus.NOT_FOUND);
+	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);
 	        }
-	    } 
-	 
+	    }
 	    
-	 
-	    @RequestMapping(value = "getSaldo/{id}", method = RequestMethod.GET)
-	    public ResponseEntity<?> getSaldo(@PathVariable(name="id") int id){
+	    
+	    @RequestMapping(value = "/{id}/setPuntuacion/{puntos}", method = RequestMethod.PUT)
+	    public ResponseEntity<?> setPuntuacion(@PathVariable(name="id") int id,@PathVariable(name="puntos") int puntos) {
 	        try {
-	            int saldo = user.getSaldo(id);
-	            return new ResponseEntity<>(saldo, HttpStatus.ACCEPTED);
+	            user.setPuntuacion(id,puntos);
+	            return new ResponseEntity<>(HttpStatus.ACCEPTED);
 
 	        } catch (Exception ex) {
 	        	ex.printStackTrace(System.out);
-	            return new ResponseEntity<>("400 bad requestrr", HttpStatus.NOT_FOUND);
+	            return new ResponseEntity<>("400 bad request", HttpStatus.NOT_FOUND);
 	        }
-	    } 
-	 
-
+	    }
 
 }

@@ -22,11 +22,11 @@ public class UsuarioRepositoryImpl implements UsuarioRepositoryCustom {
 	}
 
 	@Override
-	public int getSaldo(int id) {
-		Query query = entityManager.createQuery("select Saldo from usuario where id=:ID");
-		query.setParameter("ID", id);
-		
-		return query.getFirstResult();
+	public void setPuntuacion(int id, int puntos) {
+		Query query = entityManager.createNativeQuery("update usuario set puntuacion=? where id=?",Usuario.class);
+		 
+		query.setParameter(1, puntos )
+             .setParameter(2, id ).executeUpdate();
 		
 	}
 	

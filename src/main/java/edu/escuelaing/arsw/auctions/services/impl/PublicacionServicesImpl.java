@@ -34,21 +34,18 @@ public class PublicacionServicesImpl implements PublicacionServices {
 	}
 
 	@Override
-	public Publicacion getPublicacionByUsuario(String userName) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Publicacion> getPublicacionByUsuario(String IdUsuario) {
+		return publicacionRepo.getPublicacionByUsuario(IdUsuario);
 	}
 
 	@Override
-	public Publicacion getPublicacionByCategoria(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Publicacion> getPublicacionByCategoria(int IdCategoria) {
+		return publicacionRepo.getPublicacionByCategoria(IdCategoria);
 	}
 
 	@Override
-	public void deletePublicacion(int publicacion) {
-		// TODO Auto-generated method stub
-
+	public void deletePublicacion(int id) {
+		publicacionRepo.deleteById(id);
 	}
 
 }

@@ -15,10 +15,10 @@ public interface PublicacionServices {
     
     public void addPublicacion(Publicacion publicacion) throws AuctionPersistanceException;
 
-	Publicacion getPublicacionByUsuario(String userName);
+    public List<Publicacion> getPublicacionByUsuario(String IdUsuario);
 	
-	Publicacion getPublicacionByCategoria(int id);
+    public List<Publicacion> getPublicacionByCategoria(int IdCategoria);
 
-	public void deletePublicacion(int publicacion);
+	public void deletePublicacion(int id);
 }
 

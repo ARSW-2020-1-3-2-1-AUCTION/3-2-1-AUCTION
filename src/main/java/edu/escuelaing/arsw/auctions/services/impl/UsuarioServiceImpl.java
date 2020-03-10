@@ -25,9 +25,7 @@ public class UsuarioServiceImpl implements UsuarioServices {
 	
 	@Override
 	public Usuario getUsuario(int id) throws AuctionNotFoundException {
-		System.out.println(id + "--------");
 		Usuario usuario = userRepo.findById(id).get();
-		if (usuario==null) System.out.println(id + "<--------");
 		return usuario;
 	}	
 
@@ -39,11 +37,11 @@ public class UsuarioServiceImpl implements UsuarioServices {
 	@Override
 	public void setSaldo(int id, int saldo) throws AuctionPersistanceException {
 		userRepo.setSaldo(id,saldo);
-	}	
+	}
 
 	@Override
-	public int getSaldo(int id) throws AuctionNotFoundException {
-		return userRepo.getSaldo(id);
-	}
+	public void setPuntuacion(int id, int puntos) {
+		userRepo.setPuntuacion(id,puntos);
+	}	
 
 }
