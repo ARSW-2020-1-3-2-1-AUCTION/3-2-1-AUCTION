@@ -1,0 +1,186 @@
+@import "compass/css3";
+        
+@import url('https://fonts.googleapis.com/css?family=Amarante');
+        
+@import "compass/css3";
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
+        
+html, div, span, applet, object, iframe, h1, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    outline: none;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+h2 {
+	text-align: center;
+	color: #000000;
+}
+
+html {
+	box-sizing: border-box;
+    height: 100%;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+        
+body {
+	@include filter-gradient(#5eb7b7, #72c0c0, horizontal);
+    @include background-image(radial-gradient(circle at top,  rgba(83,69,91,1) 0,rgba(32,30,34,1) 70%));
+    color: #fff;
+          
+    font-family: "Roboto", sans-serif;
+          
+    font-size: 100%;
+    min-height: 100%;
+    line-height: 1.5;
+    padding: 2.5em 0;
+          
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;      
+}
+        
+::selection { background: #5f74a0; color: #555555; }
+::-moz-selection { background: #5f74a0; color: #555555; }
+::-webkit-selection { background: #5f74a0; color: #555555; }
+        
+        
+        
+.container {
+	margin: 0 auto;
+    width: 90%;
+    max-width: 1600px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.group:after {
+	content: "";
+    display: table;
+    clear: both;
+}
+.grid-1-5 {
+	border: 2px solid #5d4e65;   
+	min-height: 320px;
+    width: 320px;
+    float: left;
+    padding: 1.25em;
+    position: relative;
+    text-align: center;
+    transition: all .2s ease-in-out;
+       
+    @media screen and (min-width: 700px) {
+      & {
+        float: left;
+        width: 50%;
+      }
+      &:nth-child(odd) {
+        clear: left;
+      }
+    }
+          
+    @media screen and (min-width: 800px) {
+      & {      
+        width: 33.3333333%;
+      }
+      &:nth-child(3n+1) {
+        clear: left;
+      }
+      &:nth-child(odd) {
+        clear: none;
+      }    
+    }
+          
+    @media screen and (min-width: 1120px) {
+      & {
+         width: 20%;
+      }
+      &:nth-child(odd), &:nth-child(3n+1) {
+         clear: none;
+      }    
+    }
+          
+}
+
+.grid-1-5:hover {
+	background-color: rgb(0, 123, 255);
+    @include filter-gradient(#007bff, #007bff, vertical);
+    @include background-image(linear-gradient(top,  rgba(57,74,109,1) 0%,rgba(35,46,67,1) 100%));  
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 1);
+    transform: scale(1.025);
+    z-index: 2;
+        
+    &:before, &:after {
+      content: ""; 
+      position: absolute; 
+      background-color: rgb(246,125,53);
+      @include filter-gradient(#f67d35, #ff4f68, vertical);
+      @include background-image(linear-gradient(top,  rgba(246,125,53,1) 0%,rgba(255,79,104,1) 100%));
+      top: -2px; 
+      bottom: -2px; 
+      width: 2px;    
+    }
+        
+    &:before { 
+      left: -2px; 
+    }
+    &:after { 
+       right: -2px; 
+    }  
+        
+    & .button {
+      background-color: rgb(238,122,54);
+      @include filter-gradient(#ee7a36, #eb495d, horizontal);
+      @include background-image(linear-gradient(left,  rgba(238,122,54,1) 0%,rgba(235,73,93,1) 100%));    
+     }
+    }
+.button {
+	background-color: #26286e;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 0.75em 1.5em;
+    position: absolute;
+    bottom: 1.25em;
+    left: 50%;
+    margin-left: -60px;
+    text-decoration: none;
+    width: 170px;
+}
+
+.uppercase, .button {
+    text-transform: uppercase;
+}
+
+sup, .small {
+    font-size: 0.6125em;
+}
+.otherbutton {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #5eb7b7;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    font-weight: 700;
+}
+.otherbutton:hover,.otherbutton:active,.otherbutton:focus {
+    background: #b8e0d9;
+}

@@ -4,14 +4,14 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-@Entity(name="publicacion")
+@Entity//(name="publicacion")
 @Table(name="pulicacion")
 public class Publicacion implements Serializable{     
 
 	private static final long serialVersionUID = 1L;
 		@Id
         @Column(name="id")
-    	int ID;      
+		private Integer Id;     
         
         @Column(name="descripcion")
         String Descripcion;
@@ -50,11 +50,11 @@ public class Publicacion implements Serializable{
         String marca;
         
         public int getID() {
-			return ID;
+			return Id;
 		}
 
 		public void setID(int iD) {
-			ID = iD;
+			Id = iD;
 		}
 
 		public int getOferta() {

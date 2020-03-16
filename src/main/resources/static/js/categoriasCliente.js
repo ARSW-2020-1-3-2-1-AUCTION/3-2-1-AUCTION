@@ -8,6 +8,15 @@ categoriasCliente = (function() {
 				},
 				async: true
 			});
+		},
+		numArtPorCat: function(callback,categoriaId) {
+			$.ajax({
+				url: "publicacion/ByCategoria/"+categoriaId,
+				success: function (result) {
+					callback(result);
+				},
+				async: true
+			});
 		}
 	};
 })();
