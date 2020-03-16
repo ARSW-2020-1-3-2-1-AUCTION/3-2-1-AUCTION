@@ -8,6 +8,6 @@ import edu.escuelaing.arsw.auctions.model.Publicacion;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
-public interface PublicacionRepository extends JpaRepository<Publicacion, Integer>{
+public interface PublicacionRepository extends JpaRepository<Publicacion, Integer>, PublicacionRepositoryCustom{
         
 }

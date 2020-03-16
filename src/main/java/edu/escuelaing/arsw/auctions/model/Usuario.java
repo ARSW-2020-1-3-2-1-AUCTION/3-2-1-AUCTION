@@ -24,9 +24,6 @@ public class Usuario implements Serializable{
         @Column(name="saldo")
         private int Saldo;
         
-        @Column(name="correoElectronico")
-        private String correoElectronico;
-        
         @Column(name="puntuacion")
         private int Puntuacion;
         
@@ -56,14 +53,6 @@ public class Usuario implements Serializable{
 
 	public void setSaldo(int saldo) {
 		this.Saldo = saldo;
-	}
-
-	public String getCorreoElectronico() {
-		return correoElectronico;
-	}
-
-	public void setCorreoElectronico(String correoElectronico) {
-		this.correoElectronico = correoElectronico;
 	}
 
 	public int getPuntuacion() {

@@ -27,7 +27,7 @@ public class PublicacionServicesImpl implements PublicacionServices {
 	public Publicacion getPublicacion(int id) throws AuctionNotFoundException {
 		return publicacionRepo.findById(id).get();
 	}
-/*
+
 	@Override
 	public void addPublicacion(Publicacion publicacion) throws AuctionPersistanceException {
 		publicacionRepo.addPublicacion(publicacion);
@@ -41,29 +41,11 @@ public class PublicacionServicesImpl implements PublicacionServices {
 	@Override
 	public List<Publicacion> getPublicacionByCategoria(int IdCategoria) {
 		return publicacionRepo.getPublicacionByCategoria(IdCategoria);
-	}*/
+	}
 
 	@Override
 	public void deletePublicacion(int id) {
 		publicacionRepo.deleteById(id);
-	}
-
-	@Override
-	public void addPublicacion(Publicacion publicacion) throws AuctionPersistanceException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public List<Publicacion> getPublicacionByUsuario(String IdUsuario) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Publicacion> getPublicacionByCategoria(int IdCategoria) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

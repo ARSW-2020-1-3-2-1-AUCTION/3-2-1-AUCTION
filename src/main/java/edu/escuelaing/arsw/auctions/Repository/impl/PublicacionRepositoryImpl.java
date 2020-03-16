@@ -37,7 +37,7 @@ public class PublicacionRepositoryImpl implements PublicacionRepositoryCustom {
 	public List<Publicacion> getPublicacionByUsuario(String IdUsuario) {
 		Query query = entityManager.createNativeQuery("select * from publicacion where usuario=?",Publicacion.class);
 		 
-		query.setParameter(1, IdUsuario ).executeUpdate();
+		query.setParameter(1, IdUsuario );
 		return query.getResultList();
 	}
 
@@ -45,7 +45,7 @@ public class PublicacionRepositoryImpl implements PublicacionRepositoryCustom {
 	public List<Publicacion> getPublicacionByCategoria(int IdCategoria) {
 		Query query = entityManager.createNativeQuery("select * from publicacion where categoria=?",Publicacion.class);
 		 
-		query.setParameter(1, IdCategoria ).executeUpdate();
+		query.setParameter(1, IdCategoria);
 		return query.getResultList();
 	}
 

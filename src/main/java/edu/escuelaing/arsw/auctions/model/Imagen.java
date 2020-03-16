@@ -18,8 +18,8 @@ public class Imagen implements Serializable {
     @Column(name="id")
 	int Id;
 	
-	@Column(name="publicación")
-    int Publicación; 
+	@Column(name="publicacion")
+    int Publicacion; 
 
 	public int getId() {
  		return Id;
@@ -29,12 +29,12 @@ public class Imagen implements Serializable {
  		this.Id = ID;
  	}
  	
- 	 public int getPublicación() {
- 		return Publicación;
+ 	 public int getPublicacion() {
+ 		return Publicacion;
  	}
 
- 	public void setPublicación(int publicación) {
- 		Publicación = publicación;
+ 	public void setPublicación(int publicacion) {
+ 		Publicacion = publicacion;
  	}
 
 }

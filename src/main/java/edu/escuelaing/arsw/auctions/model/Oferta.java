@@ -15,16 +15,16 @@ public class Oferta implements Serializable{
         @Column(name="id")
     	int Id;
         
-        @Column(name="valorOfrecido")
+        @Column(name="valor_ofrecido")
         int valorOfrecido; 
         
         @Column(name="fecha")
         Date Fecha;
         
-        @Column(name="valorOfertaAutomatica")
+        @Column(name="valor_oferta_automatica")
         int valorOfertaAutomatica;
         
-        @Column(name="ofertaAutomatica")
+        @Column(name="oferta_automatica")
         boolean ofertaAutomatica;
         
         @Column(name="usuario")

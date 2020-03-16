@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity//(name="publicacion")
-@Table(name="pulicacion")
+@Table(name="publicacion")
 public class Publicacion implements Serializable{     
 
 	private static final long serialVersionUID = 1L;
@@ -19,10 +19,10 @@ public class Publicacion implements Serializable{
         @Column(name="valor")
         int Valor;
         
-        @Column(name="fechaPublicacion")
+        @Column(name="fecha_publicacion")
         Date fechaPublicacion;
         
-        @Column(name="fechaDeSubasta")
+        @Column(name="fecha_de_subasta")
         Date fechadeSubasta;
         
         @Column(name="usado")
