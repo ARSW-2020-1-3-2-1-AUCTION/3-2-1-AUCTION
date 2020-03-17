@@ -11,10 +11,13 @@
 
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	  <link rel="stylesheet" href="./styles/general.css">
+	  
+	  <script src="js/articulo.js"></script>
+	  <script src="js/articuloCliente.js"></script>
 
 	</head>
 
-	<body>
+	<body onLoad="articulo.setID();articulo.setInfo()">
 		<div>
 			<h1 class="p-3 mb-2 bg-primary text-white">
 				<header>
@@ -32,7 +35,7 @@
 		   
 		   <div>
 			   <ul class="breadcrumb">
-				 <li class="breadcrumb-item"><a href="categorias.html" onclick="">Categorías</a></li>
+				 <li class="breadcrumb-item"><a href="categorias.html" onclick=""><b>Categorías</b></a></li>
 				 <li class="breadcrumb-item"><a href="favoritos.html" onclick="">Mis Favoritos</a></li>
 				 <li class="breadcrumb-item"><a href="publicar1.html" onclick="">Publicar</a></li>
 				 <li class="breadcrumb-item"><a href="publicaciones.html" onclick="">Mis Publicaciones</a></li>
@@ -42,7 +45,18 @@
 		</div>
 		
 		<div>
-			<h2> Mazda 3...(capture nombre de objeto de articulos.html seleccionado) </h2>
+			<h2 id="descripcion"></h2>
+			<h2 id="valor"></h2>
+			<h2 id="fecha_de_subasta"></h2>
+			<h2 id="usado"></h2>
+			<h2 id="estado"></h2>
+			<h2 id="oferta"></h2>
+			<h2 id="categoria"></h2>
+			<h2 id="usuario"></h2>
+			<h2 id="nombre"></h2>
+			<h2 id="ubicacion"></h2>
+			<h2 id="marca"></h2>
+			
 		</div>
 		
 		
