@@ -1,4 +1,4 @@
-Cliente= (function(){
+apiCliente= (function(){
     return {
         saveCuenta: function(usuario){
             $.ajax({

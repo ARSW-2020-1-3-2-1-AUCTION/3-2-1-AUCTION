@@ -11,8 +11,7 @@ public interface UsuarioServices {
 	
 	public Usuario getUsuario(int id) throws AuctionNotFoundException;
 	
-	//Se puede elimar???
-	public void addUser(Usuario user) throws AuctionPersistanceException;
+	public Usuario addUser(Usuario user) throws AuctionPersistanceException;
 	    
 	public void setSaldo(int id, int saldo) throws AuctionPersistanceException;
 	
