@@ -28,7 +28,7 @@ public class Oferta implements Serializable{
         boolean ofertaAutomatica;
         
         @Column(name="usuario")
-        int usuario;
+        String usuario;
 
 	public int getId() {
 		return Id;
@@ -68,11 +68,11 @@ public class Oferta implements Serializable{
 		this.ofertaAutomatica  = ofertaAutomatica;
 	}
 	
-	public int isUsuario() {
+	public String isUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(int usuario) {
+	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
 }

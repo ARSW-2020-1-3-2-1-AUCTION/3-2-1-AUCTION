@@ -10,17 +10,17 @@ public class Preferencia implements Serializable{
 	private static final long serialVersionUID = 1L;
 		@Id        
         @Column(name="usuario")
-        private int IdUsuario; 
+        private String IdUsuario; 
         
         
         @Column(name="publicacion")
         private int IdPublicacion;     
         
-        public int getIdUsuario() {
+        public String getIdUsuario() {
     		return IdUsuario;
     	}
 
-    	public void setIdUsuario(int IdUsuario) {
+    	public void setIdUsuario(String IdUsuario) {
     		this.IdUsuario = IdUsuario;
     	}
         

@@ -16,7 +16,7 @@ public class Usuario implements Serializable{
 
 	@Id
 	@Column(name="id")
-        int id;
+	String id;
         
         @Column(name="contrasena")
         private String contrasena; 
@@ -24,18 +24,18 @@ public class Usuario implements Serializable{
         @Column(name="saldo")
         private int saldo;
         
-        //@Column(name="puntuacion")
-        //private int Puntuacion;
+        @Column(name="puntuacion")
+        private int Puntuacion;
         
         public Usuario() {
             
     	}
         
-    public int getId() {
+    public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}        
         
@@ -54,13 +54,13 @@ public class Usuario implements Serializable{
 	public void setSaldo(int saldo) {
 		this.saldo = saldo;
 	}
-/**
+
 	public int getPuntuacion() {
 		return Puntuacion;
 	}
 
 	public void setPuntuacion(int puntuacion) {
 		this.Puntuacion  = puntuacion;
-	}**/
+	}
 	
 }

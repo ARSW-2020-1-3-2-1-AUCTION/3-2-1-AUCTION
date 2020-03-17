@@ -38,7 +38,7 @@ public class Publicacion implements Serializable{
         int Categoria;
         
         @Column(name="usuario")
-        int usuario;
+        String usuario;
         
         @Column(name="nombre")
         String Nombre;
@@ -73,11 +73,11 @@ public class Publicacion implements Serializable{
 			Categoria = categoria;
 		}
 
-		public int getUsuario() {
+		public String getUsuario() {
 			return usuario;
 		}
 
-		public void setUsuario(int usuario) {
+		public void setUsuario(String usuario) {
 			this.usuario = usuario;
 		}        
  
