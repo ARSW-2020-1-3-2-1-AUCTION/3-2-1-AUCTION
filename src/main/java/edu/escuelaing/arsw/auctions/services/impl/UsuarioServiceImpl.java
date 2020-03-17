@@ -19,6 +19,7 @@ public class UsuarioServiceImpl implements UsuarioServices {
 	
 	@Override
 	public List<Usuario> getAllUsers() {
+		System.out.println(userRepo.findAll());
 		return userRepo.findAll();
 	}
 	

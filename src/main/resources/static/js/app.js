@@ -1,8 +1,8 @@
 var Module =( function (){
         var nombreUsuario = ""; 	
-         var  checkPassword= function(){
-            var id = $('#id').val();
-            apiCliente.checkPassword(id,validarCuenta);
+        var checkPassword = function () {
+            var username = $('#username').val();
+            apiCliente.checkPassword(username, validarCuenta);
         }
 
 var addAcount = function(){
@@ -12,7 +12,7 @@ var addAcount = function(){
 		
             if (contrasena == verificacion){
                 var hash=CryptoJS.SHA256(contrasena);
-                var usuario = { "id": id, "contrasena": hash.toString(), "saldo": 0 };
+                var usuario = { "id": id, "contrasena": hash.toString(), "saldo": 0,"puntuacion":5 };
                 apiCliente.saveCuenta(usuario);
 
                
@@ -25,28 +25,30 @@ var addAcount = function(){
 
 
 var validarCuenta = function (id) {
-    var contrasena = $('#contrasena').val();
-    var verificar = CryptoJS.SHA256(contrasena);
+    var password = $('#psw').val();
+    var verificar = CryptoJS.SHA256(password);
 
     sessionStorage.setItem("currentUser", id.id);
     sessionStorage.setItem("currentUser", saldo.saldo);
+    sessionStorage.setItem("currentUser", puntuacion.puntuacion);
     if (id.contrasena == hash) {
-        location.href = "/categorias.html"
+        location.href = "/index.html"
     }
 
     else {
         alert("Contrasena incorrecta");
 
     }
+}
     var validarUsuario = function () {
         var user = sessionStorage.getItem('currentUser');
 
         if (user == null) {
-            location.href = "/login.html";
+            location.href = "/categoria.html";
         }
 
     }
-}
+
     var cerrarSesion = function(){
         sessionStorage.setItem("currentUser",null);
         location.href = "/login.html";
