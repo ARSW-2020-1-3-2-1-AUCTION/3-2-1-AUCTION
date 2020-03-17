@@ -1,6 +1,6 @@
 var categorias =(function(){
 	var lista = [];
-	var numArt = 0;
+	var num = 0;
 	
 	function getCat(retorno) {
 		$("#categoriaTable div").remove();
@@ -9,9 +9,8 @@ var categorias =(function(){
         })
 		var i = 0;
 		lista.map(function(cat){
-			categoriasCliente.numArtPorCat(getArtXCat,cat.key);
-			console.log("global: "+numArt);
-			var fila = "<div class=\"grid-1-5\"><h2>"+numArt+"</h2><a href=\"articulos.html?var1="+cat.value+"\" class=\"button\">"+cat.value+"</a></div>";
+			categoriasCliente.numArtPorCat(getArtXCat,cat.key,i);
+			var fila = "<div class=\"grid-1-5\"><h2 id=\"categ"+i+"\">"+num+"</h2><a href=\"articulos.html?var1="+cat.value+"&var2="+cat.key+"\" class=\"button\">"+cat.value+"</a></div>";
 			//<td><button type=\"button\" class=\"btn btn-success\" onclick=\"app.draw("+i+")\">Open</button></td>
 			//var fila = "<tr><td id=\"bpName"+i+"\">" + BP.key + "</td><td id='point'>"+BP.value+"</td><td><button type=\"button\" class=\"btn btn-success\" onclick=\"app.draw("+i+")\">Open</button></td></tr>";
 
@@ -20,13 +19,12 @@ var categorias =(function(){
 		})
 	}
 	
-	function getArtXCat(numero) {
-		var i = 0;
+	function getArtXCat(numero,i) {
+		var j = 0;
 		numero.map(function(num){
-            i+=1;
+            j+=1;
         })
-		numArt = i;
-		console.log("en metodo: "+numArt);
+		$( "#categ"+i ).html("Cantidad de artículos: "+j);
 	}
 	
 	return {

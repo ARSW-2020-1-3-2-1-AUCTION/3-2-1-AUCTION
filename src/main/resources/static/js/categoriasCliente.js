@@ -9,11 +9,11 @@ categoriasCliente = (function() {
 				async: true
 			});
 		},
-		numArtPorCat: function(callback,categoriaId) {
+		numArtPorCat: function(callback,categoriaId,i) {
 			$.ajax({
 				url: "publicacion/ByCategoria/"+categoriaId,
 				success: function (result) {
-					callback(result);
+					callback(result,i);
 				},
 				async: true
 			});
