@@ -8,12 +8,12 @@ var Module =( function (){
 var addAcount = function(){
             var id = $('#id').val();
             var contrasena = $('#contrasena').val();
-            var verificacion = $('#contrasena').val();  
+            var verificacion = $('#nuevacontrasena').val();  
 		
-	    if (password == passwordtwo){
-            	var hash=CryptoJS.encriptacion(contrasena);
+	    if (contrasena == verificacion){
+            	var hash=CryptoJS.SHA256(contrasena);
 
-                var usuario = {"id":name,"contrasena":hash.toString()};
+                var usuario = {"id":id,"contrasena":contrasena:hash.toString(),"saldo":0};
                 apiCliente.saveCuenta(usuario);
 
                
@@ -29,9 +29,9 @@ var validarCuenta = function(id){
             var verificar= CryptoJS.SHA256(contrasena);             
 
             sessionStorage.setItem("currentUser",id.id);
-	    
+            sessionStorage.setItem("currentUser",saldo.saldo);	    
 	    if (id.contrasena == hash){
-		location.href = "/index.html"
+		location.href = "/categorias.html"
 		}
 	
 	    else{
@@ -42,13 +42,13 @@ var validarUsuario = function(){
             var user = sessionStorage.getItem('currentUser');
             
             if (user==null){
-                location.href = "/index.html";
+                location.href = "/login.html";
             }
                
         }
 var cerrarSesion = function(){
         sessionStorage.setItem("currentUser",null);
-        location.href = "/index.html";
+        location.href = "/login.html";
 
     }        
 return{

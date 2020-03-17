@@ -2,8 +2,8 @@ package edu.escuelaing.arsw.auctions.model;
 
 import javax.persistence.*;
 
+
 import java.io.Serializable;
-import java.util.List;
 
 @Entity(name="usuario")
 @Table(name="usuario")
@@ -19,13 +19,13 @@ public class Usuario implements Serializable{
         int id;
         
         @Column(name="contrasena")
-        private String Contrasena; 
+        private String contrasena; 
         
         @Column(name="saldo")
-        private int Saldo;
+        private int saldo;
         
-        @Column(name="puntuacion")
-        private int Puntuacion;
+        //@Column(name="puntuacion")
+        //private int Puntuacion;
         
         public Usuario() {
             
@@ -40,27 +40,27 @@ public class Usuario implements Serializable{
 	}        
         
         public String getContrasena() {
-		return Contrasena;
+		return contrasena;
 	}
 
 	public void setContrasena(String contrasena) {
-		this.Contrasena = contrasena;
+		this.contrasena = contrasena;
 	}
 	
 	public int getSaldo() {
-		return Saldo;
+		return saldo;
 	}
 
 	public void setSaldo(int saldo) {
-		this.Saldo = saldo;
+		this.saldo = saldo;
 	}
-
+/**
 	public int getPuntuacion() {
 		return Puntuacion;
 	}
 
 	public void setPuntuacion(int puntuacion) {
 		this.Puntuacion  = puntuacion;
-	}
+	}**/
 	
 }

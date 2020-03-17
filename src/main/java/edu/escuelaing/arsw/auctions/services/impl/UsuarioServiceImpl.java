@@ -30,8 +30,15 @@ public class UsuarioServiceImpl implements UsuarioServices {
 	}	
 
 	@Override
-	public void addUser(Usuario user) throws AuctionPersistanceException {
-		
+	public Usuario addUser(Usuario user) throws AuctionPersistanceException {
+		try {
+            Usuario u = getUsuario(user.getId());
+            throw new AuctionPersistanceException("Nombre de usuario ya tomado");
+        }
+        catch(AuctionNotFoundException ce){
+
+            return userRepo.saveAndFlush(user);
+        }
 	}
 
 	@Override
