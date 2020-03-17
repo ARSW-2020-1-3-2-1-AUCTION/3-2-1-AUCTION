@@ -23,10 +23,10 @@ public class Usuario implements Serializable{
         
         @Column(name="saldo")
         private int saldo;
-        
+      /**  
         @Column(name="puntuacion")
         private int Puntuacion;
-        
+        */
         public Usuario() {
             
     	}
@@ -54,13 +54,13 @@ public class Usuario implements Serializable{
 	public void setSaldo(int saldo) {
 		this.saldo = saldo;
 	}
-
+/**
 	public int getPuntuacion() {
 		return Puntuacion;
 	}
 
 	public void setPuntuacion(int puntuacion) {
 		this.Puntuacion  = puntuacion;
-	}
+	}*/
 	
 }
