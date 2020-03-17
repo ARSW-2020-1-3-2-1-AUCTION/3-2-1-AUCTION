@@ -19,12 +19,11 @@ public class UsuarioServiceImpl implements UsuarioServices {
 	
 	@Override
 	public List<Usuario> getAllUsers() {
-		System.out.println(userRepo.findAll());
 		return userRepo.findAll();
 	}
 	
 	@Override
-	public Usuario getUsuario(int id) throws AuctionNotFoundException {
+	public Usuario getUsuario(String id) throws AuctionNotFoundException {
 		Usuario usuario = userRepo.findById(id).get();
 		return usuario;
 	}	

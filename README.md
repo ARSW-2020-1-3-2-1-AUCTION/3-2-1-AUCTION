@@ -62,7 +62,7 @@ Se ha planteado un **digrama de clases** inicial el cual está orientado a resol
 
 Diagrama Entidad-Relación generado por PostgresQL:
 
-![](/img/entidadRelacionn.jpg)
+![](/img/entidadRelacion.jpg)
 
 **Diagrama de componentes**
 

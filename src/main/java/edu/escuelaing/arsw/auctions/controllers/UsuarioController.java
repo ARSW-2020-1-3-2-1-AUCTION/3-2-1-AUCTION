@@ -41,7 +41,7 @@ public class UsuarioController {
 
 	    
 	    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
-	    public ResponseEntity<?> getUsuario(@PathVariable(name = "id") int id) {
+	    public ResponseEntity<?> getUsuario(@PathVariable(name = "id") String id) {
 	        try {
 	            Usuario usuario = user.getUsuario(id);
 	            return new ResponseEntity<>(usuario, HttpStatus.ACCEPTED);

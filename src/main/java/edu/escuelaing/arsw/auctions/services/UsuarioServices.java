@@ -9,7 +9,7 @@ public interface UsuarioServices {
 	
 	public List<Usuario> getAllUsers();
 	
-	public Usuario getUsuario(int id) throws AuctionNotFoundException;
+	public Usuario getUsuario(String id) throws AuctionNotFoundException;
 	
 	public Usuario addUser(Usuario user) throws AuctionPersistanceException;
 	    

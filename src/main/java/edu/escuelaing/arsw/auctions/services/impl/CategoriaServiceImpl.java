@@ -19,9 +19,8 @@ public class CategoriaServiceImpl implements CategoriaServices {
 	private CategoriaRepository categoriaRepo;
     
 	@Override
-	public List<Categoria> getAllCategorias() {                
-		return categoriaRepo.findAll()
-		;
+	public List<Categoria> getAllCategorias() {
+		return categoriaRepo.findAll();
 	}
 
 	@Override
