@@ -33,7 +33,7 @@ public class UsuarioController {
 	        try{
 	            return new ResponseEntity<>(user.getAllUsers(),HttpStatus.ACCEPTED);
 	        }catch (Exception ex){
-	        	ex.printStackTrace(System.out);
+	        	Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
 	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
 	        }
 	    }

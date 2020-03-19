@@ -17,17 +17,22 @@ public class UsuarioServiceImpl implements UsuarioServices {
 	@Autowired
 	private UsuarioRepository userRepo;
 	
-	@Override
-	public List<Usuario> getAllUsers() {
-		System.out.println(userRepo.findAll());
-		return userRepo.findAll();
-	}
+	  @Override
+	    public List<Usuario> getAllUsers(){
+	        return userRepo.findAll(); 
+	    }
 	
-	@Override
-	public Usuario getUsuario(String id) throws AuctionNotFoundException {
-		Usuario usuario = userRepo.findById(id).get();
-		return usuario;
-	}	
+	  @Override
+	    public Usuario getUsuario(String id) throws AuctionNotFoundException{
+	        try{
+	            Usuario user = userRepo.findById(id).get();
+	            return user;
+	        }
+	        catch(java.util.NoSuchElementException e){
+	           throw new AuctionNotFoundException("No existe el usuario");
+	        }
+	           
+	    }
 
 	@Override
 	public Usuario addUser(Usuario user) throws AuctionPersistanceException {
