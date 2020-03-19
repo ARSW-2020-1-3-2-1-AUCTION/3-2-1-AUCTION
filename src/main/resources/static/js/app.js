@@ -26,13 +26,13 @@ var addAcount = function(){
 
 var validarCuenta = function (id) {
     var password = $('#psw').val();
-    var verificar = CryptoJS.SHA256(password);
+    var hash = CryptoJS.SHA256(password);
 
     sessionStorage.setItem("currentUser", id.id);
-    sessionStorage.setItem("currentUser", saldo.saldo);
-    sessionStorage.setItem("currentUser", puntuacion.puntuacion);
+    sessionStorage.setItem("currentUser", id.saldo);
+    sessionStorage.setItem("currentUser", id.puntuacion);
     if (id.contrasena == hash) {
-        location.href = "/index.html"
+        location.href = "/categorias.html"
     }
 
     else {
@@ -44,7 +44,7 @@ var validarCuenta = function (id) {
         var user = sessionStorage.getItem('currentUser');
 
         if (user == null) {
-            location.href = "/categoria.html";
+            location.href = "/categorias.html";
         }
 
     }
