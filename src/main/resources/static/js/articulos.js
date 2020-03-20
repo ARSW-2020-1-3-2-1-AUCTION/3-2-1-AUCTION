@@ -24,13 +24,16 @@ var articulos =(function(){
 		$("#articuloTable div").remove();
 		var i = 0;
 		retorno.map(function(art){
-			var fila = "<div class=\"grid-1-5\"><h2>Valor: "+art.valor+"</h2><a href=\"articulo.html?var1="+art.id+"\" class=\"button\">"+art.nombre+"</a></div>";
+			var fila = "<div class=\"grid-1-5\"><h2>Valor: "+art.valor+"</h2><a href=\"articulo.html?var1="+art.id+"&user="+document.getElementById("user").innerText+"\" class=\"button\">"+art.nombre+"</a></div>";
             $("#articuloTable").append(fila);
 			i+=1;
 		})
 	}
 	
 	return {
+		setUser: function (){
+			$( "#user" ).html(getUrlVars()["user"]);
+		},
 		setCate: function(){
 			var cate = getUrlVars()["var1"];
 			setName(cate);

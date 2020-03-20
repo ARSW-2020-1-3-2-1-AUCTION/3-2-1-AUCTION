@@ -7,7 +7,7 @@ apiCliente= (function(){
                 data: JSON.stringify(usuario),
                 contentType: "application/json",
                 success: function() {
-                  alert("Usuario "+usuario.id+" El usuario se creo correctamente");
+                  alert("Usuario "+usuario.id+" se creó correctamente");
                    location.href = "/login.html";
                 },
                  error: function(XMLHttpRequest, textStatus, errorThrown) { 
@@ -27,6 +27,20 @@ apiCliente= (function(){
                      
                 } ,
                 async: true
+            });
+        },
+		
+		saveUserCache: function(usuario){
+            $.ajax({
+                url: "usuario/saveUserCache" ,
+                type: "POST",
+                data: JSON.stringify(usuario),
+                contentType: "application/json",
+                success: function() {
+                },
+                 error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    alert("Error: El nombre de usuario no esta disponible, intente nuevamente"); 
+                }
             });
         }
     };

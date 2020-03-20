@@ -23,7 +23,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @SpringBootApplication
-@ComponentScan(basePackages  = {"edu.escuelaing.arsw.auctions.services","edu.escuelaing.arsw.auctions.controllers"})
+@ComponentScan(basePackages  = {"edu.escuelaing.arsw.auctions.services","edu.escuelaing.arsw.auctions.controllers","edu.escuelaing.arsw.auctions.cache"})
 @EnableJpaRepositories("edu.escuelaing.arsw.auctions.Repository")
 @EntityScan("edu.escuelaing.arsw.auctions.model")
 public class AuctionAPIApplication {

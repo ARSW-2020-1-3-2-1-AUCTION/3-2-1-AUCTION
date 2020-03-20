@@ -8,13 +8,14 @@
 	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	  <script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
 
-
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	  <link rel="stylesheet" href="./styles/general.css">
+	  
+	  <script src="js/favoritos.js"></script>
 
 	</head>
 
-	<body>
+	<body onLoad="favoritos.setHref()">
 		<div>
 			<h1 class="p-3 mb-2 bg-primary text-white">
 				<header>
@@ -32,14 +33,19 @@
 		   
 		   <div>
 			   <ul class="breadcrumb">
-				 <li class="breadcrumb-item"><a href="categorias.html" onclick="">Categorías</a></li>
-				 <li class="breadcrumb-item"><a href="favoritos.html" onclick=""><b>Mis Favoritos</b></a></li>
-				 <li class="breadcrumb-item"><a href="publicar1.html" onclick="">Publicar</a></li>
-				 <li class="breadcrumb-item"><a href="publicaciones.html" onclick="">Mis Publicaciones</a></li>
-				 <li class="breadcrumb-item"><a href="pujasEnCurso.html" onclick="">Pujas en curso</a></li>
+				 <li class="breadcrumb-item"><a id="c" href="categorias.html">Categorías</a></li>
+				 <li class="breadcrumb-item"><a id="f" href="favoritos.html"><b>Mis Favoritos</b></a></li>
+				 <li class="breadcrumb-item"><a id="p" href="publicar1.html">Publicar</a></li>
+				 <li class="breadcrumb-item"><a id="mp" href="publicaciones.html">Mis Publicaciones</a></li>
+				 <li class="breadcrumb-item"><a id="pec" href="pujasEnCurso.html">Pujas en curso</a></li>
 				</ul>
 			</div>
 		</div>
+		
+		<h5>Inició sesión como: </h5>
+		<h5 id="user"></h5>
+		<h5 id="saldo"></h5>
+		<br></br>
 		
 		<div>
 			<h2> Favoritos </h2>

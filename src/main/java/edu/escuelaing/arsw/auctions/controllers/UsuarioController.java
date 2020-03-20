@@ -91,6 +91,17 @@ public class UsuarioController {
 	        }        
 
 	    }
-	      
+	    
+	    @RequestMapping(value = "/saveUserCache", method = RequestMethod.POST)	
+	    public ResponseEntity<?> postUsernameCache(@RequestBody Usuario usuario){
+	        try {
+	            user.postUsernameCache(usuario);
+	            return new ResponseEntity<>(HttpStatus.CREATED);
+	        } catch (Exception ex) {
+	            Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);            
+	        }        
+
+	    }
 
 }

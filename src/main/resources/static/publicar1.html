@@ -11,10 +11,12 @@
 
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	  <link rel="stylesheet" href="./styles/general.css">
+	  
+	  <script src="js/publicar1.js"></script>
 
 	</head>
 
-	<body>
+	<body onLoad="publicar1.setHref()">
 		<div>
 			<h1 class="p-3 mb-2 bg-primary text-white">
 				<header>
@@ -32,14 +34,19 @@
 		   
 		   <div>
 			   <ul class="breadcrumb">
-				 <li class="breadcrumb-item"><a href="categorias.html" onclick="">Categorías</a></li>
-				 <li class="breadcrumb-item"><a href="favoritos.html" onclick="">Mis Favoritos</a></li>
-				 <li class="breadcrumb-item"><a href="publicar1.html" onclick=""><b>Publicar</b></a></li>
-				 <li class="breadcrumb-item"><a href="publicaciones.html" onclick="">Mis Publicaciones</a></li>
-				 <li class="breadcrumb-item"><a href="pujasEnCurso.html" onclick="">Pujas en curso</a></li>
+				 <li class="breadcrumb-item"><a id="c" href="categorias.html">Categorías</a></li>
+				 <li class="breadcrumb-item"><a id="f" href="favoritos.html">Mis Favoritos</a></li>
+				 <li class="breadcrumb-item"><a id="p" href="publicar1.html"><b>Publicar</b></a></li>
+				 <li class="breadcrumb-item"><a id="mp" href="publicaciones.html">Mis Publicaciones</a></li>
+				 <li class="breadcrumb-item"><a id="pec" href="pujasEnCurso.html">Pujas en curso</a></li>
 				</ul>
 			</div>
 		</div>
+		
+		<h5>Inició sesión como: </h5>
+		<h5 id="user"></h5>
+		<h5 id="saldo"></h5>
+		<br></br>
 		
 		<div>
 			<h2> Publicar Artículo </h2>

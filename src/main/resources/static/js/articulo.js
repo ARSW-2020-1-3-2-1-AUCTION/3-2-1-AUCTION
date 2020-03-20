@@ -29,6 +29,9 @@ var articulo =(function(){
 	
 	
 	return {
+		setUser: function (){
+			$( "#user" ).html(getUrlVars()["user"]);
+		},
 		setID: function(){
 			var id = getUrlVars()["var1"];
 			setId(id);

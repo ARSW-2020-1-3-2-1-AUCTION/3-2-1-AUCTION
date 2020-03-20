@@ -3,9 +3,11 @@ package edu.escuelaing.arsw.auctions.services.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import edu.escuelaing.arsw.auctions.Repository.UsuarioRepository;
+import edu.escuelaing.arsw.auctions.cache.AuctionCache;
 import edu.escuelaing.arsw.auctions.model.Usuario;
 import edu.escuelaing.arsw.auctions.persistance.AuctionNotFoundException;
 import edu.escuelaing.arsw.auctions.persistance.AuctionPersistanceException;
@@ -16,6 +18,10 @@ public class UsuarioServiceImpl implements UsuarioServices {
 	
 	@Autowired
 	private UsuarioRepository userRepo;
+	
+	 @Autowired
+	 @Qualifier("AuctionCacheImpl")
+	 AuctionCache ac;
 	
 	  @Override
 	    public List<Usuario> getAllUsers(){
@@ -54,6 +60,16 @@ public class UsuarioServiceImpl implements UsuarioServices {
 	@Override
 	public void setPuntuacion(int id, int puntos) {
 		userRepo.setPuntuacion(id,puntos);
-	}	
+	}
+
+	@Override
+	public void postUsernameCache(Usuario usuario) {
+		ac.postUsernameCache(usuario.getId());
+	}
+	
+	@Override
+	public boolean loginUsername(Usuario usuario) {
+		return ac.existUsername(usuario.getId());
+	}
 
 }

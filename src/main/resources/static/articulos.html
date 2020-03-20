@@ -18,7 +18,7 @@
 
 	</head>
 
-	<body onLoad="articulos.setCate();articulos.getArticulos()">
+	<body onLoad="articulos.setCate();articulos.getArticulos();articulos.setUser()">
 		<div>
 			<h1 class="p-3 mb-2 bg-primary text-white">
 				<header>
@@ -36,14 +36,19 @@
 		   
 		   <div>
 			   <ul class="breadcrumb">
-				 <li class="breadcrumb-item"><a href="categorias.html" onclick=""><b>Categorías</b></a></li>
-				 <li class="breadcrumb-item"><a href="favoritos.html" onclick="">Mis Favoritos</a></li>
-				 <li class="breadcrumb-item"><a href="publicar1.html" onclick="">Publicar</a></li>
-				 <li class="breadcrumb-item"><a href="publicaciones.html" onclick="">Mis Publicaciones</a></li>
-				 <li class="breadcrumb-item"><a href="pujasEnCurso.html" onclick="">Pujas en curso</a></li>
+				 <li class="breadcrumb-item"><a id="c" href="categorias.html"><b>Categorías</b></a></li>
+				 <li class="breadcrumb-item"><a id="f" href="favoritos.html">Mis Favoritos</a></li>
+				 <li class="breadcrumb-item"><a id="p" href="publicar1.html">Publicar</a></li>
+				 <li class="breadcrumb-item"><a id="mp" href="publicaciones.html">Mis Publicaciones</a></li>
+				 <li class="breadcrumb-item"><a id="pec" href="pujasEnCurso.html">Pujas en curso</a></li>
 				</ul>
 			</div>
 		</div>
+		
+		<h5>Inició sesión como: </h5>
+		<h5 id="user"></h5>
+		<h5 id="saldo"></h5>
+		<br></br>
 		
 			<h2 id="articulo"></h2>
 			<div class="container group" id="articuloTable"></div>

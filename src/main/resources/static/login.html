@@ -11,7 +11,7 @@
 	  <script src="js/apiCliente.js"></script>
 	  <script src="js/sha256.js"></script>
 
-	   <link rel="stylesheet" href="/webjars/bootstrap/4.1.2/css/bootstrap.min.css" />
+	  <link rel="stylesheet" href="/webjars/bootstrap/4.1.2/css/bootstrap.min.css" />
 	  <link rel="stylesheet" href="./styles/login.css">
 
 	  <script>
@@ -31,7 +31,7 @@
 		<div class="form">
 		  <img src="img/logo.PNG">
 
-		  <form class="register-form" action='javascript:Module.addAcount()' id="signup">
+		  <form class="register-form" action='javascript:app.addAcount()' id="signup">
 			<p class="message"><b>Crear una cuenta:</b></p>
 			<input type="text" placeholder="Identificacion" id="id" />
 			<br></br>
@@ -45,14 +45,14 @@
 
 
 
-		  <form class="login-form" action='javascript:Module.checkPassword()'>
+		  <form class="login-form" action='javascript:app.checkPassword()'>
 			<p class="message"><b>Ingresar:<b></p>
-          <input type="text" placeholder="Username" id="username" />
-          <input type="password" placeholder="Password" id="psw" />
-			
+            <input type="text" placeholder="Username" id="username" />
+			<br></br>
+            <input type="password" placeholder="Password" id="psw" />
+			<br></br>
 			<button>login</button>
 		  </form>
-
 
 		</div>
 	  </div>

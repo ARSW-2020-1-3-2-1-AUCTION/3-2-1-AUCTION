@@ -16,7 +16,9 @@ public interface UsuarioServices {
 	public void setSaldo(int id, int saldo) throws AuctionPersistanceException;
 	
 	public void setPuntuacion(int id,int puntos);
+	
+	public void postUsernameCache(Usuario usuario);
+
+	public boolean loginUsername(Usuario usuario);
 	    
 }
-
-
