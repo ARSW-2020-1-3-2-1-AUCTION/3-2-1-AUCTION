@@ -33,14 +33,7 @@ var categorias =(function(){
 		return vars;
 	}
 	
-	return {
-		setUser: function (){
-			$( "#user" ).html(getUrlVars()["user"]);
-		},
-		getCategorias: function(){
-			categoriasCliente.getCategorias(getCat);
-		},
-		setHref: function() {
+	function setHref() {
 			var c = document.getElementById("c").href+"?user="+document.getElementById("user").innerText;
 			document.getElementById("c").href = c;
 			var f = document.getElementById("f").href+"?user="+document.getElementById("user").innerText;
@@ -52,6 +45,25 @@ var categorias =(function(){
 			var pec = document.getElementById("pec").href+"?user="+document.getElementById("user").innerText;
 			document.getElementById("pec").href = pec;
 		}
+		
+	function logOut() {
+		categoriasCliente.deleteUserCache(document.getElementById("user").innerText);
+	}
+	
+	function existUsername() {
+		categoriasCliente.existUsername(document.getElementById("user").innerText);
+	}
+	
+	return {
+		setUser: function (){
+			$( "#user" ).html(getUrlVars()["user"]);
+		},
+		getCategorias: function(){
+			categoriasCliente.getCategorias(getCat);
+		},
+		setHref: setHref, 
+		logOut: logOut,
+		existUsername: existUsername
 	};
 	
 	

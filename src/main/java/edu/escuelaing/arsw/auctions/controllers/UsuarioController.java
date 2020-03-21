@@ -103,5 +103,29 @@ public class UsuarioController {
 	        }        
 
 	    }
+	    
+	    @RequestMapping(value = "/deleteUserCache/{user}", method = RequestMethod.DELETE)	
+	    public ResponseEntity<?> deleteUsernameCache(@PathVariable(name="user") String usuario){
+	        try {
+	            user.deleteUsernameCache(usuario);
+	            return new ResponseEntity<>(HttpStatus.CREATED);
+	        } catch (Exception ex) {
+	            Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);            
+	        }        
+
+	    }
+	    
+	    @RequestMapping(value = "/existUsername/{user}", method = RequestMethod.GET)	
+	    public ResponseEntity<?> existUsername(@PathVariable(name="user") String usuario){
+	        try {
+	            System.out.println(user.existUsername(usuario));
+	            return new ResponseEntity<>(user.existUsername(usuario), HttpStatus.CREATED);
+	        } catch (Exception ex) {
+	            Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);            
+	        }        
+
+	    }
 
 }

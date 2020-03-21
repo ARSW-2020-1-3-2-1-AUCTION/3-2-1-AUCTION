@@ -10,7 +10,7 @@ public class AuctionCacheImpl implements AuctionCache {
 	private CopyOnWriteArrayList<String> loginUsers = new  CopyOnWriteArrayList<String>();
 
 	@Override
-	public void postUsernameCache(String usuario) {
+	public void postUsername(String usuario) {
 		loginUsers.add(usuario);
 		
 	}
@@ -18,6 +18,12 @@ public class AuctionCacheImpl implements AuctionCache {
 	@Override
 	public boolean existUsername(String usuario) {
 		return loginUsers.contains(usuario);
+	}
+
+	@Override
+	public void deleteUsername(String usuario) {
+		loginUsers.remove(usuario);
+		
 	}
 
 }
