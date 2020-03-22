@@ -54,6 +54,9 @@ var categorias =(function(){
 	
 	var setLogeado = function (result) {
         logeado = result;
+		if (logeado){
+			document.getElementById("saldo").html(categoriasCliente.getSaldo(document.getElementById("user").innerText));
+		}
     }
 	
 	function existUsername() {

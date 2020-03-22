@@ -1,17 +1,18 @@
 package edu.escuelaing.arsw.auctions.cache.Impl;
 
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.ConcurrentHashMap;
+
 import org.springframework.stereotype.Service;
 import edu.escuelaing.arsw.auctions.cache.AuctionCache;
 
 @Service("AuctionCacheImpl")
 public class AuctionCacheImpl implements AuctionCache {
 	
-	private CopyOnWriteArrayList<String> loginUsers = new  CopyOnWriteArrayList<String>();
+	private ConcurrentHashMap<String,Integer> loginUsers = new  ConcurrentHashMap<String,Integer>();
 
 	@Override
-	public void postUsername(String usuario) {
-		loginUsers.add(usuario);
+	public void postUsername(String usuario, int saldo) {
+		loginUsers.put(usuario,saldo);
 		
 	}
 
@@ -24,6 +25,11 @@ public class AuctionCacheImpl implements AuctionCache {
 	public void deleteUsername(String usuario) {
 		loginUsers.remove(usuario);
 		
+	}
+
+	@Override
+	public int getSaldo(String id) {
+		return loginUsers.get(id);
 	}
 
 }

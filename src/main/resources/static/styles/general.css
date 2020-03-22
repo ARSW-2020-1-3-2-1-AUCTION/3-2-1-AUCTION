@@ -32,6 +32,20 @@ h5 {
 	margin-top: 80px;
     float: right;
 }
+div.info{
+    margin-left: 1px;
+	float: left;
+}
+h5.info{
+	font-size:large;
+}
+div.valor{
+    margin-left: 1px;
+	float: left;
+}
+h5.valor{
+	font-size:medium ;
+}
 cen {
 	margin-left: 50%;
 }

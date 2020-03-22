@@ -41,6 +41,18 @@ categoriasCliente = (function() {
                     alert("Error: Usted no ha iniciado ninguna sesión"); 
                 }
             });
+        },
+		getSaldo: function(usuario){
+            $.ajax({
+                url: "usuario/getSaldo/"+usuario ,
+                contentType: "application/json",
+                success: function(result) {
+					alert(result);
+                },
+                 error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    alert("Error: Usted no ha iniciado ninguna sesión"); 
+                }
+            });
         }
 	};
 })();

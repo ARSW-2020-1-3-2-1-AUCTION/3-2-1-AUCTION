@@ -51,8 +51,20 @@ public class UsuarioController {
 	            return new ResponseEntity<>("400 bad request", HttpStatus.NOT_FOUND);
 	        }
 	    }
+	    
+	    
+	    @RequestMapping(path = "getSaldo/{id}", method = RequestMethod.GET)
+	    public ResponseEntity<?> getSaldo(@PathVariable(name = "id") String id) {
+	        try {
+	            int saldo = user.getSaldo(id);
+	            return new ResponseEntity<>(saldo, HttpStatus.ACCEPTED);
 
-	  
+	        } catch (Exception ex) {
+	        	ex.printStackTrace(System.out);
+	            return new ResponseEntity<>("400 bad request", HttpStatus.NOT_FOUND);
+	        }
+	    }
+	    
 	
 	    @RequestMapping(value = "/{id}/setSaldo/{saldo}", method = RequestMethod.PUT)
 	    public ResponseEntity<?> setSaldo(@PathVariable(name="id") int id,@PathVariable(name="saldo") int saldo) {

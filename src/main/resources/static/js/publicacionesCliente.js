@@ -1,0 +1,3 @@
+var publicacionesCliente =(function(){
+	
+})();

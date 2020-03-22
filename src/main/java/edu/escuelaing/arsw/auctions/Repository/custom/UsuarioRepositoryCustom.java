@@ -5,6 +5,9 @@ import javax.transaction.Transactional;
 public interface UsuarioRepositoryCustom {
 	
 	@Transactional
+    public int getSaldo(String id);
+	
+	@Transactional
     public void setSaldo(int id, int saldo);
 	
 	@Transactional

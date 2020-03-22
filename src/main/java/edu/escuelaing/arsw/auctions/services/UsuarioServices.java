@@ -22,5 +22,7 @@ public interface UsuarioServices {
 	public boolean existUsername(String usuario);
 	
 	public void deleteUsernameCache(String usuario);
+
+	public int getSaldo(String id);
 	    
 }

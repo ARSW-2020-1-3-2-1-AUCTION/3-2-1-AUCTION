@@ -11,6 +11,15 @@ public class UsuarioRepositoryImpl implements UsuarioRepositoryCustom {
 	
 	@PersistenceContext
     EntityManager entityManager;
+	
+	@Override
+	public int getSaldo(String id) {
+		Query query = entityManager.createNativeQuery("select saldo from usuario where id=?",Usuario.class);
+		
+		query.setParameter(1, id);
+		return (int) query.getSingleResult();
+		
+	}
 
 	@Override
 	public void setSaldo(int id, int saldo) {
