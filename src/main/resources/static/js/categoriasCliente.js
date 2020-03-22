@@ -31,11 +31,11 @@ categoriasCliente = (function() {
                 }
             });
         },
-		existUsername: function(usuario){
+		existUsername: function(usuario,callback){
             $.ajax({
                 url: "usuario/existUsername/"+usuario ,
                 success: function(result) {
-					return result;
+					callback(result);
                 },
                  error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     alert("Error: Usted no ha iniciado ninguna sesión"); 

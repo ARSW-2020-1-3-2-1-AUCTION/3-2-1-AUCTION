@@ -2,6 +2,7 @@ var categorias =(function(){
 	var lista = [];
 	var num = 0;
 	var id = "";
+	var logeado = false;
 	
 	function getCat(retorno) {
 		$("#categoriaTable div").remove();
@@ -47,11 +48,29 @@ var categorias =(function(){
 		}
 		
 	function logOut() {
+		setLogeado(false);
 		categoriasCliente.deleteUserCache(document.getElementById("user").innerText);
 	}
 	
+	var setLogeado = function (result) {
+        logeado = result;
+    }
+	
 	function existUsername() {
-		categoriasCliente.existUsername(document.getElementById("user").innerText);
+		categoriasCliente.existUsername(document.getElementById("user").innerText,setLogeado);
+	}
+	
+	function estaLog() {
+		if(logeado){
+			location.href = "/publicar1.html?user="+document.getElementById("user").innerText;
+		} else{
+			var r = confirm("Usted no ha iniciado sesión, presione OK para ir al login");
+			if (r == true) {
+				document.getElementById("p").href = "/login.html";
+			} else {
+				document.getElementById("p").href = "/categorias.html?user="+document.getElementById("user").innerText;
+			}
+		}
 	}
 	
 	return {
@@ -63,7 +82,8 @@ var categorias =(function(){
 		},
 		setHref: setHref, 
 		logOut: logOut,
-		existUsername: existUsername
+		existUsername: existUsername,
+		estaLog: estaLog
 	};
 	
 	

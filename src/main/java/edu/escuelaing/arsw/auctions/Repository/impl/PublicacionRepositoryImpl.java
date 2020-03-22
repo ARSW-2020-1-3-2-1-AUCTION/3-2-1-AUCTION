@@ -1,7 +1,9 @@
 package edu.escuelaing.arsw.auctions.Repository.impl;
 
+import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Converter;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -9,6 +11,7 @@ import javax.persistence.Query;
 import edu.escuelaing.arsw.auctions.Repository.custom.PublicacionRepositoryCustom;
 import edu.escuelaing.arsw.auctions.model.Publicacion;
 
+@Converter(autoApply = true)
 public class PublicacionRepositoryImpl implements PublicacionRepositoryCustom {
 	
 	@PersistenceContext
@@ -16,21 +19,23 @@ public class PublicacionRepositoryImpl implements PublicacionRepositoryCustom {
 	
 	@Override
 	public void addPublicacion(Publicacion publicacion) {
-		Query query = entityManager.createNativeQuery("insert into publicacion values(?,?,?,?,?,?,?,?,?,?,?,?,?)",Publicacion.class);
+		System.out.println(publicacion.getValor());
+		System.out.println(publicacion.getFechadeSubasta());
+		System.out.println(publicacion.getCategoria());
+		Query query = entityManager.createNativeQuery("insert into publicacion values(NEXTVAL('serial'),?,?,?,?,?,?,?,?,?,?,?,?)",Publicacion.class);
 		 
-		 query.setParameter(1, publicacion.getID() )
-		 	  .setParameter(2, publicacion.getDescripcion())
-		 	  .setParameter(3, publicacion.getValor() )
-		 	  .setParameter(4, publicacion.getFechaPublicacion() )
-		 	  .setParameter(5, publicacion.getFechadeSubasta() )
-		 	  .setParameter(6, publicacion.getUsado() )
-		 	  .setParameter(7, publicacion.getEstado() )
-		 	  .setParameter(8, publicacion.getOferta())
-		 	  .setParameter(9, publicacion.getCategoria() )
-		 	  .setParameter(10, publicacion.getUsuario() )
-		 	  .setParameter(11, publicacion.getNombre() )
-		 	  .setParameter(12, publicacion.getUbicacion() )
-              .setParameter(13, publicacion.getMarca() ).executeUpdate();
+		 query.setParameter(1, publicacion.getDescripcion())
+		 	  .setParameter(2, publicacion.getValor() )
+		 	  .setParameter(3, new Date())
+		 	  .setParameter(4, new Date() )
+		 	  .setParameter(5, publicacion.getUsado() )
+		 	  .setParameter(6, "Activo" )
+		 	  .setParameter(7, 1)
+		 	  .setParameter(8, publicacion.getCategoria() )
+		 	  .setParameter(9, publicacion.getUsuario() )
+		 	  .setParameter(10, publicacion.getNombre() )
+		 	  .setParameter(11, publicacion.getUbicacion() )
+              .setParameter(12, publicacion.getMarca() ).executeUpdate();
 	}
 
 	@Override

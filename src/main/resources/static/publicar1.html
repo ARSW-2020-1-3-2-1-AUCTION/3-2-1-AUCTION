@@ -1,18 +1,28 @@
 <html>
 	<head xmlns="http://www.w3.org/1999/html">
-	  <title>Categorias</title>
+	  <title>Publicar</title>
 	  <meta charset="UTF-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  <meta name="MobileOptimized" content="width" />
 
 	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	  <script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
-
-
+	  
+	  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+	  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
+	  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+	  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+		
+	  
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	  <link rel="stylesheet" href="./styles/general.css">
 	  
+	  <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet"/>
+	  <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css" rel="stylesheet"/>
+	  
 	  <script src="js/categorias.js"></script>
+	  <script src="js/publicar1.js"></script>
+	  <script src="js/publicar1Cliente.js"></script>
 
 	</head>
 
@@ -36,7 +46,7 @@
 			   <ul class="breadcrumb">
 				 <li class="breadcrumb-item"><a id="c" href="categorias.html">Categorías</a></li>
 				 <li class="breadcrumb-item"><a id="f" href="favoritos.html">Mis Favoritos</a></li>
-				 <li class="breadcrumb-item"><a id="p" href="publicar1.html"><b>Publicar</b></a></li>
+				 <li class="breadcrumb-item"><a id="p" href="publicar1.html" onclick="categorias.estaLog()"><b>Publicar</b></a></li>
 				 <li class="breadcrumb-item"><a id="mp" href="publicaciones.html">Mis Publicaciones</a></li>
 				 <li class="breadcrumb-item"><a id="pec" href="pujasEnCurso.html">Pujas en curso</a></li>
 				</ul>
@@ -50,9 +60,93 @@
 		<br></br>
 		
 		<div>
-			<h2> Publicar Artículo </h2>
+			<h2></b> Publicar Artículo </b></h2>
+			<br></br>
 		</div>
+		<div class="c">
+			<div class="row" style="margin: 2%">
+				<div class="col-lg-6">
+				
+					<h4>Nombre:<h4>
+					<input type="text" placeholder="Use un nombre corto" id="nombre" />
+					<br></br>
+					
+					<h4>Ubicación:</h4>
+					<select id="ubicacion" class="btn btn-primary dropdown-toggle">
+						<option value="Barranquilla">Barranquilla</option>
+						<option value="Bogota">Bogota</option>
+						<option value="Cali">Cali</option>
+						<option value="Medellin">Medellin</option>
+					</select>
+					<br></br>
+					
+					<h4>Categoría:</h4>
+					<select id="categoria" class="btn btn-primary dropdown-toggle">
+						<option value="1">Libros</option>
+						<option value="2">Automoviles</option>
+						<option value="3">Licores</option>
+						<option value="4">Deportes</option>
+						<option value="5">Musica</option>
+						<option value="6">Alimentos</option>
+						<option value="7">VideoJuegos</option>
+					</select>
+					<br></br>
+					
+					<h4>Marca:</h4>
+					<input type="text" placeholder="" id="marca" />
+					<br></br>
+					
+					<h4>Estado:</h4>
+					<select id="usado" class="btn btn-primary dropdown-toggle">
+						<option value="true">Nuevo</option>
+						<option value="false">Usado</option>
+					</select>
+					<br></br>
+					
+					<div><h4>Fecha y hora de subasta:</h4></div>
+			
+					
+						
+								<div class="form-group">
+									<div class='input-group date' id='calendario'>
+										<input type='text' class="form-control" />
+										<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</span>
+									</div>
+								</div>
+								<script type="text/javascript">
+									$(function () {
+										$('#calendario').datetimepicker();
+									});
+								</script>
+							
+					
+					
+					
+				</div>
+				
+				<div class="col-lg-15">
+				
+					<h4>Descripción:</h4>
+					<textarea rows="10" cols="40" type="text" placeholder="Añada información que no haya puesto y considere necesaria" id="descripcion"></textarea>
+					<br></br>
+					
+					<!--<form action="" method="post" enctype="multipart/form-data" target="_blank">
+						<p><h4>Imagen:</h4><br></br>
+							<input type="file" id="imagen"><br></br>
+						</p>
+					</form>-->
+					
+					<h4>Valor:</h4>
+					<input type="number" id="valor" />
+					<br></br>					
+					
+				</div>
+			</div>
+		</div>			
 		
+		<cen><button type="button" class="btn btn-primary btn-lg" onclick="publicar1.setValues()">Publicar</button></cen>
 		
 	</body>
 </html>

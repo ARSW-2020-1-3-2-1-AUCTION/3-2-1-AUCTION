@@ -20,7 +20,6 @@ import edu.escuelaing.arsw.auctions.services.PublicacionServices;
 
 @RestController
 @RequestMapping(value = "/publicacion")
-
 public class PublicacionController {
 	
 	 	@Autowired
