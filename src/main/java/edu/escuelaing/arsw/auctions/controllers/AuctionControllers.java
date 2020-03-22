@@ -14,7 +14,7 @@ public class AuctionControllers {
     
 	@GetMapping(value="")
 	public String page() {
-		return "index.html";
+		return "login.html";
 	}
     
 }

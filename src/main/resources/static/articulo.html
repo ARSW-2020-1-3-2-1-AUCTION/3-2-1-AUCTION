@@ -1,22 +1,24 @@
-<html>
-	<head xmlns="http://www.w3.org/1999/html">
-	  <title>Categorias</title>
-	  <meta charset="UTF-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  <meta name="MobileOptimized" content="width" />
+﻿<html>
+<head xmlns="http://www.w3.org/1999/html">
+	<title>Categorias</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="MobileOptimized" content="width" />
 
-	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	  <script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
+	
 
 
-	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	  <link rel="stylesheet" href="./styles/general.css">
-	  
-	  <script src="js/articulo.js"></script>
-	  <script src="js/articuloCliente.js"></script>
-	  <script src="js/categorias.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="./styles/articulo.css">
 
-	</head>
+	<script src="js/articulo.js"></script>
+	<script src="js/articuloCliente.js"></script>
+	<script src="js/categorias.js"></script>
+
+
+</head>
 
 	<body onLoad="articulo.setID();articulo.setInfo();articulo.setUser();categorias.setHref()">
 		<div>
@@ -32,24 +34,24 @@
 						</div>
 					</div>
 				</header>
-		   </h1>   
-		   
-		   <div>
-			   <ul class="breadcrumb">
-				 <li class="breadcrumb-item"><a id="c" href="categorias.html"><b>Categorías</b></a></li>
-				 <li class="breadcrumb-item"><a id="f" href="favoritos.html">Mis Favoritos</a></li>
-				 <li class="breadcrumb-item"><a id="p" href="publicar1.html">Publicar</a></li>
-				 <li class="breadcrumb-item"><a id="mp" href="publicaciones.html">Mis Publicaciones</a></li>
-				 <li class="breadcrumb-item"><a id="pec" href="pujasEnCurso.html">Pujas en curso</a></li>
+			</h1>
+
+			<div>
+				<ul class="breadcrumb">
+					<li class="breadcrumb-item"><a id="c" href="categorias.html"><b>Categorías</b></a></li>
+					<li class="breadcrumb-item"><a id="f" href="favoritos.html">Mis Favoritos</a></li>
+					<li class="breadcrumb-item"><a id="p" href="publicar1.html">Publicar</a></li>
+					<li class="breadcrumb-item"><a id="mp" href="publicaciones.html">Mis Publicaciones</a></li>
+					<li class="breadcrumb-item"><a id="pec" href="pujasEnCurso.html">Pujas en curso</a></li>
 				</ul>
 			</div>
 		</div>
-		
+
 		<h5>Inició sesión como: </h5>
 		<h5 id="user"></h5>
 		<h5 id="saldo"></h5>
 		<br></br>
-		
+
 		<div>
 			<h2 id="descripcion"></h2>
 			<h2 id="valor"></h2>
@@ -62,9 +64,17 @@
 			<h2 id="nombre"></h2>
 			<h2 id="ubicacion"></h2>
 			<h2 id="marca"></h2>
-			
+
 		</div>
-		
-		
+
+		<div>
+			<h1>Ofertar</h1>
+
+			<form id="Ofertar" action="javascript:articulo.addOferta()">
+				<input class="inputtype" id="puja" type="number" placeholder="Cuanto desea ofertar?" />
+				<button class="otherbutton" id="aceptar">Aceptar</button>
+			</form>
+		</div>
+
 	</body>
 </html>
