@@ -1,6 +1,7 @@
 package edu.escuelaing.arsw.auctions.controllers;
 
 import java.util.logging.Level;
+
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.escuelaing.arsw.auctions.model.Publicacion;
-import edu.escuelaing.arsw.auctions.model.Usuario;
 import edu.escuelaing.arsw.auctions.services.PublicacionServices;
 
 @RestController

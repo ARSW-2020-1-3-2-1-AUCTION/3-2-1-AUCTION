@@ -1,0 +1,44 @@
+body {
+	min-width: 500px;
+}
+
+div {
+	text-align: right;
+	color: #000000;
+}
+h1 {
+	width: 100%;
+	min-width: 963px;
+	height: 117px;
+	font-size: large;
+	margin-bottom: 100px;
+}
+
+.left {
+	float: left;
+	margin: 3px;
+	object-position: 5px 10%;
+}
+
+.right {
+	padding-right: 0px;
+	margin-top: 80px;
+	float: right;
+}
+
+ul.breadcrumb {
+	background-color: white;
+}
+
+h2 {
+	text-align: center;
+}
+
+h5 {
+	margin-left: 30px;
+	color: #000000;
+}
+
+.margen {
+	padding: 60px;
+}

@@ -5,7 +5,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-@Entity(name="oferta")
+@Entity//(name="oferta")
 @Table(name="oferta")
 public class Oferta implements Serializable{     
 
@@ -68,7 +68,7 @@ public class Oferta implements Serializable{
 		this.ofertaAutomatica  = ofertaAutomatica;
 	}
 	
-	public String isUsuario() {
+	public String getUsuario() {
 		return usuario;
 	}
 

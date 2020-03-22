@@ -1,6 +1,8 @@
 package edu.escuelaing.arsw.auctions.controllers;
 
 import java.util.logging.Level;
+
+
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.escuelaing.arsw.auctions.model.Oferta;
-
 import edu.escuelaing.arsw.auctions.services.OfertaServices;
 
 @RestController
@@ -27,13 +28,40 @@ public class OfertaController {
 	  
 
 	 	@RequestMapping(method = RequestMethod.GET)
-		    public ResponseEntity<?> getAllCategorias(){
+		    public ResponseEntity<?> getAllOfertas(){
 		        try{
 		            return new ResponseEntity<>(os,HttpStatus.ACCEPTED);
 		        }catch (Exception ex){
 		            return new ResponseEntity<>(ex.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
 		        }
 		    }
+	 	
+		@RequestMapping(value="/getById/{id}", method = RequestMethod.GET)
+	    public ResponseEntity<?> getPublicaciones(@PathVariable(name="id") int id){
+	        try{
+	        	return new ResponseEntity<>(os.getOferta(id),HttpStatus.ACCEPTED);
+	        }catch (Exception ex){
+	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+	        }
+	    } 	
+	 	
+	 	@RequestMapping(value="/ByPublicacion/{IdPublicacion}",method=RequestMethod.GET)
+	 	public ResponseEntity<?> getPublicacionByCategoria(@PathVariable(name="IdPublicacion") int IdPublicacion){
+			try {
+				return new ResponseEntity<>(os.getOfertaByPublicacion(IdPublicacion),HttpStatus.ACCEPTED);
+			} catch (Exception e) {
+				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+			}
+		}
+	 	
+	 	@RequestMapping(value="/ByUser/{IdUsuario}",method=RequestMethod.GET)
+		public ResponseEntity<?> getPublicacionByUsuario(@PathVariable(name="IdUsuario") String IdUsuario){
+			try {
+				return new ResponseEntity<>(os.getOfertaByUsuario(IdUsuario),HttpStatus.ACCEPTED);
+			} catch (Exception e) {
+				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+			}
+		}
 	 	
 	 	 @RequestMapping(method = RequestMethod.POST)	
 	     public ResponseEntity<?> manejadorPostRecursoOferta(@RequestBody Oferta oferta){
@@ -42,7 +70,7 @@ public class OfertaController {
 	             return new ResponseEntity<>(HttpStatus.CREATED);
 	         } catch (Exception ex) {
 	             Logger.getLogger(OfertaController.class.getName()).log(Level.SEVERE, null, ex);
-	             return new ResponseEntity<>("Error al intentar crear el nuevo tiquete",HttpStatus.FORBIDDEN);            
+	             return new ResponseEntity<>("Saldo insuficiente",HttpStatus.FORBIDDEN);            
 	         }
 	     }
 	 	
