@@ -1,12 +1,26 @@
 body{
 	 min-width: 500px;
 }
+div.c {
+	margin: auto;
+    width: 70%;
+}
 h1 {
   width: 100%;
   min-width:963px;
   height: 117px;
   font-size:large;
   margin-bottom: 100px; 
+}
+h2 {
+	text-align: center;
+}
+h3 {
+	color: #0000ff;
+}
+h5 {
+	margin-left: 30px;
+	color: #000000;
 }
 .left{
     float: left;
@@ -18,16 +32,23 @@ h1 {
 	margin-top: 80px;
     float: right;
 }
+cen {
+	margin-left: 50%;
+}
 ul.breadcrumb {
 	background-color: white;
 }
-h2 {
-	text-align: center;
-}
-h5 {
+a.sesion {
 	margin-left: 30px;
-	color: #000000;
+	color: #0000ff;
 }
 .margen{
 	 padding: 60px;
+}
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+input,label {
+    margin: .4rem 0;
 }

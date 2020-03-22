@@ -21,7 +21,7 @@ public class UsuarioServiceImpl implements UsuarioServices {
 	
 	 @Autowired
 	 @Qualifier("AuctionCacheImpl")
-	 AuctionCache ac;
+	 AuctionCache auctionCache;
 	
 	  @Override
 	    public List<Usuario> getAllUsers(){
@@ -64,12 +64,18 @@ public class UsuarioServiceImpl implements UsuarioServices {
 
 	@Override
 	public void postUsernameCache(Usuario usuario) {
-		ac.postUsernameCache(usuario.getId());
+		auctionCache.postUsername(usuario.getId());
 	}
 	
 	@Override
-	public boolean loginUsername(Usuario usuario) {
-		return ac.existUsername(usuario.getId());
+	public boolean existUsername(String usuario) {
+		return auctionCache.existUsername(usuario);
+	}
+
+	@Override
+	public void deleteUsernameCache(String usuario) {
+		auctionCache.deleteUsername(usuario);
+		
 	}
 
 }

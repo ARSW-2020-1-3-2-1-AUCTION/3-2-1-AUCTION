@@ -2,6 +2,7 @@ var categorias =(function(){
 	var lista = [];
 	var num = 0;
 	var id = "";
+	var logeado = false;
 	
 	function getCat(retorno) {
 		$("#categoriaTable div").remove();
@@ -33,14 +34,7 @@ var categorias =(function(){
 		return vars;
 	}
 	
-	return {
-		setUser: function (){
-			$( "#user" ).html(getUrlVars()["user"]);
-		},
-		getCategorias: function(){
-			categoriasCliente.getCategorias(getCat);
-		},
-		setHref: function() {
+	function setHref() {
 			var c = document.getElementById("c").href+"?user="+document.getElementById("user").innerText;
 			document.getElementById("c").href = c;
 			var f = document.getElementById("f").href+"?user="+document.getElementById("user").innerText;
@@ -52,6 +46,44 @@ var categorias =(function(){
 			var pec = document.getElementById("pec").href+"?user="+document.getElementById("user").innerText;
 			document.getElementById("pec").href = pec;
 		}
+		
+	function logOut() {
+		setLogeado(false);
+		categoriasCliente.deleteUserCache(document.getElementById("user").innerText);
+	}
+	
+	var setLogeado = function (result) {
+        logeado = result;
+    }
+	
+	function existUsername() {
+		categoriasCliente.existUsername(document.getElementById("user").innerText,setLogeado);
+	}
+	
+	function estaLog() {
+		if(logeado){
+			location.href = "/publicar1.html?user="+document.getElementById("user").innerText;
+		} else{
+			var r = confirm("Usted no ha iniciado sesión, presione OK para ir al login");
+			if (r == true) {
+				document.getElementById("p").href = "/login.html";
+			} else {
+				document.getElementById("p").href = "/categorias.html?user="+document.getElementById("user").innerText;
+			}
+		}
+	}
+	
+	return {
+		setUser: function (){
+			$( "#user" ).html(getUrlVars()["user"]);
+		},
+		getCategorias: function(){
+			categoriasCliente.getCategorias(getCat);
+		},
+		setHref: setHref, 
+		logOut: logOut,
+		existUsername: existUsername,
+		estaLog: estaLog
 	};
 	
 	

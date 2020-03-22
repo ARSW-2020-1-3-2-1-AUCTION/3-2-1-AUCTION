@@ -16,11 +16,12 @@
 	 <script src="js/articulos.js"></script>
 	 <script src="js/articulosCliente.js"></script>
 	 <script src="js/categorias.js"></script>
+	 <script src="js/categoriasCliente.js"></script>
 	 
 	
 	</head>
 
-	<body onLoad="articulos.setCate();articulos.getArticulos();articulos.setUser();categorias.setHref()">
+	<body onLoad="articulos.setCate();articulos.getArticulos();articulos.setUser();categorias.setHref();categorias.existUsername()">
 		<div>
 			<h1 class="p-3 mb-2 bg-primary text-white">
 				<header>
@@ -40,7 +41,7 @@
 			   <ul class="breadcrumb">
 				 <li class="breadcrumb-item"><a id="c" href="categorias.html"><b>Categorías</b></a></li>
 				 <li class="breadcrumb-item"><a id="f" href="favoritos.html">Mis Favoritos</a></li>
-				 <li class="breadcrumb-item"><a id="p" href="publicar1.html">Publicar</a></li>
+				 <li class="breadcrumb-item"><a id="p" href="publicar1.html" onclick="categorias.estaLog()">Publicar</a></li>
 				 <li class="breadcrumb-item"><a id="mp" href="publicaciones.html">Mis Publicaciones</a></li>
 				 <li class="breadcrumb-item"><a id="pec" href="pujasEnCurso.html">Pujas en curso</a></li>
 				</ul>
@@ -50,6 +51,7 @@
 		<h5>Inició sesión como: </h5>
 		<h5 id="user"></h5>
 		<h5 id="saldo"></h5>
+		<a class="sesion" href="login.html" onclick="categorias.logOut()">Cerrar Sesión</a>
 		<br></br>
 		
 			<h2 id="articulo"></h2>

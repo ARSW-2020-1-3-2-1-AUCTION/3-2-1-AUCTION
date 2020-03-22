@@ -19,6 +19,8 @@ public interface UsuarioServices {
 	
 	public void postUsernameCache(Usuario usuario);
 
-	public boolean loginUsername(Usuario usuario);
+	public boolean existUsername(String usuario);
+	
+	public void deleteUsernameCache(String usuario);
 	    
 }
