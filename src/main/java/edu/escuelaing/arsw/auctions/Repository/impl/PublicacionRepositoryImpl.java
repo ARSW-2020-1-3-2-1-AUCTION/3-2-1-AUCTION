@@ -19,15 +19,12 @@ public class PublicacionRepositoryImpl implements PublicacionRepositoryCustom {
 	
 	@Override
 	public void addPublicacion(Publicacion publicacion) {
-		System.out.println(publicacion.getValor());
-		System.out.println(publicacion.getFechadeSubasta());
-		System.out.println(publicacion.getCategoria());
 		Query query = entityManager.createNativeQuery("insert into publicacion values(NEXTVAL('serial'),?,?,?,?,?,?,?,?,?,?,?,?)",Publicacion.class);
 		 
 		 query.setParameter(1, publicacion.getDescripcion())
 		 	  .setParameter(2, publicacion.getValor() )
 		 	  .setParameter(3, new Date())
-		 	  .setParameter(4, new Date() )
+		 	  .setParameter(4, publicacion.getFechadeSubasta())
 		 	  .setParameter(5, publicacion.getUsado() )
 		 	  .setParameter(6, "Activo" )
 		 	  .setParameter(7, 1)

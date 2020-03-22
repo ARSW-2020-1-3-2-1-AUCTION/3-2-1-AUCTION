@@ -1,6 +1,8 @@
 package edu.escuelaing.arsw.auctions.model;
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -22,6 +24,7 @@ public class Publicacion implements Serializable{
         @Column(name="fecha_publicacion")
         Date fechaPublicacion;
         
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy hh:mm aa")
         @Column(name="fecha_de_subasta")
         Date fechadeSubasta;
         

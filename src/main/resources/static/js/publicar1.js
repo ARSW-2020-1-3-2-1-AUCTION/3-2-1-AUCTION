@@ -21,12 +21,13 @@ var publicar1 =(function(){
 		descripcion = document.getElementById("descripcion").value;
 		valor = document.getElementById("valor").value;
 		usuario = document.getElementById("user").innerText;
+
 		if (nombre=="" || ubicacion=="" || categoria=="" || marca=="" || usado=="" || calendario=="" || descripcion=="" || usuario==""){
 			alert("Para publicar ningún campo puede ser vacío")
 		} else {
-			lista = {nombre: nombre, ubicacion: ubicacion, categoria: categoria, marca: marca,usado: usado, fechaDeSubasta: calendario,descripcion: descripcion, valor: valor, usuario:usuario};
-			alert(JSON.stringify(lista));
+			lista = {nombre: nombre, ubicacion: ubicacion, categoria: categoria, marca: marca,usado: usado, fechadeSubasta: calendario, descripcion: descripcion, valor: valor, usuario:usuario};
 			publicar1Cliente.putArticulo(JSON.stringify(lista));
+			alert("Publicación exitosa, ahora puede ver su producto");
 		}		
 	}
 	

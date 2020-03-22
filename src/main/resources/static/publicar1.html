@@ -17,10 +17,8 @@
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	  <link rel="stylesheet" href="./styles/general.css">
 	  
-	  <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet"/>
-	  <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css" rel="stylesheet"/>
-	  
 	  <script src="js/categorias.js"></script>
+	  <script src="js/categoriasCliente.js"></script>
 	  <script src="js/publicar1.js"></script>
 	  <script src="js/publicar1Cliente.js"></script>
 
@@ -98,8 +96,8 @@
 					
 					<h4>Estado:</h4>
 					<select id="usado" class="btn btn-primary dropdown-toggle">
-						<option value="true">Nuevo</option>
-						<option value="false">Usado</option>
+						<option value="false">Nuevo</option>
+						<option value="true">Usado</option>
 					</select>
 					<br></br>
 					
@@ -108,8 +106,8 @@
 					
 						
 								<div class="form-group">
-									<div class='input-group date' id='calendario'>
-										<input type='text' class="form-control" />
+									<div class='input-group date' id='calendario2'>
+										<input type='text' id='calendario' class="form-control" />
 										<span class="input-group-addon">
 											<span class="glyphicon glyphicon-calendar"></span>
 										</span>
@@ -117,7 +115,7 @@
 								</div>
 								<script type="text/javascript">
 									$(function () {
-										$('#calendario').datetimepicker();
+										$('#calendario2').datetimepicker();
 									});
 								</script>
 							
@@ -147,6 +145,6 @@
 		</div>			
 		
 		<cen><button type="button" class="btn btn-primary btn-lg" onclick="publicar1.setValues()">Publicar</button></cen>
-		
+		<br></br><br></br><br></br>
 	</body>
 </html>
