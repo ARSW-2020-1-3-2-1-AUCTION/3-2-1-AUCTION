@@ -6,10 +6,8 @@ import edu.escuelaing.arsw.auctions.persistance.AuctionNotFoundException;
 import edu.escuelaing.arsw.auctions.persistance.AuctionPersistanceException;
 
 public interface PreferenciaServices {
-	
-	public List<Preferencia> getAllPublicaciones();
 
-    public Preferencia getPreferencia(int idUsuario) throws AuctionNotFoundException;
+    public List<Preferencia> getPreferencias(String idUsuario) throws AuctionNotFoundException;
 
     void savePreferencia(Preferencia preferencia) throws AuctionPersistanceException;
 	
