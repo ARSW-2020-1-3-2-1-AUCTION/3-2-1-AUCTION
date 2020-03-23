@@ -66,6 +66,7 @@ public class OfertaController {
 	 	 @RequestMapping(method = RequestMethod.POST)	
 	     public ResponseEntity<?> manejadorPostRecursoOferta(@RequestBody Oferta oferta){
 	         try {
+	        	 System.out.println("oferta es: "+oferta.getUsuario());
 	             os.addOferta(oferta);
 	             return new ResponseEntity<>(HttpStatus.CREATED);
 	         } catch (Exception ex) {

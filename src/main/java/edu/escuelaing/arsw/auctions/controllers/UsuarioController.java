@@ -53,7 +53,7 @@ public class UsuarioController {
 	    }
 	    
 	    
-	    @RequestMapping(path = "getSaldo/{id}", method = RequestMethod.GET)
+	    @RequestMapping(path = "/getSaldo/{id}", method = RequestMethod.GET)
 	    public ResponseEntity<?> getSaldo(@PathVariable(name = "id") String id) {
 	        try {
 	            int saldo = user.getSaldo(id);
@@ -131,7 +131,6 @@ public class UsuarioController {
 	    @RequestMapping(value = "/existUsername/{user}", method = RequestMethod.GET)	
 	    public ResponseEntity<?> existUsername(@PathVariable(name="user") String usuario){
 	        try {
-	            System.out.println(user.existUsername(usuario));
 	            return new ResponseEntity<>(user.existUsername(usuario), HttpStatus.CREATED);
 	        } catch (Exception ex) {
 	            Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);

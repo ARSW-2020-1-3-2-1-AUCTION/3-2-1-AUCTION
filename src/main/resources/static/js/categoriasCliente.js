@@ -47,7 +47,7 @@ categoriasCliente = (function() {
                 url: "usuario/getSaldo/"+usuario ,
                 contentType: "application/json",
                 success: function(result) {
-					alert(result);
+					return(result);
                 },
                  error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     alert("Error: Usted no ha iniciado ninguna sesión"); 

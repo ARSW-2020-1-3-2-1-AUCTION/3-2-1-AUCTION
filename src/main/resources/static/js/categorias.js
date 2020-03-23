@@ -3,6 +3,7 @@ var categorias =(function(){
 	var num = 0;
 	var id = "";
 	var logeado = false;
+	var saldo = 0;
 	
 	function getCat(retorno) {
 		$("#categoriaTable div").remove();
@@ -55,8 +56,9 @@ var categorias =(function(){
 	var setLogeado = function (result) {
         logeado = result;
 		if (logeado){
-			document.getElementById("saldo").html(categoriasCliente.getSaldo(document.getElementById("user").innerText));
+			saldo = categoriasCliente.getSaldo(document.getElementById("user").innerText);
 		}
+		else {saldo = 0}
     }
 	
 	function existUsername() {

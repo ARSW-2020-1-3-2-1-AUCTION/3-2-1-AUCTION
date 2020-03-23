@@ -64,8 +64,7 @@ public class UsuarioServiceImpl implements UsuarioServices {
 
 	@Override
 	public void postUsernameCache(Usuario usuario) {
-		String id = usuario.getId();
-		auctionCache.postUsername(id,userRepo.getSaldo(id));
+		auctionCache.postUsername(usuario.getId());
 	}
 	
 	@Override
@@ -81,10 +80,7 @@ public class UsuarioServiceImpl implements UsuarioServices {
 
 	@Override
 	public int getSaldo(String id) {
-		if (auctionCache.existUsername(id)) {
-			return auctionCache.getSaldo(id);
-		}
-		return 0;
+		return 15;
 	}
 
 }

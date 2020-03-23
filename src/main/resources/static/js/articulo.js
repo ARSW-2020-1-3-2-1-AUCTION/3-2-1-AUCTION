@@ -1,7 +1,8 @@
 var articulo =(function(){
 	var _id = 0;
-
-
+	var lista = [];
+	var ultimaOferta = 0;
+	var cantidadAPujar = 0;
 
 	function getUrlVars() {
 		var vars = {};
@@ -12,29 +13,22 @@ var articulo =(function(){
 	}
 
 
-
-	var addOferta = function (Oferta) {
-		var ultimaOferta = document.getElementById('oferta').innerHTML;
-
-		var cantidadAPujar = $('#cantidad').val();
-		if (cantidadAPujar > uiltimaOferta) {
-			if (cantidadAPujar < uiltimaOferta + ultimaOferta * 0.05) {
-				alert("Debe pujar al menos " + uiltimaOferta + ultimaOferta * 0.05 );
-
-			}
-			
-			else {
-					articuloCliente.saveOferta(cantidadAPujar);
-				}
-				alert(cantidadAPujar + " aceptada");
-
-			}
-
+	function addOferta() {
+		ultimaOferta = document.getElementById('valor').innerText;
+		cantidadAPujar = $('#puja').val();
 		
+		if (cantidadAPujar > ultimaOferta) {
+			if (cantidadAPujar <  (ultimaOferta * 1.05)) {
+				alert("Debe pujar al menos " + (ultimaOferta * 1.05) );
+			} else {
+				lista  = {valorOfrecido: cantidadAPujar, valorOfertaAutomatica: cantidadAPujar,ofertaAutomatica: false,usuario: document.getElementById('user').innerText};
+				articuloCliente.saveOferta(lista);
+				alert("oferta aceptada por: "+cantidadAPujar);
+				}
+			}
 		else {
-			alert("El monto que quiere ingresar es menor al de la ultima Oferta");
+			alert("El monto a pujar debe ser mayor al de la ultima Oferta");
 		}
-
 	}
 	
 	var setId = function (id) {
@@ -44,8 +38,10 @@ var articulo =(function(){
 	function setInformacion(art) {
 			$("#descripcion").html(art.descripcion);
 			$("#valor").html(art.valor);
-			$("#fecha_de_subasta").html(art.fecha_de_subasta);
-			$("#usado").html(art.usado);
+			$("#fecha_de_subasta").html(art.fechadeSubasta);
+			if (art.usado){
+				$("#usado").html("Usado");
+			} else {$("#usado").html("Nuevo");}
 			$("#estado").html(art.estado);
 			$("#oferta").html(art.oferta);
 			$("#categoria").html(art.categoria);
