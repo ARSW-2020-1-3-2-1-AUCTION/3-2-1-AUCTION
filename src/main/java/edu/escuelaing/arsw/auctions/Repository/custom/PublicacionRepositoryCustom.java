@@ -17,4 +17,6 @@ public interface PublicacionRepositoryCustom {
 	@Transactional
     public List<Publicacion> getPublicacionByCategoria(int IdCategoria);
 
+	 @Transactional
+	    public void changeState(Publicacion pb,int id);
 }

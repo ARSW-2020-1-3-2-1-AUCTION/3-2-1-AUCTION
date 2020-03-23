@@ -1,12 +1,12 @@
 package edu.escuelaing.arsw.auctions.services.impl;
 
 import edu.escuelaing.arsw.auctions.Repository.PublicacionRepository;
+
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import edu.escuelaing.arsw.auctions.model.Publicacion;
-import edu.escuelaing.arsw.auctions.model.Usuario;
 import edu.escuelaing.arsw.auctions.persistance.AuctionNotFoundException;
 import edu.escuelaing.arsw.auctions.persistance.AuctionPersistanceException;
 import edu.escuelaing.arsw.auctions.services.PublicacionServices;
@@ -46,6 +46,12 @@ public class PublicacionServicesImpl implements PublicacionServices {
 	@Override
 	public void deletePublicacion(int id) {
 		publicacionRepo.deleteById(id);
+	}
+
+	@Override
+	public void changeState(Publicacion pb, int id) {
+		publicacionRepo.changeState(pb,id);
+		
 	}
 
 }
