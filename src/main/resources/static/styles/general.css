@@ -43,6 +43,10 @@ div.valor{
     margin-left: 1px;
 	float: left;
 }
+div.container{
+    padding-right: 250px;
+    padding-left: 250px;
+}
 h5.valor{
 	font-size:medium ;
 }

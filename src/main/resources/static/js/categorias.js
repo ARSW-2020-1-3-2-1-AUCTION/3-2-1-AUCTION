@@ -13,7 +13,7 @@ var categorias =(function(){
 		var i = 0;
 		lista.map(function(cat){
 			categoriasCliente.numArtPorCat(getArtXCat,cat.key,i);
-			var fila = "<div class=\"grid-1-5\"><h2 id=\"categ"+i+"\">"+num+"</h2><a href=\"articulos.html?var1="+cat.value+"&var2="+cat.key+"&user="+document.getElementById("user").innerText+"\" class=\"button\">"+cat.value+"</a></div>";
+			var fila = "<div class=\"grid-1-5\"><h4><b>"+cat.value+"</b></h4><h4 id=\"categ"+i+"\">"+num+"</h4><a href=\"articulos.html?var1="+cat.value+"&var2="+cat.key+"&user="+document.getElementById("user").innerText+"\" class=\"button\">Ir</a></div>";
             $("#categoriaTable").append(fila);
 			i+=1;
 		})
@@ -46,6 +46,8 @@ var categorias =(function(){
 			document.getElementById("mp").href = mp;
 			var pec = document.getElementById("pec").href+"?user="+document.getElementById("user").innerText;
 			document.getElementById("pec").href = pec;
+			var re = document.getElementById("re").href+"?user="+document.getElementById("user").innerText;
+			document.getElementById("re").href = re;
 		}
 		
 	function logOut() {
@@ -56,18 +58,26 @@ var categorias =(function(){
 	var setLogeado = function (result) {
         logeado = result;
 		if (logeado){
-			saldo = categoriasCliente.getSaldo(document.getElementById("user").innerText);
+			categoriasCliente.getSaldo(document.getElementById("user").innerText,setSaldo);
 		}
-		else {saldo = 0}
+		else {
+			saldo = 0;
+			$( "#saldo" ).html(saldo);
+		}
     }
+	
+	var setSaldo = function (result) {
+		saldo = result;
+		$("#saldo").html(saldo);
+	}
 	
 	function existUsername() {
 		categoriasCliente.existUsername(document.getElementById("user").innerText,setLogeado);
 	}
 	
-	function estaLog() {
+	function estaLog(ruta) {
 		if(logeado){
-			location.href = "/publicar1.html?user="+document.getElementById("user").innerText;
+			location.href = ruta+"?user="+document.getElementById("user").innerText;
 		} else{
 			var r = confirm("Usted no ha iniciado sesión, presione OK para ir al login");
 			if (r == true) {

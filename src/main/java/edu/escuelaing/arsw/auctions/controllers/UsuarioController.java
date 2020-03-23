@@ -67,7 +67,7 @@ public class UsuarioController {
 	    
 	
 	    @RequestMapping(value = "/{id}/setSaldo/{saldo}", method = RequestMethod.PUT)
-	    public ResponseEntity<?> setSaldo(@PathVariable(name="id") int id,@PathVariable(name="saldo") int saldo) {
+	    public ResponseEntity<?> setSaldo(@PathVariable(name="id") String id,@PathVariable(name="saldo") int saldo) {
 	        try {
 	            user.setSaldo(id,saldo);
 	            return new ResponseEntity<>(HttpStatus.ACCEPTED);

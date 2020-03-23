@@ -53,7 +53,7 @@ public class UsuarioServiceImpl implements UsuarioServices {
 	}
 
 	@Override
-	public void setSaldo(int id, int saldo) throws AuctionPersistanceException {
+	public void setSaldo(String id, int saldo) throws AuctionPersistanceException {
 		userRepo.setSaldo(id,saldo);
 	}
 
@@ -80,7 +80,7 @@ public class UsuarioServiceImpl implements UsuarioServices {
 
 	@Override
 	public int getSaldo(String id) {
-		return 15;
+		return userRepo.getSaldo(id).get(0).getSaldo();
 	}
 
 }

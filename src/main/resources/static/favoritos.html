@@ -10,6 +10,7 @@
 
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	  <link rel="stylesheet" href="./styles/general.css">
+	  <link rel="stylesheet" href="./styles/main.css"> 
 	  
 	  <script src="js/categorias.js"></script>
 	  <script src="js/categoriasCliente.js"></script>
@@ -26,7 +27,7 @@
 						</div>
 
 						<div class="right">
-							<p class="message">¿No encuentra lo que busca? <a href="crecer.html" style="color:white;">Crezcamos aquí</a></p>
+							<p class="message">¿No tiene saldo para ofertar? <a id="re" href="recargar.html" style="color:white;"><b>Recargue aquí</b></a></p>
 						</div>
 					</div>
 				</header>
@@ -36,8 +37,8 @@
 			   <ul class="breadcrumb">
 				 <li class="breadcrumb-item"><a id="c" href="categorias.html">Categorías</a></li>
 				 <li class="breadcrumb-item"><a id="f" href="favoritos.html"><b>Mis Favoritos</b></a></li>
-				 <li class="breadcrumb-item"><a id="p" href="publicar1.html" onclick="categorias.estaLog()">Publicar</a></li>
-				 <li class="breadcrumb-item"><a id="mp" href="publicaciones.html">Mis Publicaciones</a></li>
+				 <li class="breadcrumb-item"><a id="p" href="publicar1.html" onclick="categorias.estaLog('/publicar1.html')">Publicar</a></li>
+				 <li class="breadcrumb-item"><a id="mp" href="publicaciones.html" onclick="categorias.estaLog('/publicaciones.html')">Mis Publicaciones</a></li>
 				 <li class="breadcrumb-item"><a id="pec" href="pujasEnCurso.html">Pujas en curso</a></li>
 				</ul>
 			</div>

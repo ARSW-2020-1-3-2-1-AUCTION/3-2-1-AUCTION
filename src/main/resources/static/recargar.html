@@ -1,6 +1,6 @@
 <html>
 	<head xmlns="http://www.w3.org/1999/html">
-	  <title>Categorias</title>
+	  <title>Recargar</title>
 	  <meta charset="UTF-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  <meta name="MobileOptimized" content="width" />
@@ -11,14 +11,15 @@
 
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	  <link rel="stylesheet" href="./styles/general.css">
-	  <link rel="stylesheet" href="./styles/main.css"> 
 	  
 	   <script src="js/categorias.js"></script>
 	   <script src="js/categoriasCliente.js"></script>
+	   <script src="js/recargar.js"></script>
+	   <script src="js/recargarCliente.js"></script>
 
 	</head>
 
-	<body onLoad="categorias.setUser();categorias.getCategorias();categorias.setHref();categorias.existUsername()">
+	<body onLoad="categorias.setUser();categorias.setHref();categorias.existUsername()">
 		<div>
 			<h1 class="p-3 mb-2 bg-primary text-white">
 				<header>
@@ -36,7 +37,7 @@
 		   
 		   <div>
 			   <ul class="breadcrumb">
-				 <li class="breadcrumb-item"><a id="c" href="categorias.html"><b>Categorías</b></a></li>
+				 <li class="breadcrumb-item"><a id="c" href="categorias.html">Categorías</a></li>
 				 <li class="breadcrumb-item"><a id="f" href="favoritos.html">Mis Favoritos</a></li>
 				 <li class="breadcrumb-item"><a id="p" href="publicar1.html" onclick="categorias.estaLog('/publicar1.html')">Publicar</a></li>
 				 <li class="breadcrumb-item"><a id="mp" href="publicaciones.html" onclick="categorias.estaLog('/publicaciones.html')">Mis Publicaciones</a></li>
@@ -64,9 +65,17 @@
 		</div>
 		<br></br>
 		
-		<h2> Categorías </h2>
-		<div class="container group" id="categoriaTable"></div>
+		<h2> Recargar </h2>
+		<br></br>
 		
+		<div class="container">
+			<div class="form-group ">
+				<form id="Ofertar" action="javascript:recargar.recarga()">
+					<input class="form-control" id="recarga" type="number" placeholder="¿Cuánto desea recargar?" />
+					<button class="otherbutton" id="aceptar">Realizar Regarga</button>
+				</form>
+			</div>
+		</div>
 		
 	</body>
 </html>

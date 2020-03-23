@@ -24,7 +24,7 @@ var articulos =(function(){
 		$("#articuloTable div").remove();
 		var i = 0;
 		retorno.map(function(art){
-			var fila = "<div class=\"grid-1-5\"><h2>Valor: "+art.valor+"</h2><a href=\"articulo.html?var1="+art.id+"&user="+document.getElementById("user").innerText+"\" class=\"button\">"+art.nombre+"</a></div>";
+			var fila = "<div class=\"grid-1-5\"><h4><b>"+art.nombre+"</b></h4><h4>Valor: "+art.valor+"</h4><a href=\"articulo.html?var1="+art.id+"&user="+document.getElementById("user").innerText+"\" class=\"button\">Ir</a></div>";
             $("#articuloTable").append(fila);
 			i+=1;
 		})

@@ -13,7 +13,7 @@ public interface UsuarioServices {
 	
 	public Usuario addUser(Usuario user) throws AuctionPersistanceException;
 	    
-	public void setSaldo(int id, int saldo) throws AuctionPersistanceException;
+	public void setSaldo(String id, int saldo) throws AuctionPersistanceException;
 	
 	public void setPuntuacion(int id,int puntos);
 	

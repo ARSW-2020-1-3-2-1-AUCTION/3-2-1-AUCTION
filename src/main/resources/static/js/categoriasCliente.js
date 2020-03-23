@@ -42,12 +42,12 @@ categoriasCliente = (function() {
                 }
             });
         },
-		getSaldo: function(usuario){
+		getSaldo: function(usuario,callback){
             $.ajax({
                 url: "usuario/getSaldo/"+usuario ,
                 contentType: "application/json",
                 success: function(result) {
-					return(result);
+					callback(result);
                 },
                  error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     alert("Error: Usted no ha iniciado ninguna sesión"); 

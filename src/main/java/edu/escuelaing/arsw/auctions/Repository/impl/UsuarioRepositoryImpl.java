@@ -1,5 +1,7 @@
 package edu.escuelaing.arsw.auctions.Repository.impl;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -13,20 +15,21 @@ public class UsuarioRepositoryImpl implements UsuarioRepositoryCustom {
     EntityManager entityManager;
 	
 	@Override
-	public int getSaldo(String id) {
-		Query query = entityManager.createNativeQuery("select saldo from usuario where id=?",Usuario.class);
+	public List<Usuario> getSaldo(String id) {
+		Query query = entityManager.createNativeQuery("select * from usuario where id=?",Usuario.class);
 		
 		query.setParameter(1, id);
-		return (int) query.getSingleResult();
+		return query.getResultList();
 		
 	}
 
 	@Override
-	public void setSaldo(int id, int saldo) {
-		 Query query = entityManager.createNativeQuery("update usuario set saldo=? where id=?",Usuario.class);
+	public void setSaldo(String id, int saldo) {
+		 Query query = entityManager.createNativeQuery("update usuario set saldo=?+(select saldo where id=?) where id=?",Usuario.class);
 		 
 		 query.setParameter(1, saldo )
-              .setParameter(2, id ).executeUpdate();
+              .setParameter(2, id )
+              .setParameter(3, id ).executeUpdate();
 
 	}
 
