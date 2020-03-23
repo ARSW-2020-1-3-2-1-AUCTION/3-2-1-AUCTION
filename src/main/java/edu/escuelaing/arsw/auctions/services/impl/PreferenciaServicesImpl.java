@@ -11,23 +11,15 @@ import edu.escuelaing.arsw.auctions.persistance.AuctionPersistanceException;
 import edu.escuelaing.arsw.auctions.services.PreferenciaServices;
 import org.springframework.beans.factory.annotation.Autowired;
 
-@Service("PreferenciaServices")
+@Service("PreferenciaServicesImpl")
 public class PreferenciaServicesImpl implements PreferenciaServices {
         
-        @Autowired
+    @Autowired
 	private PreferenciaRepository preferenciaRepo;
-    
-    
-	@Override
-	public List<Preferencia> getAllPublicaciones() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
-	public Preferencia getPreferencia(int idUsuario) throws AuctionNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Preferencia> getPreferencias(String idUsuario) throws AuctionNotFoundException {
+		return preferenciaRepo.getPreferencias(idUsuario);
 	}
 
 	@Override

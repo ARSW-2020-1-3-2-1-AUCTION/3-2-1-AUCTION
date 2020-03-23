@@ -14,10 +14,12 @@
 	  
 	  <script src="js/categorias.js"></script>
 	  <script src="js/categoriasCliente.js"></script>
+	  <script src="js/favoritos.js"></script>
+	  <script src="js/favoritosCliente.js"></script>
 
 	</head>
 
-	<body onLoad="categorias.setUser();categorias.setHref();categorias.existUsername()">
+	<body onLoad="categorias.setUser();categorias.setHref();categorias.existUsername();favoritos.getFavoritos()">
 		<div>
 			<h1 class="p-3 mb-2 bg-primary text-white">
 				<header>
@@ -63,9 +65,8 @@
 		</div>
 		<br></br>
 		
-		<div>
-			<h2> Favoritos </h2>
-		</div>
+		<h2> Favoritos </h2>
+		<div class="container group" id="favoritosTable"></div>
 		
 		
 	</body>
