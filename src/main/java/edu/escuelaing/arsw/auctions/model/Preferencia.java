@@ -8,28 +8,41 @@ import java.io.Serializable;
 @Table(name="preferencia")
 public class Preferencia implements Serializable{     
 	private static final long serialVersionUID = 1L;
-		@Id        
+	
+	@Id
+	@Column(name="id")
+    private int id; 
+      
         @Column(name="usuario")
-        private String IdUsuario; 
-        
+        private String usuario; 
         
         @Column(name="publicacion")
-        private int IdPublicacion;     
+        private int publicacion; 
         
-        public String getIdUsuario() {
-    		return IdUsuario;
-    	}
 
-    	public void setIdUsuario(String IdUsuario) {
-    		this.IdUsuario = IdUsuario;
-    	}
-        
-        public int getIdPublicacion() {
-		return IdPublicacion;
-	}
+        public int getId() {
+			return id;
+		}
 
-	public void setIdPublicacion(int IdPublicacion) {
-		this.IdPublicacion = IdPublicacion;
-	}
+		public void setId(int id) {
+			this.id = id;
+		}
+
+		public String getUsuario() {
+			return usuario;
+		}
+
+		public void setUsuario(String usuario) {
+			this.usuario = usuario;
+		}
+
+		public int getPublicacion() {
+			return publicacion;
+		}
+
+		public void setPublicacion(int publicacion) {
+			this.publicacion = publicacion;
+		}    
+
 		
 }

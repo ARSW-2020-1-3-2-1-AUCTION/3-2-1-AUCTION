@@ -12,7 +12,7 @@ var articulo =(function(){
 		return vars;
 	}
 
-
+	
 	function addOferta() {
 		ultimaOferta = document.getElementById('valor').innerText;
 		cantidadAPujar = $('#puja').val();
@@ -51,6 +51,10 @@ var articulo =(function(){
 			$("#marca").html(art.marca);
 	}
 	
+	function addToFavorite() {
+		articuloCliente.addToFavorite(document.getElementById('user').innerText,_id);
+	}
+	
 	
 	return {
 		addOferta: addOferta,
@@ -63,6 +67,7 @@ var articulo =(function(){
 		},
 		setInfo: function(){
 			articuloCliente.getArticulo(setInformacion,_id);
-		}
+		},
+		addToFavorite: addToFavorite
 	};
 })();

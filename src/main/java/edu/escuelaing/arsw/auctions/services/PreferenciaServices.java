@@ -9,7 +9,7 @@ public interface PreferenciaServices {
 
     public List<Preferencia> getPreferencias(String idUsuario) throws AuctionNotFoundException;
 
-    void savePreferencia(Preferencia preferencia) throws AuctionPersistanceException;
+    void savePreferencia(String usuario,int publicacion) throws AuctionPersistanceException;
 	
 
 }

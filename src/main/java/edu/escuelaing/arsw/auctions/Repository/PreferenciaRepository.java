@@ -10,6 +10,6 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
-public interface PreferenciaRepository extends JpaRepository<Preferencia, String>,PreferenciaRepositoryCustom{
+public interface PreferenciaRepository extends JpaRepository<Preferencia, Integer>,PreferenciaRepositoryCustom{
         
 }

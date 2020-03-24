@@ -8,7 +8,6 @@ import javax.persistence.Query;
 
 import edu.escuelaing.arsw.auctions.Repository.custom.PreferenciaRepositoryCustom;
 import edu.escuelaing.arsw.auctions.model.Preferencia;
-import edu.escuelaing.arsw.auctions.model.Publicacion;
 
 public class PreferenciaRepositoryImpl implements PreferenciaRepositoryCustom {
 	
@@ -17,11 +16,22 @@ public class PreferenciaRepositoryImpl implements PreferenciaRepositoryCustom {
 
 	@Override
 	public List<Preferencia> getPreferencias(String idUsuario) {
-		System.out.println(idUsuario);
-		Query query = entityManager.createNativeQuery("select * from preferencia where usuario=?",Publicacion.class);
+		Query query = entityManager.createNativeQuery("select * from preferencia where usuario=?",Preferencia.class);
 		 
 		query.setParameter(1, idUsuario );
 		return query.getResultList();
+	}
+
+	@Override
+	public void savePreferencia(String usuario, int publicacion) {
+		System.out.println(usuario);
+		System.out.println(publicacion);
+		Query query = entityManager.createNativeQuery("insert into preferencia values(?,?,NEXTVAL('serialPref'))",Preferencia.class);
+		 
+		 query.setParameter(1, usuario )
+		      .setParameter(2, publicacion ).executeUpdate();
+		 System.out.println("ternimo execute Update");
+		
 	}
 
 }

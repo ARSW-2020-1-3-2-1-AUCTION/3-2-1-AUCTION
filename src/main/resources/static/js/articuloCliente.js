@@ -14,12 +14,23 @@ articuloCliente = (function() {
                 }   
             });
         },
-
 		getArticulo: function(callback,articuloId) {
 			$.ajax({
 				url: "publicacion/getById/"+articuloId,
 				success: function (result) {
 					callback(result);
+				},
+				async: true
+			});
+		},
+		addToFavorite: function(usuario,publicacion) {
+			$.ajax({
+				url: "/preferencia/"+usuario+"/"+publicacion,
+				type: "GET",
+				data: JSON.stringify(usuario),
+				contentType: "application/json",
+				success: function () {
+					alert("Añadido a favoritos con éxito");
 				},
 				async: true
 			});

@@ -23,8 +23,8 @@ public class PreferenciaServicesImpl implements PreferenciaServices {
 	}
 
 	@Override
-	public void savePreferencia(Preferencia preferencia) throws AuctionPersistanceException {
-		// TODO Auto-generated method stub
+	public void savePreferencia(String usuario,int publicacion) throws AuctionPersistanceException {
+		preferenciaRepo.savePreferencia(usuario,publicacion);
 
 	}
 

@@ -27,5 +27,15 @@ public class PreferenciaController {
             return new ResponseEntity<>(ex.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+	
+	@RequestMapping(value="/{usuario}/{publicacion}",method = RequestMethod.POST)
+    public ResponseEntity<?> savePreferencia(@PathVariable(name="usuario") String usuario,@PathVariable(name="publicacion") int publicacion){
+        try{
+        	preferencia.savePreferencia(usuario,publicacion);
+        	return new ResponseEntity<>(HttpStatus.ACCEPTED);
+        }catch (Exception ex){
+            return new ResponseEntity<>(ex.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
 }
