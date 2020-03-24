@@ -7,7 +7,6 @@ var recargarCliente =(function(){
 				type: "PUT",
 				success: function () {
 					if (monto > 0) {
-						alert(monto);
 						alert("Recarga exitosa de: " + monto);
 					}
 					else {
