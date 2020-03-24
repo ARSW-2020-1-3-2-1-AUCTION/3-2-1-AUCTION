@@ -4,6 +4,7 @@ var articulo =(function(){
 	var lista2 = [];
 	var ultimaOferta = 0;
 	var cantidadAPujar = 0;
+	var saldoUsuario = 0;
 
 	function getUrlVars() {
 		var vars = {};
@@ -17,20 +18,27 @@ var articulo =(function(){
 	function addOferta() {
 		ultimaOferta = document.getElementById('valor').innerText;
 		cantidadAPujar = $('#puja').val();
-		
-		if (cantidadAPujar > ultimaOferta) {
-			if (cantidadAPujar <  (ultimaOferta * 1.05)) {
-				alert("Debe pujar al menos " + (ultimaOferta * 1.05) );
-			} else {
-				lista = { valorOfrecido: cantidadAPujar, valorOfertaAutomatica: cantidadAPujar, ofertaAutomatica: false, usuario: document.getElementById('user').innerText };
-				//alert("oferta aceptada por: " + _id);
-				articuloCliente.saveOferta(lista,changeState,cantidadAPujar);
-				alert("oferta aceptada por: "+cantidadAPujar);
+		saldoUsuario = document.getElementById('saldo').innerText;
+		if (saldoUsuario >= cantidadAPujar) {
+			if (cantidadAPujar > ultimaOferta) {
+				if (cantidadAPujar < (ultimaOferta * 1.05)) {
+					alert("Debe pujar al menos " + (ultimaOferta * 1.05));
+				} else {
+					lista = { valorOfrecido: cantidadAPujar, valorOfertaAutomatica: cantidadAPujar, ofertaAutomatica: false, usuario: document.getElementById('user').innerText };
+					//alert("oferta aceptada por: " + _id);
+					articuloCliente.saveOferta(lista, changeState, cantidadAPujar);
+					alert("oferta aceptada por: " + cantidadAPujar);
+
+					recargarCliente.recarga(document.getElementById('user').innerText, -(cantidadAPujar));
 				}
 			}
-		else {
-			alert("El monto a pujar debe ser mayor al de la ultima Oferta");
+			else {
+				alert("El monto a pujar debe ser mayor al de la ultima Oferta");
+			}
 		}
+		else {
+			alert("No tiene saldo suficiente, recargue mas fondos");
+        }
 	}
 	
 	function changeState(result,valorOfrecido) {

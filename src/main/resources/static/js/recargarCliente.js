@@ -6,7 +6,13 @@ var recargarCliente =(function(){
 				url: "usuario/"+id+"/setSaldo/"+monto,
 				type: "PUT",
 				success: function () {
-					alert("Recarga exitosa de: "+monto);
+					if (monto > 0) {
+						alert(monto);
+						alert("Recarga exitosa de: " + monto);
+					}
+					else {
+						alert("Se desconto de su cuenta el valor de: " + monto);
+					}
 				},
 				async: true
 			});
