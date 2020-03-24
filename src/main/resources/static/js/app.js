@@ -13,7 +13,7 @@ var app =( function (){
 		
         if (contrasena == verificacion){
             var hash=CryptoJS.SHA256(contrasena);
-            var usuario = { "id": id, "contrasena": hash.toString(), "saldo": 5000000,"puntuacion":5 };
+            var usuario = { "id": id, "contrasena": hash.toString(), "saldo": 0,"puntuacion":5 };
             apiCliente.saveCuenta(usuario);
         }
         else{

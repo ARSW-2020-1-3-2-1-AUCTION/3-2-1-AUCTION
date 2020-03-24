@@ -28,6 +28,7 @@ var publicar1 =(function(){
 			lista = {nombre: nombre, ubicacion: ubicacion, categoria: categoria, marca: marca,usado: usado, fechadeSubasta: calendario, descripcion: descripcion, valor: valor, usuario:usuario};
 			publicar1Cliente.putArticulo(JSON.stringify(lista));
 			alert("Publicación exitosa, ahora puede ver su producto");
+			location.href = "/publicaciones.html?user=" + sessionStorage.getItem('currentUser');
 		}		
 	}
 	
