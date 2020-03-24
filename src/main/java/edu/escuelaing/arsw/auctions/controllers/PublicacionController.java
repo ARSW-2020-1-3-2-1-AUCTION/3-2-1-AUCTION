@@ -80,20 +80,32 @@ public class PublicacionController {
 	 	
 	 	@RequestMapping(path = "/delete/{id}",method = RequestMethod.DELETE)
 	    public ResponseEntity<?> deletePublicacion(@PathVariable (name = "id") int id) {
-	    try {
-	    	publication.deletePublicacion(id);
-	        return new ResponseEntity<>(HttpStatus.ACCEPTED); 
-	    } catch (Exception e) {
-	            Logger.getLogger(PublicacionController.class.getName()).log(Level.SEVERE, null, e);
-	            return new ResponseEntity<>(e.getMessage(),HttpStatus.FORBIDDEN);
-	    }
-	}
+		    try {
+		    	publication.deletePublicacion(id);
+		        return new ResponseEntity<>(HttpStatus.ACCEPTED); 
+		    } catch (Exception e) {
+		            Logger.getLogger(PublicacionController.class.getName()).log(Level.SEVERE, null, e);
+		            return new ResponseEntity<>(e.getMessage(),HttpStatus.FORBIDDEN);
+		    }
+		}
 	 	
 	 	@RequestMapping(path = "/{id}",method = RequestMethod.PUT)	
 	    public ResponseEntity<?> actualizarOferta(@PathVariable ("id") int id,@RequestBody Publicacion pb ){
 	        
 	        try {
 	            publication.changeState(pb,id);
+	            return new ResponseEntity<>(HttpStatus.CREATED);
+	        } catch (Exception ex) {
+	            Logger.getLogger(PublicacionController.class.getName()).log(Level.SEVERE, null, ex);
+	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);
+	        }
+	    }
+	 	
+	 	@RequestMapping(path = "/setOferta/{valor}/{ofertaid}/{publicacionId}",method = RequestMethod.PUT)	
+	    public ResponseEntity<?> setOferta(@PathVariable(name="valor") int valor,@PathVariable(name="ofertaid") int ofertaid,@PathVariable(name="publicacionId") int publicacionId){
+	        
+	        try {
+	            publication.setOferta(valor,ofertaid,publicacionId);
 	            return new ResponseEntity<>(HttpStatus.CREATED);
 	        } catch (Exception ex) {
 	            Logger.getLogger(PublicacionController.class.getName()).log(Level.SEVERE, null, ex);

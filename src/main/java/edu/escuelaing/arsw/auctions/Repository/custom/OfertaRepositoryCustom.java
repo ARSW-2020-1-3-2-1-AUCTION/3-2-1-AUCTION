@@ -9,7 +9,7 @@ import edu.escuelaing.arsw.auctions.model.Oferta;
 public interface OfertaRepositoryCustom {
 	
 	@Transactional
-	public void addOferta(Oferta oferta);
+	public List<Oferta> addOferta(Oferta oferta);
 	
 	@Transactional
 	public List<Oferta> getOfertaByUsuario(String IdUsuario);

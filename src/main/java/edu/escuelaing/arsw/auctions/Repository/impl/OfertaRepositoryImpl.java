@@ -27,11 +27,11 @@ public class OfertaRepositoryImpl implements OfertaRepositoryCustom {
 	}
 	
 	@Override
-	public void addOferta(Oferta oferta) {
-		System.out.println(oferta.getValorOfrecido());
-		System.out.println(oferta.getValorOfertaAutomatica());
-		System.out.println(oferta.getOfertaAutomatica());
-		System.out.println(oferta.getUsuario());
+	public List<Oferta> addOferta(Oferta oferta) {
+		//System.out.println(oferta.getValorOfrecido());
+		//System.out.println(oferta.getValorOfertaAutomatica());
+		//System.out.println(oferta.getOfertaAutomatica());
+		//System.out.println(oferta.getUsuario());
 		Query query = entityManager.createNativeQuery("insert into oferta values(NEXTVAL('serialOferta'),?,?,?,?,?)",Oferta.class);
 		 
 		 query.setParameter(1, oferta.getValorOfrecido() )
@@ -39,6 +39,13 @@ public class OfertaRepositoryImpl implements OfertaRepositoryCustom {
 		 	  .setParameter(3, oferta.getValorOfertaAutomatica())
 		 	  .setParameter(4, oferta.getOfertaAutomatica())		 	  
 		 	  .setParameter(5, oferta.getUsuario() ).executeUpdate();
+		 
+		 Query query2 = entityManager.createNativeQuery("select * from oferta where usuario=? and valor_ofrecido=?",Oferta.class);
+		 
+		 query2.setParameter(1,  oferta.getUsuario() )
+	 	  	   .setParameter(2, oferta.getValorOfrecido());
+		 
+		 return query2.getResultList();
 	}
 
 	

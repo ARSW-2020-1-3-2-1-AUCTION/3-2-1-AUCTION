@@ -54,4 +54,10 @@ public class PublicacionServicesImpl implements PublicacionServices {
 		
 	}
 
+	@Override
+	public void setOferta(int valor, int ofertaid,int publicacionId) {
+		publicacionRepo.setOferta(valor,ofertaid,publicacionId);
+		
+	}
+
 }

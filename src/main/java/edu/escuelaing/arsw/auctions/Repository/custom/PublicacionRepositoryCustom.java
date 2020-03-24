@@ -19,4 +19,7 @@ public interface PublicacionRepositoryCustom {
 
 	 @Transactional
 	    public void changeState(Publicacion pb,int id);
+	 
+	 @Transactional
+	 public void setOferta(int valor, int ofertaid, int publicacionId);
 }

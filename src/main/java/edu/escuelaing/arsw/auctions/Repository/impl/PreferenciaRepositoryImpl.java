@@ -24,13 +24,10 @@ public class PreferenciaRepositoryImpl implements PreferenciaRepositoryCustom {
 
 	@Override
 	public void savePreferencia(String usuario, int publicacion) {
-		System.out.println(usuario);
-		System.out.println(publicacion);
 		Query query = entityManager.createNativeQuery("insert into preferencia values(?,?,NEXTVAL('serialPref'))",Preferencia.class);
 		 
 		 query.setParameter(1, usuario )
 		      .setParameter(2, publicacion ).executeUpdate();
-		 System.out.println("ternimo execute Update");
 		
 	}
 

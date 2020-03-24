@@ -13,7 +13,7 @@ public interface OfertaServices {
     
     void saveOferta(Oferta oferta) throws AuctionPersistanceException;
     
-    public void addOferta(Oferta oferta);
+    public int addOferta(Oferta oferta);
     
     public void updateOferta(Oferta of,int id);
 

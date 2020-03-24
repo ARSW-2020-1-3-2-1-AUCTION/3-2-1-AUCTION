@@ -33,8 +33,8 @@ public class OfertaServicesImpl implements OfertaServices {
 	}
 
 	@Override
-	public void addOferta(Oferta oferta) {
-		ofertaRepo.addOferta(oferta);
+	public int addOferta(Oferta oferta) {
+		return ofertaRepo.addOferta(oferta).get(0).getId();
 		
 	}
 

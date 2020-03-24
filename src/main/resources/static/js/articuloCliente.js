@@ -1,13 +1,13 @@
 articuloCliente = (function() {
 	return {
-		saveOferta: function (Oferta) {
+		saveOferta: function (Oferta,callback,valorOfrecido) {
             $.ajax({
                 url: "/oferta",
                 type: "POST",
                 data: JSON.stringify(Oferta),
                 contentType: "application/json",
-                success: function () {
-					alert("Puja realizada satisfactoriamnete");
+                success: function (result) {
+					callback(result,valorOfrecido)
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     alert("Error al realizar la puja" + textStatus + " " + errorThrown);
@@ -15,16 +15,15 @@ articuloCliente = (function() {
             });
 		},
 
-        changeState: function (Publicacion) {
+        changeState: function (result,valorOfrecido,id) {
 
             $.ajax({
-                url: "publicacion/getById" + Publicacion.id,
+                url: "/publicacion/setOferta/"+valorOfrecido+"/"+result+"/"+id,
                 type: "PUT",
-                data: JSON.stringify(Publicacion),
+                data: JSON.stringify(result),
                 contentType: "application/json",
                 success: function () {
-                    location.href = "/articulo.html";
-
+					alert("recargue la página o posterior con sockets");
                 }
             })
         },
@@ -40,7 +39,7 @@ articuloCliente = (function() {
 		addToFavorite: function(usuario,publicacion) {
 			$.ajax({
 				url: "/preferencia/"+usuario+"/"+publicacion,
-				type: "GET",
+				type: "POST",
 				data: JSON.stringify(usuario),
 				contentType: "application/json",
 				success: function () {

@@ -24,16 +24,17 @@ var articulo =(function(){
 			} else {
 				lista = { valorOfrecido: cantidadAPujar, valorOfertaAutomatica: cantidadAPujar, ofertaAutomatica: false, usuario: document.getElementById('user').innerText };
 				//alert("oferta aceptada por: " + _id);
-				lista2 = { descripcion: document.getElementById('descripcion').innerText, valor: cantidadAPujar, fechaPublicacion: document.getElementById('fecha_publicacion').value, fechadeSubasta: document.getElementById('fecha_de_subasta').value, usado: document.getElementById('usado').innerText, estado: document.getElementById('estado').innerText, oferta: document.getElementById('oferta').innerText, categoria: document.getElementById('categoria').innerText, usuario: document.getElementById('usuario').innerText, nombre: document.getElementById('nombre').innerText, ubicacion: document.getElementById('ubicacion').innerText, marca: document.getElementById('marca').innerText};
-				articuloCliente.saveOferta(lista);
-				
-				articuloCliente.changeState(lista2);
+				articuloCliente.saveOferta(lista,changeState,cantidadAPujar);
 				alert("oferta aceptada por: "+cantidadAPujar);
 				}
 			}
 		else {
 			alert("El monto a pujar debe ser mayor al de la ultima Oferta");
 		}
+	}
+	
+	function changeState(result,valorOfrecido) {
+		articuloCliente.changeState(result,valorOfrecido,_id);
 	}
 	
 	var setId = function (id) {

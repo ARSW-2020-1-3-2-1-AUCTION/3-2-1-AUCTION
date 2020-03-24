@@ -21,5 +21,7 @@ public interface PublicacionServices {
 	public void deletePublicacion(int id);
 
 	public void changeState(Publicacion pb, int id);
+
+	public void setOferta(int valor, int ofertaid, int publicacionId);
 }
 
