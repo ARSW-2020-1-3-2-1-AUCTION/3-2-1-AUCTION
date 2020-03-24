@@ -7,12 +7,26 @@ articuloCliente = (function() {
                 data: JSON.stringify(Oferta),
                 contentType: "application/json",
                 success: function () {
-					alert("devuelve OK");
+					alert("Puja realizada satisfactoriamnete");
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     alert("Error al realizar la puja" + textStatus + " " + errorThrown);
                 }   
             });
+		},
+
+        changeState: function (Publicacion) {
+
+            $.ajax({
+                url: "publicacion/getById" + Publicacion.id,
+                type: "PUT",
+                data: JSON.stringify(Publicacion),
+                contentType: "application/json",
+                success: function () {
+                    location.href = "/articulo.html";
+
+                }
+            })
         },
 		getArticulo: function(callback,articuloId) {
 			$.ajax({

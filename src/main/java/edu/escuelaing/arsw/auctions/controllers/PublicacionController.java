@@ -88,5 +88,17 @@ public class PublicacionController {
 	            return new ResponseEntity<>(e.getMessage(),HttpStatus.FORBIDDEN);
 	    }
 	}
+	 	
+	 	@RequestMapping(path = "/{id}",method = RequestMethod.PUT)	
+	    public ResponseEntity<?> actualizarOferta(@PathVariable ("id") int id,@RequestBody Publicacion pb ){
+	        
+	        try {
+	            publication.changeState(pb,id);
+	            return new ResponseEntity<>(HttpStatus.CREATED);
+	        } catch (Exception ex) {
+	            Logger.getLogger(PublicacionController.class.getName()).log(Level.SEVERE, null, ex);
+	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);
+	        }
+	    }
 	
 }

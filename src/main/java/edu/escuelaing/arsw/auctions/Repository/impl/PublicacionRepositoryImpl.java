@@ -51,4 +51,24 @@ public class PublicacionRepositoryImpl implements PublicacionRepositoryCustom {
 		return query.getResultList();
 	}
 
+	@Override
+	public void changeState(Publicacion pb, int id) {
+		Query query = entityManager.createNativeQuery("update publicacion set descripcion=?,valor=?,fecha_publicacion=?,fecha_de_subasta=?,usado=?,estado=?,oferta=?,categoria=?,usuario=?,nombre=?,ubicacion=?,marca=? where id=? ",Publicacion.class);
+        
+        query.setParameter(1, pb.getDescripcion() )
+                .setParameter(2, pb.getValor() )
+                .setParameter(3, pb.getFechaPublicacion() )
+                .setParameter(4, pb.getFechadeSubasta() )
+                .setParameter(5, pb.getUsado() )
+                .setParameter(6, pb.getEstado() )
+                .setParameter(7, pb.getOferta() )
+                .setParameter(7, pb.getCategoria() )
+                .setParameter(9, pb.getUsuario() )
+                .setParameter(10, pb.getNombre() )
+                .setParameter(11, pb.getUbicacion() )
+                .setParameter(12, pb.getMarca() )
+                .setParameter(13, id ).executeUpdate();
+		
+	}
+
 }

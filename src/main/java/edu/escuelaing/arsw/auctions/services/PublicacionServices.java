@@ -19,5 +19,7 @@ public interface PublicacionServices {
     public List<Publicacion> getPublicacionByCategoria(int IdCategoria);
 
 	public void deletePublicacion(int id);
+
+	public void changeState(Publicacion pb, int id);
 }
 
