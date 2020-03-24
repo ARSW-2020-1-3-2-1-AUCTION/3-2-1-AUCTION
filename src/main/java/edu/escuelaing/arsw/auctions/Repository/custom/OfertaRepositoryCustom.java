@@ -17,7 +17,8 @@ public interface OfertaRepositoryCustom {
 	@Transactional
     public List<Oferta> getOfertaByPublicacion(int IdPublicacion);
 
-	
+	@Transactional
+	public List<Oferta> getUsuarioById(int id);
 	
 	@Transactional
     public void setOferta(int id, int oferta);

@@ -27,13 +27,13 @@ var articulo =(function(){
 					lista = { valorOfrecido: cantidadAPujar, valorOfertaAutomatica: cantidadAPujar, ofertaAutomatica: false, usuario: document.getElementById('user').innerText };
 					//alert("oferta aceptada por: " + _id);
 					articuloCliente.saveOferta(lista, changeState, cantidadAPujar);
-					alert("oferta aceptada por: " + cantidadAPujar);
+					alert("Oferta aceptada por: " + cantidadAPujar);
 
 					recargarCliente.recarga(document.getElementById('user').innerText, -(cantidadAPujar));
 				}
 			}
 			else {
-				alert("El monto a pujar debe ser mayor al de la ultima Oferta");
+				alert("El monto a pujar debe ser mayor al de la ultima oferta");
 			}
 		}
 		else {
@@ -53,14 +53,14 @@ var articulo =(function(){
 			$("#descripcion").html(art.descripcion);
 			$("#valor").html(art.valor);
 			$("#fecha_publicacion").html(art.fechaPublicacion);
-			$("#fecha_de_subasta").html(art.fechadeSubasta);			
+			$("#fecha_de_subasta").html("Subastado el: "+art.fechadeSubasta);			
 			if (art.usado){
 				$("#usado").html("Usado");
 			} else {$("#usado").html("Nuevo");}
 			$("#estado").html(art.estado);
-			$("#oferta").html(art.oferta);
+			articuloCliente.getCliente(art.oferta);
 			$("#categoria").html(art.categoria);
-			$("#usuario").html(art.usuario);
+			$("#usuario").html("Publicado por: "+art.usuario);
 			$("#nombre").html(art.nombre);
 			$("#ubicacion").html(art.ubicacion);
 			$("#marca").html(art.marca);

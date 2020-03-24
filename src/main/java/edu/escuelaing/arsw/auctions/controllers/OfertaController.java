@@ -43,7 +43,16 @@ public class OfertaController {
 	        }catch (Exception ex){
 	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
 	        }
-	    } 	
+	    }
+		
+		@RequestMapping(value="/getUsuarioById/{id}", method = RequestMethod.GET)
+	    public ResponseEntity<?> getUsuarioById(@PathVariable(name="id") int id){
+	        try{
+	        	return new ResponseEntity<>(os.getUsuarioById(id),HttpStatus.ACCEPTED);
+	        }catch (Exception ex){
+	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+	        }
+	    }
 	 	
 	 	@RequestMapping(value="/ByPublicacion/{IdPublicacion}",method=RequestMethod.GET)
 	 	public ResponseEntity<?> getPublicacionByCategoria(@PathVariable(name="IdPublicacion") int IdPublicacion){

@@ -53,6 +53,9 @@ h5.valor{
 cen {
 	margin-left: 50%;
 }
+cen2 {
+	margin-left: 43%;
+}
 ul.breadcrumb {
 	background-color: white;
 }
@@ -69,4 +72,15 @@ label {
 }
 input,label {
     margin: .4rem 0;
+}
+p {
+	border: blue 3px groove;
+	border-left: blue 3px groove;
+}
+esq {
+	color: #ffffff;
+}
+
+h2.valor {
+	font-size:x-large;
 }

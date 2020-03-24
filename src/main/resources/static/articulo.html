@@ -1,6 +1,6 @@
 ﻿<html>
 <head xmlns="http://www.w3.org/1999/html">
-	<title>Categorias</title>
+	<title>Artículo</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="MobileOptimized" content="width" />
@@ -64,33 +64,49 @@
 		</div>
 	</div>
 	<br></br>
-
-	<div>
-		<h2 id="descripcion"></h2>
-		<h2 id="valor"></h2>
-		<h2 id="fecha_publicacion"></h2>
-		<h2 id="fecha_de_subasta"></h2>
-		<h2 id="usado"></h2>
-		<h2 id="estado"></h2>
-		<h2 id="oferta"></h2>
-		<h2 id="categoria"></h2>
-		<h2 id="usuario"></h2>
-		<h2 id="nombre"></h2>
-		<h2 id="ubicacion"></h2>
-		<h2 id="marca"></h2>
-
-	</div>
-	<div>
-		<h1>Ofertar</h1>
-
-		<form id="Ofertar" action="javascript:articulo.addOferta()">
-			<input class="inputtype" id="puja" type="number" placeholder="¿Cuánto desea ofertar?" />
-			<button class="otherbutton" id="aceptar">Aceptar</button>
-		</form>
-		
-	</div>
 	
-	<button class="otherbutton" id="favoritos" onclick="articulo.addToFavorite()">Añadir a Favoritos</button>
+	<cen><h2 id="nombre"></h2></cen>
+	<cen2><button class="otherbutton" id="favoritos" onclick="articulo.addToFavorite()">Añadir a Favoritos</button></cen2>
+	<br></br>
+	
+	<div class="c">
+		<div class="row" style="margin: 2%">
+			<div class="col-lg-6">
+				<h4 id="marca"></h4><br></br>
+				<h4 id="fecha_de_subasta"></h4><br></br>
+				<h4 id="usado"></h4><br></br>
+				<h4 id="usuario"></h4>				
+			</div>
+			
+				
+			<div class="col-lg-15">
+				<p style="width: 100%; height: 10em" <h4 id="descripcion"></h4>
+				<h4 id="estado"></h4>
+				<h4 id="ubicacion"></h4>
+				<h4 id="oferta"></h2>
+			</div>
+		</div>
+	</div>	
+		
+		
+	
+	<cen>
+		<h2>Valor Actual:</h2>
+		<h2 class="valor" id="valor">50000</h2><br></br>
 
+		<div>
+			<form id="Ofertar" action="javascript:articulo.addOferta()">
+				<cen2><input class="inputtype" id="puja" type="number" placeholder="¿Cuánto desea ofertar?" /></cen2>
+				<cen2><button class="otherbutton" id="aceptar">Aceptar</button></cen2>
+			</form>
+			
+		</div>
+	
+	
+	</cen>
+	<esq id="categoria"></esq>
+	<esq id="fecha_publicacion"></esq>
+	
+	
 </body>
 </html>

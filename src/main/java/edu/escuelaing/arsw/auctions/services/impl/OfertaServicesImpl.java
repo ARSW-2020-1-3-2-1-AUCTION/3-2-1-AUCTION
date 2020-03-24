@@ -54,4 +54,9 @@ public class OfertaServicesImpl implements OfertaServices {
 		return ofertaRepo.getOfertaByPublicacion(IdPublicacion);
 	}
 
+	@Override
+	public String getUsuarioById(int id) {
+		return ofertaRepo.getUsuarioById(id).get(0).getUsuario();
+	}
+
 }

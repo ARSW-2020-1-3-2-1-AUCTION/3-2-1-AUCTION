@@ -19,7 +19,9 @@ public interface OfertaServices {
 
 	public List<Oferta> getOfertaByUsuario(String IdUsuario);
 
-	public List<Oferta> getOfertaByPublicacion(int IdPublicacion);  
+	public List<Oferta> getOfertaByPublicacion(int IdPublicacion);
+
+	public String getUsuarioById(int id);  
     
 }
 

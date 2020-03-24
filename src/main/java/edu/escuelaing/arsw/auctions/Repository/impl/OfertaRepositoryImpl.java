@@ -28,10 +28,6 @@ public class OfertaRepositoryImpl implements OfertaRepositoryCustom {
 	
 	@Override
 	public List<Oferta> addOferta(Oferta oferta) {
-		//System.out.println(oferta.getValorOfrecido());
-		//System.out.println(oferta.getValorOfertaAutomatica());
-		//System.out.println(oferta.getOfertaAutomatica());
-		//System.out.println(oferta.getUsuario());
 		Query query = entityManager.createNativeQuery("insert into oferta values(NEXTVAL('serialOferta'),?,?,?,?,?)",Oferta.class);
 		 
 		 query.setParameter(1, oferta.getValorOfrecido() )
@@ -70,6 +66,14 @@ public class OfertaRepositoryImpl implements OfertaRepositoryCustom {
 	public List<Oferta> getOferta(int id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<Oferta> getUsuarioById(int id) {
+		Query query = entityManager.createNativeQuery("select * from oferta where id=?",Oferta.class);
+		 
+		query.setParameter(1, id);
+		return query.getResultList();
 	}
 
 

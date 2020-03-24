@@ -36,6 +36,15 @@ articuloCliente = (function() {
 				async: true
 			});
 		},
+		getCliente: function(id) {
+			$.ajax({
+				url: "/oferta/getUsuarioById/"+id,
+				success: function (result) {
+					$("#oferta").html(result+" tiene este producto");
+				},
+				async: true
+			});
+		},
 		addToFavorite: function(usuario,publicacion) {
 			$.ajax({
 				url: "/preferencia/"+usuario+"/"+publicacion,
