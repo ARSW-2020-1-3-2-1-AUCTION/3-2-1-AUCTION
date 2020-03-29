@@ -33,16 +33,17 @@
 						</div>
 				</div>
 			</header>
-	   </h1>   
+	    </h1>   
 		   
-	   <div>
-		   <ul class="breadcrumb">
-			 <li class="breadcrumb-item"><a id="c" href="categorias.html"><b>Categorías</b></a></li>
-			 <li class="breadcrumb-item"><a id="f" href="favoritos.html">Mis Favoritos</a></li>
-			 <li class="breadcrumb-item"><a id="p" href="publicar1.html" onclick="categorias.estaLog('/publicar1.html')">Publicar</a></li>
-			 <li class="breadcrumb-item"><a id="mp" href="publicaciones.html" onclick="categorias.estaLog('/publicaciones.html')">Mis Publicaciones</a></li>
-			 <li class="breadcrumb-item"><a id="pec" href="pujasEnCurso.html">Pujas en curso</a></li>
-			</ul>
+	    <div>
+	   
+	  	    <ul class="breadcrumb">
+				<li class="breadcrumb-item"><a id="c" href="categorias.html" onclick="categorias.estaLog('/categorias.html')"><b>Categorías</b></a></li>
+				<li class="breadcrumb-item"><a id="f" href="favoritos.html" onclick="categorias.estaLog('/favoritos.html')">Mis Favoritos</a></li>
+				<li class="breadcrumb-item"><a id="p" href="publicar1.html" onclick="categorias.estaLog('/publicar1.html')">Publicar</a></li>
+				<li class="breadcrumb-item"><a id="mp" href="publicaciones.html" onclick="categorias.estaLog('/publicaciones.html')">Mis Publicaciones</a></li>
+				<li class="breadcrumb-item"><a id="pec" href="pujasEnCurso.html" onclick="categorias.estaLog('/pujasEnCurso.html')">Pujas en curso</a></li>
+		    </ul>
 		</div>
 	</div>
 		
@@ -72,15 +73,16 @@
 	<div class="c">
 		<div class="row" style="margin: 2%">
 			<div class="col-lg-6">
-				<h4 id="marca"></h4><br></br>
-				<h4 id="fecha_de_subasta"></h4><br></br>
-				<h4 id="usado"></h4><br></br>
+				<div  class="imagen" id="myImg"></div>
+				<h4 id="marca"></h4>
 				<h4 id="usuario"></h4>				
 			</div>
 			
 				
 			<div class="col-lg-15">
 				<p style="width: 100%; height: 10em" <h4 id="descripcion"></h4>
+				<h4 id="fecha_de_subasta"></h4>
+				<h4 id="usado"></h4>
 				<h4 id="estado"></h4>
 				<h4 id="ubicacion"></h4>
 				<h4 id="oferta"></h2>
@@ -106,6 +108,7 @@
 	</cen>
 	<esq id="categoria"></esq>
 	<esq id="fecha_publicacion"></esq>
+	<esq id="imagen"></esq>
 	
 	
 </body>

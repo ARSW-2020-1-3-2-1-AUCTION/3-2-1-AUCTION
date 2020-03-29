@@ -24,11 +24,34 @@ var articulos =(function(){
 		$("#articuloTable div").remove();
 		var i = 0;
 		retorno.map(function(art){
-			var fila = "<div class=\"grid-1-5\"><h4><b>"+art.nombre+"</b></h4><h4>Valor: "+art.valor+"</h4><a href=\"articulo.html?var1="+art.id+"&user="+document.getElementById("user").innerText+"\" class=\"button\">Ir</a></div>";
+			var fila = "<div class=\"grid-1-5\"><h4><b>"+art.nombre+"</b></h4><h4>Valor: "+art.valor+"</h4><div id=\"ima"+i+"\"  class='imagen2'></div><a href=\"articulo.html?var1="+art.id+"&user="+document.getElementById("user").innerText+"\" class=\"button\">Ir</a></div>";
             $("#articuloTable").append(fila);
+			se(art,i);
 			i+=1;
 		})
 	}
+	
+	function se(art,i) {
+		fetch(art.imagen)
+			.then(res => res.blob()) // Gets the response and returns it as a blob
+			.then(blob => {
+				// Here's where you get access to the blob
+				// And you can use it for whatever you want
+				// Like calling ref().put(blob)
+
+			// Here, I use it to make an image appear on the page
+				const width = 265;
+				const height = 180;
+				let objectURL = URL.createObjectURL(blob);
+				let myImage = new Image();
+				myImage.src = objectURL;
+				const elem = document.getElementById('ima'+i).appendChild(myImage)
+				elem.width = width;
+				elem.height = height;
+				
+			});
+	}
+	
 	
 	return {
 		setUser: function (){

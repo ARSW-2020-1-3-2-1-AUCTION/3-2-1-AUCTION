@@ -7,24 +7,22 @@ var categorias =(function(){
 	
 	function getCat(retorno) {
 		$("#categoriaTable div").remove();
-		var lista  = retorno.map(function(cat){
-            return {key:cat.id, value:cat.nombre}
-        })
 		var i = 0;
-		lista.map(function(cat){
-			categoriasCliente.numArtPorCat(getArtXCat,cat.key,i);
-			var fila = "<div class=\"grid-1-5\"><h4><b>"+cat.value+"</b></h4><h4 id=\"categ"+i+"\">"+num+"</h4><a href=\"articulos.html?var1="+cat.value+"&var2="+cat.key+"&user="+document.getElementById("user").innerText+"\" class=\"button\">Ir</a></div>";
-            $("#categoriaTable").append(fila);
+		retorno.map(function(cat){
+			categoriasCliente.numArtPorCat(getArtXCat,cat.id,i);			
+			var fila = "<div class=\"grid-1-5\"><h4><b>"+cat.nombre+"</b></h4><h4 id=\"categ"+i+"\">"+num+"</h4><img width='265' height='180' src=\"img/cat"+i+".jpg\"><a href=\"articulos.html?var1="+cat.nombre+"&var2="+cat.id+"&user="+document.getElementById("user").innerText+"\" class=\"button\">Ir</a></div>";
+			$("#categoriaTable").append(fila);			
 			i+=1;
 		})
 	}
+	
 	
 	function getArtXCat(numero,i) {
 		var j = 0;
 		numero.map(function(num){
             j+=1;
         })
-		$( "#categ"+i ).html("Cantidad de artículos: "+j);
+		$( "#categ"+i ).html(j+" Artículos");
 	}
 	
 	function getUrlVars() {
@@ -79,12 +77,7 @@ var categorias =(function(){
 		if(logeado){
 			location.href = ruta+"?user="+document.getElementById("user").innerText;
 		} else{
-			var r = confirm("Usted no ha iniciado sesión, presione OK para ir al login");
-			if (r == true) {
-				document.getElementById("p").href = "/login.html";
-			} else {
-				document.getElementById("p").href = "/categorias.html?user="+document.getElementById("user").innerText;
-			}
+			location.href = "/login.html";
 		}
 	}
 	

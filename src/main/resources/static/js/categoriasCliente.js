@@ -38,7 +38,7 @@ categoriasCliente = (function() {
 					callback(result);
                 },
                  error: function(XMLHttpRequest, textStatus, errorThrown) { 
-                    alert("Error: Usted no ha iniciado ninguna sesión"); 
+                    alert("Error: Usted no ha iniciado ninguna sesión");
                 }
             });
         },

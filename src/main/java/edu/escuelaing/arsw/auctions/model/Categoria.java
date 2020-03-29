@@ -1,6 +1,5 @@
 package edu.escuelaing.arsw.auctions.model;
 
-import javax.persistence.Id;
 import javax.persistence.*;
 
 import java.io.Serializable;
@@ -15,7 +14,7 @@ public class Categoria implements Serializable{
     	private Integer Id;
         
         @Column(name="nombre")
-        private String nombre; 
+        private String nombre;
         
         public Categoria(Integer Id,String nombre){
             this.Id=Id;

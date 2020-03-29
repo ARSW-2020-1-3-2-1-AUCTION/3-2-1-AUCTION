@@ -10,11 +10,11 @@ var favoritosCliente =(function(){
 				async: true
 			});
 		},
-		getArticulo: function(id,callback) {
+		getArticulo: function(id,callback,i) {
 			$.ajax({
 				url: "publicacion/getById/"+id,
 				success: function (result) {
-					callback(result);
+					callback(result,i);
 				},
 				async: true
 			});

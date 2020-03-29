@@ -19,7 +19,7 @@ public class PublicacionRepositoryImpl implements PublicacionRepositoryCustom {
 	
 	@Override
 	public void addPublicacion(Publicacion publicacion) {
-		Query query = entityManager.createNativeQuery("insert into publicacion values(NEXTVAL('serial'),?,?,?,?,?,?,?,?,?,?,?,?)",Publicacion.class);
+		Query query = entityManager.createNativeQuery("insert into publicacion values(NEXTVAL('serial'),?,?,?,?,?,?,?,?,?,?,?,?,?)",Publicacion.class);
 		 
 		 query.setParameter(1, publicacion.getDescripcion())
 		 	  .setParameter(2, publicacion.getValor() )
@@ -32,7 +32,8 @@ public class PublicacionRepositoryImpl implements PublicacionRepositoryCustom {
 		 	  .setParameter(9, publicacion.getUsuario() )
 		 	  .setParameter(10, publicacion.getNombre() )
 		 	  .setParameter(11, publicacion.getUbicacion() )
-              .setParameter(12, publicacion.getMarca() ).executeUpdate();
+              .setParameter(12, publicacion.getMarca() )
+              .setParameter(13, publicacion.getImagen() ).executeUpdate();
 	}
 
 	@Override
@@ -53,7 +54,7 @@ public class PublicacionRepositoryImpl implements PublicacionRepositoryCustom {
 
 	@Override
 	public void changeState(Publicacion pb, int id) {
-		Query query = entityManager.createNativeQuery("update publicacion set descripcion=?,valor=?,fecha_publicacion=?,fecha_de_subasta=?,usado=?,estado=?,oferta=?,categoria=?,usuario=?,nombre=?,ubicacion=?,marca=? where id=? ",Publicacion.class);
+		Query query = entityManager.createNativeQuery("update publicacion set descripcion=?,valor=?,fecha_publicacion=?,fecha_de_subasta=?,usado=?,estado=?,oferta=?,categoria=?,usuario=?,nombre=?,ubicacion=?,marca=?,imagen=? where id=? ",Publicacion.class);
         
         query.setParameter(1, pb.getDescripcion() )
                 .setParameter(2, pb.getValor() )
@@ -67,7 +68,8 @@ public class PublicacionRepositoryImpl implements PublicacionRepositoryCustom {
                 .setParameter(10, pb.getNombre() )
                 .setParameter(11, pb.getUbicacion() )
                 .setParameter(12, pb.getMarca() )
-                .setParameter(13, id ).executeUpdate();
+                .setParameter(13, pb.getImagen() )
+                .setParameter(14, id ).executeUpdate();
 		
 	}
 

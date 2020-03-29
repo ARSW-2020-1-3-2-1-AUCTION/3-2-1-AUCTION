@@ -64,10 +64,40 @@ var articulo =(function(){
 			$("#nombre").html(art.nombre);
 			$("#ubicacion").html(art.ubicacion);
 			$("#marca").html(art.marca);
+			$("#imagen").html(art.imagen);
+			setImg();
 	}
 	
 	function addToFavorite() {
-		articuloCliente.addToFavorite(document.getElementById('user').innerText,_id);
+		alert(document.getElementById('user').innerText == document.getElementById('usuario').innerText);
+		alert(document.getElementById('user') == document.getElementById('usuario'));
+		if (document.getElementById('user').innerText == document.getElementById('usuario').innerText){
+			alert("No puede añadir a favoritos un artículo que publicó");
+		} else {
+			articuloCliente.addToFavorite(document.getElementById('user').innerText,_id);
+		}
+		
+	}
+	
+	
+	function setImg() {
+		fetch(document.getElementById('imagen').innerText)
+		  .then(res => res.blob()) // Gets the response and returns it as a blob
+		  .then(blob => {
+			// Here's where you get access to the blob
+			// And you can use it for whatever you want
+			// Like calling ref().put(blob)
+
+			// Here, I use it to make an image appear on the page
+			const width = 299;
+			const height = 299;
+			let objectURL = URL.createObjectURL(blob);
+			let myImage = new Image();
+			myImage.src = objectURL;
+			const elem = document.getElementById('myImg').appendChild(myImage)
+			elem.width = width;
+			elem.height = height;
+		});
 	}
 	
 	

@@ -52,7 +52,18 @@ public class Publicacion implements Serializable{
         @Column(name="marca")
         String marca;
         
-        public int getID() {
+        @Column(name="imagen")
+        String imagen;
+        
+        public String getImagen() {
+			return imagen;
+		}
+
+		public void setImagen(String imagen) {
+			this.imagen = imagen;
+		}
+
+		public int getID() {
 			return Id;
 		}
 

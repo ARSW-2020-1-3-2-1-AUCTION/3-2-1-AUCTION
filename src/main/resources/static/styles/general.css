@@ -47,6 +47,15 @@ div.container{
     padding-right: 250px;
     padding-left: 250px;
 }
+div.imagen{
+    border: blue 3px groove;
+	width: 305;
+	height: 305;
+}
+div.imagen2{
+	width: 271;
+	height: 186;
+}
 h5.valor{
 	font-size:medium ;
 }
@@ -72,10 +81,6 @@ label {
 }
 input,label {
     margin: .4rem 0;
-}
-p {
-	border: blue 3px groove;
-	border-left: blue 3px groove;
 }
 esq {
 	color: #ffffff;
