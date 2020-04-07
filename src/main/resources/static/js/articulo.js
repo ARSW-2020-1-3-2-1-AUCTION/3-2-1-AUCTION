@@ -16,29 +16,37 @@ var articulo =(function(){
 
 	
 	function addOferta() {
-		ultimaOferta = document.getElementById('valor').innerText;
+		ultimaOferta = parseInt(document.getElementById('valor').innerText,10);
 		cantidadAPujar = $('#puja').val();
-		saldoUsuario = document.getElementById('saldo').innerText;
-		if (saldoUsuario >= cantidadAPujar) {
-			if (cantidadAPujar > ultimaOferta) {
-				if (cantidadAPujar < (ultimaOferta * 1.05)) {
-					alert("Debe pujar al menos " + (ultimaOferta * 1.05));
-				} else {
-					lista = { valorOfrecido: cantidadAPujar, valorOfertaAutomatica: cantidadAPujar, ofertaAutomatica: false, usuario: document.getElementById('user').innerText };
-					//alert("oferta aceptada por: " + _id);
-					articuloCliente.saveOferta(lista, changeState, cantidadAPujar);
-					alert("Oferta aceptada por: " + cantidadAPujar);
+		saldoUsuario = parseInt(document.getElementById('saldo').innerText,10); 
+		if ("Publicado por: "+document.getElementById('user').innerText == document.getElementById('usuario').innerText){
+			alert("No puede ofertar por un artículo que usted publicó");
+		} else {
+			if (document.getElementById('clock').innerText.charAt(12) == "c") {
+				if (saldoUsuario >= cantidadAPujar) {
+					if (cantidadAPujar > ultimaOferta) {
+						if (cantidadAPujar < (ultimaOferta * 1.05)) {
+							alert("Debe pujar al menos " + (ultimaOferta * 1.05));
+						} else {
+							lista = { valorOfrecido: cantidadAPujar, valorOfertaAutomatica: cantidadAPujar, ofertaAutomatica: false, usuario: document.getElementById('user').innerText };
+							//alert("oferta aceptada por: " + _id);
+							articuloCliente.saveOferta(lista, changeState, cantidadAPujar);
+							alert("Oferta aceptada por: " + cantidadAPujar);
 
-					recargarCliente.recarga(document.getElementById('user').innerText, -(cantidadAPujar));
+							recargarCliente.recarga(document.getElementById('user').innerText, -(cantidadAPujar));
+						}
+					}
+					else {
+						alert("El monto a pujar debe ser mayor al de la última oferta");
+					}
 				}
-			}
-			else {
-				alert("El monto a pujar debe ser mayor al de la ultima oferta");
+				else {
+					alert("No tiene saldo suficiente, recargue más fondos");
+				}
+			} else {
+				alert("Este artículo no se está subastando actualmente");
 			}
 		}
-		else {
-			alert("No tiene saldo suficiente, recargue mas fondos");
-        }
 	}
 	
 	function changeState(result,valorOfrecido) {
@@ -57,7 +65,6 @@ var articulo =(function(){
 			if (art.usado){
 				$("#usado").html("Usado");
 			} else {$("#usado").html("Nuevo");}
-			$("#estado").html(art.estado);
 			articuloCliente.getCliente(art.oferta);
 			$("#categoria").html(art.categoria);
 			$("#usuario").html("Publicado por: "+art.usuario);
@@ -66,13 +73,14 @@ var articulo =(function(){
 			$("#marca").html(art.marca);
 			$("#imagen").html(art.imagen);
 			setImg();
+			var fecha = art.fechadeSubasta.charAt(0)+art.fechadeSubasta.charAt(1)+art.fechadeSubasta.charAt(2)+art.fechadeSubasta.charAt(3)+"-"+art.fechadeSubasta.charAt(5)+art.fechadeSubasta.charAt(6)+"-"+art.fechadeSubasta.charAt(8)+art.fechadeSubasta.charAt(9)+"T"+art.fechadeSubasta.charAt(11)+art.fechadeSubasta.charAt(12)+":"+art.fechadeSubasta.charAt(14)+art.fechadeSubasta.charAt(15);
+			fecha = new Date(fecha);
+			countdown(fecha, 'clock');
 	}
 	
 	function addToFavorite() {
-		alert(document.getElementById('user').innerText == document.getElementById('usuario').innerText);
-		alert(document.getElementById('user') == document.getElementById('usuario'));
-		if (document.getElementById('user').innerText == document.getElementById('usuario').innerText){
-			alert("No puede añadir a favoritos un artículo que publicó");
+		if ("Publicado por: "+document.getElementById('user').innerText == document.getElementById('usuario').innerText){
+			alert("No puede añadir a favoritos un artículo que usted publicó");
 		} else {
 			articuloCliente.addToFavorite(document.getElementById('user').innerText,_id);
 		}
@@ -98,6 +106,46 @@ var articulo =(function(){
 			elem.width = width;
 			elem.height = height;
 		});
+	}
+	
+	const getTime = deadline => {
+		let now = new Date(),
+			faltante = ((deadline - now + 1000)/1000),
+			adicional = faltante+180,
+			segundos = ('0' + Math.floor(faltante % 60)).slice(-2),
+			minutos = ('0' + Math.floor(faltante / 60 % 60)).slice(-2),
+			horas = ('0' + Math.floor(faltante / 3600 % 24)).slice(-2),
+			dias = Math.floor(faltante / (3600 * 24)),
+			segundosAd = ('0' + Math.floor(adicional % 60)).slice(-2),
+			minutosAd = ('0' + Math.floor(adicional / 60 % 60)).slice(-2);
+			
+			return {
+				faltante,
+				segundos,
+				minutos,
+				horas,
+				dias,
+				adicional,
+				minutosAd,
+				segundosAd
+			}
+	};
+	
+	const countdown = (deadline, elem) => {
+		const el = document.getElementById(elem);
+		
+		const timerUpdate = setInterval( () => {
+			let t = getTime(deadline);
+			if (t.faltante > 1){
+				el.innerHTML = "Tiempo para iniciar subasta: "+`${t.dias} Día(s) ${t.horas}h:${t.minutos}m:${t.segundos}s`;
+			} else if (t.adicional > 0) {
+				el.innerHTML = "Tiempo para cerrar la subasta: "+`${t.minutosAd}m:${t.segundosAd}s`;
+			}
+			else {
+				el.innerHTML = "Subasta finalizada"
+				clearInterval(timerUpdate);
+			}
+		}, 1000)
 	}
 	
 	

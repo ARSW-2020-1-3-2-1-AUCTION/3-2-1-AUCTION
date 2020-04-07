@@ -75,9 +75,6 @@ public class PublicacionRepositoryImpl implements PublicacionRepositoryCustom {
 
 	@Override
 	public void setOferta(int valor, int ofertaid, int publicacionId) {
-		System.out.println(valor);
-		System.out.println(ofertaid);
-		System.out.println(publicacionId);
 			Query query = entityManager.createNativeQuery("update publicacion set valor=?,oferta=? where id=?",Publicacion.class);
         
         query.setParameter(1,valor )

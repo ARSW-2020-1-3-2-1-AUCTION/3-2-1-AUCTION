@@ -16,8 +16,6 @@
 
 
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	  <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet"/>
-	  <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css" rel="stylesheet"/>
 	  <link rel="stylesheet" href="./styles/general.css">
 	  
 	  <script src="js/categorias.js"></script>
@@ -117,26 +115,9 @@
 					</select>
 					<br></br>
 					
-					<div><h4>Fecha y hora de subasta:</h4></div>
-			
-					
-						
-								<div class="form-group">
-									<div class='input-group date' id='calendario2'>
-										<input type='text' id='calendario' class="form-control" />
-										<span class="input-group-addon">
-											<span class="glyphicon glyphicon-calendar"></span>
-										</span>
-									</div>
-								</div>
-								<script type="text/javascript">
-									$(function () {
-										$('#calendario2').datetimepicker();
-									});
-								</script>
-							
-					
-					
+					<h4>Fecha y hora de subasta:</h4>
+					<input type="text" placeholder="aaaa/mm/dd hh:mm" id="calendario" />
+					<br></br>
 					
 				</div>
 				
@@ -158,7 +139,7 @@
 			</div>
 		</div>			
 		
-		<cen><button type="button" class="btn btn-primary btn-lg" onclick="publicar1.setValues()">Publicar</button></cen>
+		<cen2><button type="button" class="btn btn-primary btn-lg" onclick="publicar1.setValues()">Publicar</button></cen2>
 		<br></br><br></br><br></br>
 	</body>
 </html>
