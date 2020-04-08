@@ -56,6 +56,24 @@ articuloCliente = (function() {
 				},
 				async: true
 			});
+		},
+		setPujaEnCurso: function(id) {
+			$.ajax({
+				url: "/publicacion/setPujaEnCurso/"+id,
+				type: "PUT",
+				success: function (result) {
+				},
+				async: true
+			});
+		},
+		deletePujaEnCurso: function(id) {
+			$.ajax({
+				url: "/publicacion/deletePujaEnCurso/"+id,
+				type: "DELETE",
+				success: function (result) {
+				},
+				async: true
+			});
 		}
 	};
 

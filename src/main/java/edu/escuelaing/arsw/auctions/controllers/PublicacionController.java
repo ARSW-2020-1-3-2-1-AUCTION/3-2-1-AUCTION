@@ -112,5 +112,40 @@ public class PublicacionController {
 	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);
 	        }
 	    }
+	 	
+	 	@RequestMapping(path = "/setPujaEnCurso/{id}",method = RequestMethod.PUT)	
+	    public ResponseEntity<?> setPujaEnCurso(@PathVariable(name="id") int id){
+	        
+	        try {
+	            publication.setPujaEnCurso(id);
+	            return new ResponseEntity<>(HttpStatus.CREATED);
+	        } catch (Exception ex) {
+	            Logger.getLogger(PublicacionController.class.getName()).log(Level.SEVERE, null, ex);
+	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);
+	        }
+	    }
+	 	
+	 	@RequestMapping(path = "/deletePujaEnCurso/{id}",method = RequestMethod.DELETE)	
+	    public ResponseEntity<?> deletePujaEnCurso(@PathVariable(name="id") int id){
+	        
+	        try {
+	            publication.deletePujaEnCurso(id);
+	            return new ResponseEntity<>(HttpStatus.CREATED);
+	        } catch (Exception ex) {
+	            Logger.getLogger(PublicacionController.class.getName()).log(Level.SEVERE, null, ex);
+	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);
+	        }
+	    }
+	 	
+	 	@RequestMapping(path = "/getPujasEnCurso",method = RequestMethod.GET)
+	    public ResponseEntity<?> getPujasEnCurso(){
+	        
+	        try {
+	            return new ResponseEntity<>(publication.getPujasEnCurso(),HttpStatus.CREATED);
+	        } catch (Exception ex) {
+	            Logger.getLogger(PublicacionController.class.getName()).log(Level.SEVERE, null, ex);
+	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);
+	        }
+	    }
 	
 }

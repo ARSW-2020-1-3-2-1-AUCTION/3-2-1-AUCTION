@@ -15,10 +15,12 @@
 	  
 	  <script src="js/categorias.js"></script>
 	  <script src="js/categoriasCliente.js"></script>
+	  <script src="js/pujasEnCurso.js"></script>
+	  <script src="js/pujasEnCursoCliente.js"></script>
 
 	</head>
 
-	<body onLoad="categorias.setUser();categorias.setHref();categorias.existUsername()">
+	<body onLoad="categorias.setUser();categorias.setHref();categorias.existUsername();pujasEnCurso.getPujasEnCurso()">
 		<div>
 			<h1 class="p-3 mb-2 bg-primary text-white">
 				<header>
@@ -64,9 +66,8 @@
 		</div>
 		<br></br>
 		
-		<div>
-			<h2> Pujas en curso </h2>
-		</div>
+		<h2> Pujas En Curso </h2>
+		<div class="container group" id="pujasEnCursoTable"></div>
 		
 		
 	</body>

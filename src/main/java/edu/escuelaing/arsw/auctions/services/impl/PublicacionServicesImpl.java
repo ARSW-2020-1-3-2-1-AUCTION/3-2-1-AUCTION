@@ -2,6 +2,7 @@ package edu.escuelaing.arsw.auctions.services.impl;
 
 import edu.escuelaing.arsw.auctions.Repository.PublicacionRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -10,13 +11,19 @@ import edu.escuelaing.arsw.auctions.model.Publicacion;
 import edu.escuelaing.arsw.auctions.persistance.AuctionNotFoundException;
 import edu.escuelaing.arsw.auctions.persistance.AuctionPersistanceException;
 import edu.escuelaing.arsw.auctions.services.PublicacionServices;
+import edu.escuelaing.arsw.auctions.cache.AuctionCache;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 @Service("PublicacionServices")
 public class PublicacionServicesImpl implements PublicacionServices {
         
     @Autowired
 	private PublicacionRepository publicacionRepo;
+    
+    @Autowired
+    @Qualifier("AuctionCacheImpl")
+    private AuctionCache AuctionCache;
     
 	@Override
 	public List<Publicacion> getAllPublicaciones() {
@@ -57,6 +64,28 @@ public class PublicacionServicesImpl implements PublicacionServices {
 	@Override
 	public void setOferta(int valor, int ofertaid,int publicacionId) {
 		publicacionRepo.setOferta(valor,ofertaid,publicacionId);
+		
+	}
+
+	@Override
+	public void setPujaEnCurso(int id) {
+		AuctionCache.setPujaEnCurso(id);
+		
+	}
+
+	@Override
+	public List<Publicacion> getPujasEnCurso() {
+		List<Integer> publicaciones = AuctionCache.getPujasEnCurso();
+		List<Publicacion> pujasEnCurso = new ArrayList<>();
+		for (int i : publicaciones) {
+			pujasEnCurso.add(publicacionRepo.findById(i).get());
+		}
+		return pujasEnCurso;
+	}
+
+	@Override
+	public void deletePujaEnCurso(int id) {
+		AuctionCache.deletePujaEnCurso(id);
 		
 	}
 

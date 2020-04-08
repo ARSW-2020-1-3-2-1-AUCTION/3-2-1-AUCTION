@@ -23,5 +23,11 @@ public interface PublicacionServices {
 	public void changeState(Publicacion pb, int id);
 
 	public void setOferta(int valor, int ofertaid, int publicacionId);
+
+	public void setPujaEnCurso(int id);
+	
+	public void deletePujaEnCurso(int id);
+
+	public List<Publicacion> getPujasEnCurso();
 }
 

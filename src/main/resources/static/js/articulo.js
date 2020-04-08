@@ -111,7 +111,7 @@ var articulo =(function(){
 	const getTime = deadline => {
 		let now = new Date(),
 			faltante = ((deadline - now + 1000)/1000),
-			adicional = faltante+180,
+			adicional = faltante+60,
 			segundos = ('0' + Math.floor(faltante % 60)).slice(-2),
 			minutos = ('0' + Math.floor(faltante / 60 % 60)).slice(-2),
 			horas = ('0' + Math.floor(faltante / 3600 % 24)).slice(-2),
@@ -133,6 +133,7 @@ var articulo =(function(){
 	
 	const countdown = (deadline, elem) => {
 		const el = document.getElementById(elem);
+		var primeraVez = true;
 		
 		const timerUpdate = setInterval( () => {
 			let t = getTime(deadline);
@@ -140,9 +141,14 @@ var articulo =(function(){
 				el.innerHTML = "Tiempo para iniciar subasta: "+`${t.dias} Día(s) ${t.horas}h:${t.minutos}m:${t.segundos}s`;
 			} else if (t.adicional > 0) {
 				el.innerHTML = "Tiempo para cerrar la subasta: "+`${t.minutosAd}m:${t.segundosAd}s`;
+				if (primeraVez){
+					articuloCliente.setPujaEnCurso(parseInt(_id,10));
+					primeraVez = false;
+				}
 			}
 			else {
 				el.innerHTML = "Subasta finalizada"
+				articuloCliente.deletePujaEnCurso(parseInt(_id,10));
 				clearInterval(timerUpdate);
 			}
 		}, 1000)
