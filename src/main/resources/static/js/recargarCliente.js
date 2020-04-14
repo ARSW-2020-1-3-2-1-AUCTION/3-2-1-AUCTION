@@ -10,7 +10,6 @@ var recargarCliente =(function(){
 						alert("Recarga exitosa de: " + monto);
 					}
 					else {
-						alert("Se desconto de su cuenta el valor de: " + monto);
 					}
 				},
 				async: true

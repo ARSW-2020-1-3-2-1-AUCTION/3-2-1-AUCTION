@@ -23,7 +23,8 @@ articuloCliente = (function() {
                 data: JSON.stringify(result),
                 contentType: "application/json",
                 success: function () {
-					alert("recargue la página o posterior con sockets");
+					var lista = "hh"
+					stompClient.send("/articulo/"+id, {}, JSON.stringify(lista));
                 }
             })
         },

@@ -18,35 +18,45 @@ var articulo =(function(){
 	function addOferta() {
 		ultimaOferta = parseInt(document.getElementById('valor').innerText,10);
 		cantidadAPujar = $('#puja').val();
-		saldoUsuario = parseInt(document.getElementById('saldo').innerText,10); 
+		saldoUsuario = parseInt(document.getElementById('saldo').innerText,10);
 		if ("Publicado por: "+document.getElementById('user').innerText == document.getElementById('usuario').innerText){
-			alert("No puede ofertar por un artículo que usted publicó");
+			notify ('notifyNoOk',".myAlert-top2","No puede ofertar por un artículo que usted publicó");
 		} else {
 			if (document.getElementById('clock').innerText.charAt(12) == "c") {
 				if (saldoUsuario >= cantidadAPujar) {
 					if (cantidadAPujar > ultimaOferta) {
 						if (cantidadAPujar < (ultimaOferta * 1.05)) {
-							alert("Debe pujar al menos " + (ultimaOferta * 1.05));
+							var texto = "Debe pujar al menos " + (ultimaOferta * 1.05);
+							notify ('notifyNoOk',".myAlert-top2",texto);
 						} else {
 							lista = { valorOfrecido: cantidadAPujar, valorOfertaAutomatica: cantidadAPujar, ofertaAutomatica: false, usuario: document.getElementById('user').innerText };
-							//alert("oferta aceptada por: " + _id);
 							articuloCliente.saveOferta(lista, changeState, cantidadAPujar);
-							alert("Oferta aceptada por: " + cantidadAPujar);
-
+							
+							var texto = "Oferta aceptada por: " + cantidadAPujar + ". Se descontó de su saldo.";
+							notify ('notifyOk',".myAlert-top",texto);
+							
 							recargarCliente.recarga(document.getElementById('user').innerText, -(cantidadAPujar));
 						}
 					}
 					else {
-						alert("El monto a pujar debe ser mayor al de la última oferta");
+						notify ('notifyNoOk',".myAlert-top2","El monto a pujar debe ser mayor al de la última oferta");
 					}
 				}
 				else {
-					alert("No tiene saldo suficiente, recargue más fondos");
+					notify ('notifyNoOk',".myAlert-top2","No tiene saldo suficiente, recargue más fondos");
 				}
 			} else {
-				alert("Este artículo no se está subastando actualmente");
+				notify ('notifyNoOk',".myAlert-top2","Este artículo no se está subastando actualmente");
 			}
 		}
+	}
+	
+	function notify (tipo,alerta,mensaje){
+		document.getElementById(tipo).innerHTML = mensaje;
+		$(alerta).show();
+		setTimeout(function(){
+			$(alerta).hide();
+		}, 5000);
 	}
 	
 	function changeState(result,valorOfrecido) {
@@ -80,13 +90,12 @@ var articulo =(function(){
 	
 	function addToFavorite() {
 		if ("Publicado por: "+document.getElementById('user').innerText == document.getElementById('usuario').innerText){
-			alert("No puede añadir a favoritos un artículo que usted publicó");
+			notify ('notifyNoOk',".myAlert-top2","No puede añadir a favoritos un artículo que usted publicó");
 		} else {
 			articuloCliente.addToFavorite(document.getElementById('user').innerText,_id);
 		}
 		
-	}
-	
+	}	
 	
 	function setImg() {
 		fetch(document.getElementById('imagen').innerText)
@@ -102,7 +111,11 @@ var articulo =(function(){
 			let objectURL = URL.createObjectURL(blob);
 			let myImage = new Image();
 			myImage.src = objectURL;
-			const elem = document.getElementById('myImg').appendChild(myImage)
+			const elem = document.getElementById('myImg');
+			while (elem.hasChildNodes()) {  
+				elem.removeChild(elem.firstChild);
+			}
+			elem.appendChild(myImage)
 			elem.width = width;
 			elem.height = height;
 		});
@@ -111,7 +124,7 @@ var articulo =(function(){
 	const getTime = deadline => {
 		let now = new Date(),
 			faltante = ((deadline - now + 1000)/1000),
-			adicional = faltante+60,
+			adicional = faltante+3000,
 			segundos = ('0' + Math.floor(faltante % 60)).slice(-2),
 			minutos = ('0' + Math.floor(faltante / 60 % 60)).slice(-2),
 			horas = ('0' + Math.floor(faltante / 3600 % 24)).slice(-2),
@@ -154,6 +167,22 @@ var articulo =(function(){
 		}, 1000)
 	}
 	
+	var connectAndSubscribe = function () {
+        console.info('Connecting to WS...');
+        var socket = new SockJS('/stompendpoint');
+        stompClient = Stomp.over(socket);
+        
+        //subscribe to /articulo/id when connections succeed
+        stompClient.connect({}, function (frame) {
+            console.log('Connected: ' + frame);
+            stompClient.subscribe('/articulo/'+_id, function (eventbody) {
+                var theObject = JSON.parse(eventbody.body);
+				articulo.setInfo();
+			});
+        });
+
+    };
+	
 	
 	return {
 		addOferta: addOferta,
@@ -167,6 +196,7 @@ var articulo =(function(){
 		setInfo: function(){
 			articuloCliente.getArticulo(setInformacion,_id);
 		},
-		addToFavorite: addToFavorite
+		addToFavorite: addToFavorite,
+		connectAndSubscribe: connectAndSubscribe
 	};
 })();
