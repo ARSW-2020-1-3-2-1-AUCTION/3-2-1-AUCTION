@@ -27,7 +27,7 @@ categoriasCliente = (function() {
                 success: function() {
                 },
                  error: function(XMLHttpRequest, textStatus, errorThrown) { 
-                    alert("Error: Usted no ha iniciado ninguna sesión"); 
+					categorias.notify('notifyNoOk',".myAlert-top2","Usted no ha iniciado ninguna sesión");
                 }
             });
         },
@@ -38,7 +38,7 @@ categoriasCliente = (function() {
 					callback(result);
                 },
                  error: function(XMLHttpRequest, textStatus, errorThrown) { 
-                    alert("Error: Usted no ha iniciado ninguna sesión");
+					categorias.notify('notifyNoOk',".myAlert-top2","Usted no ha iniciado ninguna sesión");
                 }
             });
         },
@@ -50,7 +50,7 @@ categoriasCliente = (function() {
 					callback(result);
                 },
                  error: function(XMLHttpRequest, textStatus, errorThrown) { 
-                    alert("Error: Usted no ha iniciado ninguna sesión"); 
+                    categorias.notify('notifyNoOk',".myAlert-top2","Usted no ha iniciado ninguna sesión"); 
                 }
             });
         }

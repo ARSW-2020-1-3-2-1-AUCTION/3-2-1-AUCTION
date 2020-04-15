@@ -7,7 +7,8 @@ var recargarCliente =(function(){
 				type: "PUT",
 				success: function () {
 					if (monto > 0) {
-						alert("Recarga exitosa de: " + monto);
+						var texto = "Recarga exitosa por: " + monto;
+						recargar.notify('notifyOk',".myAlert-top",texto);
 					}
 					else {
 					}

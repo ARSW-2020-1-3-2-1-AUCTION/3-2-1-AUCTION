@@ -25,17 +25,25 @@ var publicar1 =(function(){
 		imagen = document.getElementById("imagen").innerText;
 
 		if (nombre=="" || ubicacion=="" || categoria=="" || marca=="" || usado=="" || calendario=="" || descripcion=="" || usuario==""){
-			alert("Para publicar ningún campo puede ser vacío")
+			notify ('notifyNoOk',".myAlert-top2","Para publicar ningún campo puede ser vacío");
 		} else {
 			lista = {nombre: nombre, ubicacion: ubicacion, categoria: categoria, marca: marca,usado: usado, fechadeSubasta: calendario, descripcion: descripcion, valor: valor, usuario:usuario, imagen:imagen};
 			publicar1Cliente.putArticulo(JSON.stringify(lista));
-			alert("Publicación exitosa, ahora puede ver su producto");
+			notify ('notifyOk',".myAlert-top","Publicación exitosa, ahora puede ver su producto");
 			location.href = "/publicaciones.html?user=" + sessionStorage.getItem('currentUser');
 		}		
 	}
 	
 	function setCalendario() {
 		document.getElementById("calendario").datetimepicker();
+	}
+	
+	function notify (tipo,alerta,mensaje){
+		document.getElementById(tipo).innerHTML = mensaje;
+		$(alerta).show();
+		setTimeout(function(){
+			$(alerta).hide();
+		}, 5000);
 	}
 	
 	return {

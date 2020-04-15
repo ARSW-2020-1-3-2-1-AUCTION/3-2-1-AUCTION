@@ -7,11 +7,12 @@ apiCliente= (function(){
                 data: JSON.stringify(usuario),
                 contentType: "application/json",
                 success: function() {
-                  alert("Usuario "+usuario.id+" se creó correctamente");
-                   location.href = "/login.html";
+					var texto = "Usuario "+usuario.id+" se creó correctamente";
+					app.notify('notifyOk',".myAlert-top",texto);
+					location.href = "/login.html";
                 },
                  error: function(XMLHttpRequest, textStatus, errorThrown) { 
-                    alert("Error: El nombre de usuario no esta disponible, intente nuevamente"); 
+					app.notify ('notifyNoOk',".myAlert-top2","El nombre de usuario no está disponible, intente con un userName distinto");
                 }
             });
         },
@@ -23,7 +24,7 @@ apiCliente= (function(){
                   callback(result);
                 },
                  error: function(XMLHttpRequest, textStatus, errorThrown) { 
-                     alert("Usuario no encontrado");
+					 app.notify ('notifyNoOk',".myAlert-top2","Usuario no encontrado");
                      
                 } ,
                 async: true
@@ -39,7 +40,7 @@ apiCliente= (function(){
                 success: function() {
                 },
                  error: function(XMLHttpRequest, textStatus, errorThrown) { 
-                    alert("Error: El nombre de usuario no esta disponible, intente nuevamente"); 
+					app.notify ('notifyNoOk',".myAlert-top2","El nombre de usuario no esta disponible, intente nuevamente");
                 }
             });
         }

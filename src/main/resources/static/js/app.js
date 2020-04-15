@@ -17,7 +17,7 @@ var app =( function (){
             apiCliente.saveCuenta(usuario);
         }
         else{
-            alert("Las contrasenas no coinciden");
+			notify ('notifyNoOk',".myAlert-top2","Las contrasenas no coinciden");
         }      
 	}
 
@@ -33,8 +33,7 @@ var app =( function (){
 		}
 
 		else {
-			alert("Contraseña incorrecta");
-
+			notify ('notifyNoOk',".myAlert-top2","Contraseña incorrecta");
 		}
 	}
 	
@@ -53,11 +52,20 @@ var app =( function (){
 
     }
 	
+	function notify (tipo,alerta,mensaje){
+		document.getElementById(tipo).innerHTML = mensaje;
+		$(alerta).show();
+		setTimeout(function(){
+			$(alerta).hide();
+		}, 5000);
+	}
+	
     return{
         addAcount: addAcount,
 		checkPassword: checkPassword,
         validarUsuario: validarUsuario,
         validarCuenta: validarCuenta,
-        cerrarSesion: cerrarSesion
+        cerrarSesion: cerrarSesion,
+		notify: notify
     };
 })();

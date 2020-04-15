@@ -35,6 +35,7 @@ var articulo =(function(){
 							var texto = "Oferta aceptada por: " + cantidadAPujar + ". Se descontó de su saldo.";
 							notify ('notifyOk',".myAlert-top",texto);
 							
+							$("#saldo").html(saldoUsuario-cantidadAPujar);
 							recargarCliente.recarga(document.getElementById('user').innerText, -(cantidadAPujar));
 						}
 					}
@@ -60,7 +61,9 @@ var articulo =(function(){
 	}
 	
 	function changeState(result,valorOfrecido) {
-		articuloCliente.changeState(result,valorOfrecido,_id);
+		var usuario = document.getElementById('user').innerText;
+		var nombreArt = document.getElementById('nombre').innerText;
+		articuloCliente.changeState(result,valorOfrecido,_id,usuario,nombreArt);
 	}
 	
 	var setId = function (id) {
@@ -177,6 +180,13 @@ var articulo =(function(){
             console.log('Connected: ' + frame);
             stompClient.subscribe('/articulo/'+_id, function (eventbody) {
                 var theObject = JSON.parse(eventbody.body);
+				if ("Publicado por: "+document.getElementById('user').innerText == document.getElementById('usuario').innerText){
+					var texto = "Ofertaron "+theObject.valor+" por "+theObject.nombreArt+". ¿Desea publicar similar?";
+					notify ('notify',".myAlert-top",texto);
+				} else if (theObject.usuario != document.getElementById('user').innerText) {
+					var texto = theObject.usuario+" ofertó "+theObject.valor+" por "+theObject.nombreArt+". ¿Desea ofertar más?";
+					notify ('notify',".myAlert-top",texto);
+				}
 				articulo.setInfo();
 			});
         });
@@ -197,6 +207,7 @@ var articulo =(function(){
 			articuloCliente.getArticulo(setInformacion,_id);
 		},
 		addToFavorite: addToFavorite,
-		connectAndSubscribe: connectAndSubscribe
+		connectAndSubscribe: connectAndSubscribe,
+		notify: notify
 	};
 })();

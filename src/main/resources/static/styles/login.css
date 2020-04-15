@@ -11,3 +11,18 @@ button{
 .r {
 	margin-left: 53px;
 }
+.myAlert-top{
+    position: fixed;
+    top: 5px; 
+    left:2%;
+    width: 96%;
+}
+.myAlert-top2{
+    position: fixed;
+    top: 5px;
+    left:2%;
+    width: 96%;
+}
+.alert{
+    display: none;
+}

@@ -10,12 +10,13 @@ articuloCliente = (function() {
 					callback(result,valorOfrecido)
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    alert("Error al realizar la puja" + textStatus + " " + errorThrown);
-                }   
+					var texto = "Error al realizar la puja" + textStatus + " " + errorThrown;
+					articulo.notify ('notifyNoOk',".myAlert-top2",texto);
+                }
             });
 		},
 
-        changeState: function (result,valorOfrecido,id) {
+        changeState: function (result,valorOfrecido,id,usuario,nombreArt) {
 
             $.ajax({
                 url: "/publicacion/setOferta/"+valorOfrecido+"/"+result+"/"+id,
@@ -23,7 +24,7 @@ articuloCliente = (function() {
                 data: JSON.stringify(result),
                 contentType: "application/json",
                 success: function () {
-					var lista = "hh"
+					var lista = {valor:valorOfrecido , usuario:usuario , nombreArt:nombreArt};
 					stompClient.send("/articulo/"+id, {}, JSON.stringify(lista));
                 }
             })
@@ -53,7 +54,7 @@ articuloCliente = (function() {
 				data: JSON.stringify(usuario),
 				contentType: "application/json",
 				success: function () {
-					alert("Añadido a favoritos con éxito");
+					articulo.notify ('notifyOk',".myAlert-top","Añadido a favoritos con éxito");
 				},
 				async: true
 			});

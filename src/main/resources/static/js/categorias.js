@@ -81,6 +81,14 @@ var categorias =(function(){
 		}
 	}
 	
+	function notify (tipo,alerta,mensaje){
+		document.getElementById(tipo).innerHTML = mensaje;
+		$(alerta).show();
+		setTimeout(function(){
+			$(alerta).hide();
+		}, 5000);
+	}
+	
 	return {
 		setUser: function (){
 			$( "#user" ).html(getUrlVars()["user"]);
@@ -91,7 +99,8 @@ var categorias =(function(){
 		setHref: setHref, 
 		logOut: logOut,
 		existUsername: existUsername,
-		estaLog: estaLog
+		estaLog: estaLog,
+		notify: notify
 	};
 	
 	
