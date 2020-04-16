@@ -101,6 +101,12 @@ h2.valor {
     left:2%;
     width: 96%;
 }
+.myAlert-top3{
+    position: fixed;
+    top: 5px;
+    left:2%;
+    width: 96%;
+}
 .alert{
     display: none;
 }
