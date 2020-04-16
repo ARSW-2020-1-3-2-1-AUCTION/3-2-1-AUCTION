@@ -182,10 +182,10 @@ var articulo =(function(){
                 var theObject = JSON.parse(eventbody.body);
 				if ("Publicado por: "+document.getElementById('user').innerText == document.getElementById('usuario').innerText){
 					var texto = "Ofertaron "+theObject.valor+" por "+theObject.nombreArt+". ¿Desea publicar similar?";
-					notify ('notify',".myAlert-top",texto);
+					notify ('notify',".myAlert-top3",texto);
 				} else if (theObject.usuario != document.getElementById('user').innerText) {
 					var texto = theObject.usuario+" ofertó "+theObject.valor+" por "+theObject.nombreArt+". ¿Desea ofertar más?";
-					notify ('notify',".myAlert-top",texto);
+					notify ('notify',".myAlert-top3",texto);
 				}
 				articulo.setInfo();
 			});
