@@ -99,7 +99,14 @@ var articulo =(function(){
 	
 	function addOfertaAutomatica() {
 		ultimaOferta = parseInt(document.getElementById('valor').innerText,10);
-		cantidadAPujar = ultimaOferta * 1.05;
+		cantidadAPujar = Math.floor(ultimaOferta * 1.05);
+		usuarioConPuja = document.getElementById('oferta').innerText;
+		var respuesta = "";
+		contador = 0;
+		while (usuarioConPuja[contador] != " " || usuarioConPuja[contador + 6] != " " || usuarioConPuja[contador + 11] != " " || usuarioConPuja[contador + 12] != "p") {
+			respuesta = respuesta + usuarioConPuja[contador]
+			contador++;
+		}
 		saldoUsuario = parseInt(document.getElementById('saldo').innerText,10);
 		if (document.getElementById('clock').innerText.charAt(12) == "c") {
 			if (saldoUsuario >= cantidadAPujar) {
@@ -111,6 +118,7 @@ var articulo =(function(){
 				
 				$("#saldo").html(saldoUsuario-cantidadAPujar);
 				recargarCliente.recarga(document.getElementById('user').innerText, -(cantidadAPujar));
+				recargarCliente.recarga(respuesta, ultimaOferta);
 			}
 			else {
 				notify ('notifyNoOk',".myAlert-top2","No tiene saldo suficiente, recargue más fondos");
@@ -233,7 +241,7 @@ var articulo =(function(){
 					var texto = "Ofertaron "+theObject.valor+" por "+theObject.nombreArt+". ¿Desea publicar similar?";
 					notify ('notify',".myAlert-top3",texto);
 				} else if (theObject.usuario != document.getElementById('user').innerText) {
-					var texto = theObject.usuario+" ofertó "+theObject.valor+" por "+theObject.nombreArt+". ¿Desea ofertar más?"+'<button class="otherbutton" id="similar" onclick="articulo.addOfertaAutomatica()">Publicar Similar</button>' ;
+					var texto = theObject.usuario+" ofertó "+theObject.valor+" por "+theObject.nombreArt+". ¿Desea ofertar más?  "+'<button class="otherbutton" id="similar" onclick="articulo.addOfertaAutomatica()">Superar Oferta</button>' ;
 					notify ('notify',".myAlert-top3",texto);
 				}
 				articulo.setInfo();
