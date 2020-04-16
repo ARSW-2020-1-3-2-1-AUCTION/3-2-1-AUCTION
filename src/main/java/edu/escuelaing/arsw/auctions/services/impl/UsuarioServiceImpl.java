@@ -53,8 +53,9 @@ public class UsuarioServiceImpl implements UsuarioServices {
 	}
 
 	@Override
-	public void setSaldo(String id, int saldo) throws AuctionPersistanceException {
+	public int setSaldo(String id, int saldo) throws AuctionPersistanceException {
 		userRepo.setSaldo(id,saldo);
+		return userRepo.getSaldo(id).get(0).getSaldo();
 	}
 
 	@Override

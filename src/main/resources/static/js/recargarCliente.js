@@ -4,9 +4,9 @@ var recargarCliente =(function(){
 		recarga: function (id, monto) {
 			$.ajax({
 				url: "usuario/"+id+"/setSaldo/"+monto,
-				type: "PUT",
-				success: function () {
+				success: function (result) {
 					if (monto > 0) {
+						$("#saldo").html(parseInt(result,10));
 						var texto = "Recarga exitosa por: " + monto;
 						recargar.notify('notifyOk',".myAlert-top",texto);
 					}
