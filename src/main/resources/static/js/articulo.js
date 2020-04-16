@@ -52,6 +52,29 @@ var articulo =(function(){
 		}
 	}
 	
+	function addOfertaAutomatica() {
+		ultimaOferta = parseInt(document.getElementById('valor').innerText,10);
+		cantidadAPujar = ultimaOferta * 1.05;
+		saldoUsuario = parseInt(document.getElementById('saldo').innerText,10);
+		if (document.getElementById('clock').innerText.charAt(12) == "c") {
+			if (saldoUsuario >= cantidadAPujar) {
+				lista = { valorOfrecido: cantidadAPujar, valorOfertaAutomatica: cantidadAPujar, ofertaAutomatica: false, usuario: document.getElementById('user').innerText };
+				articuloCliente.saveOferta(lista, changeState, cantidadAPujar);
+				
+				var texto = "Oferta aceptada por: " + cantidadAPujar + ". Se descontó de su saldo.";
+				notify ('notifyOk',".myAlert-top",texto);
+				
+				$("#saldo").html(saldoUsuario-cantidadAPujar);
+				recargarCliente.recarga(document.getElementById('user').innerText, -(cantidadAPujar));
+			}
+			else {
+				notify ('notifyNoOk',".myAlert-top2","No tiene saldo suficiente, recargue más fondos");
+			}
+		} else {
+			notify ('notifyNoOk',".myAlert-top2","Este artículo no se está subastando actualmente");
+		}
+	}
+	
 	function notify (tipo,alerta,mensaje){
 		document.getElementById(tipo).innerHTML = mensaje;
 		$(alerta).show();
@@ -184,7 +207,7 @@ var articulo =(function(){
 					var texto = "Ofertaron "+theObject.valor+" por "+theObject.nombreArt+". ¿Desea publicar similar?";
 					notify ('notify',".myAlert-top3",texto);
 				} else if (theObject.usuario != document.getElementById('user').innerText) {
-					var texto = theObject.usuario+" ofertó "+theObject.valor+" por "+theObject.nombreArt+". ¿Desea ofertar más?";
+					var texto = theObject.usuario+" ofertó "+theObject.valor+" por "+theObject.nombreArt+". ¿Desea ofertar más?"+'<button class="otherbutton" id="similar" onclick="articulo.addOfertaAutomatica()">Publicar Similar</button>' ;
 					notify ('notify',".myAlert-top3",texto);
 				}
 				articulo.setInfo();
@@ -196,6 +219,7 @@ var articulo =(function(){
 	
 	return {
 		addOferta: addOferta,
+		addOfertaAutomatica: addOfertaAutomatica,
 		setUser: function (){
 			$( "#user" ).html(getUrlVars()["user"]);
 		},
