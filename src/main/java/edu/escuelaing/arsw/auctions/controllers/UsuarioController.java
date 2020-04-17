@@ -66,11 +66,11 @@ public class UsuarioController {
 	    }
 	    
 	
-	    @RequestMapping(value = "/{id}/setSaldo/{saldo}", method = RequestMethod.PUT)
+	    @RequestMapping(value = "/{id}/setSaldo/{saldo}", method = RequestMethod.GET)
 	    public ResponseEntity<?> setSaldo(@PathVariable(name="id") String id,@PathVariable(name="saldo") int saldo) {
 	        try {
-	            user.setSaldo(id,saldo);
-	            return new ResponseEntity<>(HttpStatus.ACCEPTED);
+	            
+	            return new ResponseEntity<>(user.setSaldo(id,saldo),HttpStatus.ACCEPTED);
 
 	        } catch (Exception ex) {
 	        	ex.printStackTrace(System.out);
