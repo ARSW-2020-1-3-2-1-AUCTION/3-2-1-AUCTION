@@ -50,7 +50,10 @@ public class Publicacion implements Serializable{
         String marca;
         
         @Column(name="imagen")
-        String imagen;
+        String imagen;        
+        
+        @Column(name="tiempo")
+        String tiempo;
         
         public String getImagen() {
 			return imagen;
@@ -67,6 +70,15 @@ public class Publicacion implements Serializable{
 		public void setID(int iD) {
 			Id = iD;
 		}
+		
+		public String getTiempo() {
+			return tiempo;
+		}
+
+		public void setTiempo(String tiempo) {
+			this.tiempo = tiempo;
+		}
+
 
 		public int getOferta() {
 			return Oferta;

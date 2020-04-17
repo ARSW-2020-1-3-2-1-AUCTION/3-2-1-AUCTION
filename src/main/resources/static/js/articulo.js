@@ -24,7 +24,7 @@ var articulo =(function(){
 			$("#usado").html("Usado");
 		} else { $("#usado").html("Nuevo"); }
 		articuloCliente.getCliente(art.oferta);
-	
+		$("#tiempo").html(art.tiempo);
 		$("#categoria").html(art.categoria);
 		$("#usuario").html("Publicado por: " + art.usuario);
 		$("#nombre").html(art.nombre);
@@ -183,8 +183,9 @@ var articulo =(function(){
 	
 	const getTime = deadline => {
 		let now = new Date(),
-			faltante = ((deadline - now + 1000)/1000),
-			adicional = faltante+3000,
+			faltante = ((deadline - now + 1000) / 1000),
+			
+			adicional = faltante + parseInt(document.getElementById('tiempo').innerText,10) * 60,
 			segundos = ('0' + Math.floor(faltante % 60)).slice(-2),
 			minutos = ('0' + Math.floor(faltante / 60 % 60)).slice(-2),
 			horas = ('0' + Math.floor(faltante / 3600 % 24)).slice(-2),

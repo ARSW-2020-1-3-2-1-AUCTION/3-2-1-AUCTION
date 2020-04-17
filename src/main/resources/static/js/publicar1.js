@@ -11,6 +11,7 @@ var publicar1 =(function(){
 	var valor = 0;
 	var usuario = "";
 	var imagen = "";
+	var tiempo = "";
 	
 	function setValues() {
 		nombre = document.getElementById("nombre").value;
@@ -23,11 +24,14 @@ var publicar1 =(function(){
 		valor = document.getElementById("valor").value;
 		usuario = document.getElementById("user").innerText;
 		imagen = document.getElementById("imagen").innerText;
+		tiempo = document.getElementById("tiempo").value;
 
-		if (nombre=="" || ubicacion=="" || categoria=="" || marca=="" || usado=="" || calendario=="" || descripcion=="" || usuario==""){
+		if (nombre == "" || ubicacion == "" || categoria == "" || marca == "" || usado == "" || calendario == "" || descripcion == "" || usuario == "" || tiempo == "") {
 			notify ('notifyNoOk',".myAlert-top2","Para publicar ningún campo puede ser vacío");
 		} else {
-			lista = {nombre: nombre, ubicacion: ubicacion, categoria: categoria, marca: marca,usado: usado, fechadeSubasta: calendario, descripcion: descripcion, valor: valor, usuario:usuario, imagen:imagen};
+			lista = {
+				nombre: nombre, ubicacion: ubicacion, categoria: categoria, marca: marca, usado: usado, fechadeSubasta: calendario, descripcion: descripcion, valor: valor, usuario: usuario, imagen: imagen, tiempo: tiempo
+			};
 			publicar1Cliente.putArticulo(JSON.stringify(lista));
 			notify ('notifyOk',".myAlert-top","Publicación exitosa, ahora puede ver su producto");
 			location.href = "/publicaciones.html?user=" + sessionStorage.getItem('currentUser');
