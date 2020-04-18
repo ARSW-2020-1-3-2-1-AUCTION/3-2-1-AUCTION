@@ -29,11 +29,11 @@ articuloCliente = (function() {
                 }
             })
         },
-		getArticulo: function(callback,articuloId) {
+		getArticulo: function(callback,articuloId,state) {
 			$.ajax({
 				url: "publicacion/getById/"+articuloId,
 				success: function (result) {
-					callback(result);
+					callback(result,state);
 				},
 				async: true
 			});

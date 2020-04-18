@@ -45,7 +45,7 @@ var articulos =(function(){
 				let objectURL = URL.createObjectURL(blob);
 				let myImage = new Image();
 				myImage.src = objectURL;
-				const elem = document.getElementById('ima'+i).appendChild(myImage)
+				const elem = document.getElementById('ima'+i).appendChild(myImage);
 				elem.width = width;
 				elem.height = height;
 				

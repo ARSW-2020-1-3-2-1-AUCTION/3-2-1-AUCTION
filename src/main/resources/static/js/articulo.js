@@ -15,7 +15,7 @@ var articulo =(function(){
 		return vars;
 	}
 
-	function setInformacion(art) {
+	function setInformacion(art,state) {
 		$("#descripcion").html(art.descripcion);
 		$("#valor").html(art.valor);
 		$("#fecha_publicacion").html(art.fechaPublicacion);
@@ -31,7 +31,10 @@ var articulo =(function(){
 		$("#ubicacion").html(art.ubicacion);
 		$("#marca").html(art.marca);
 		$("#imagen").html(art.imagen);
-		setImg();
+		if (state == "si"){
+			setImg();
+		}
+		
 		var fecha = art.fechadeSubasta.charAt(0) + art.fechadeSubasta.charAt(1) + art.fechadeSubasta.charAt(2) + art.fechadeSubasta.charAt(3) + "-" + art.fechadeSubasta.charAt(5) + art.fechadeSubasta.charAt(6) + "-" + art.fechadeSubasta.charAt(8) + art.fechadeSubasta.charAt(9) + "T" + art.fechadeSubasta.charAt(11) + art.fechadeSubasta.charAt(12) + ":" + art.fechadeSubasta.charAt(14) + art.fechadeSubasta.charAt(15);
 		fecha = new Date(fecha);
 		countdown(fecha, 'clock');
@@ -172,11 +175,11 @@ var articulo =(function(){
 			let objectURL = URL.createObjectURL(blob);
 			let myImage = new Image();
 			myImage.src = objectURL;
-			const elem = document.getElementById('myImg');
+			const elem = document.getElementById('myImg').appendChild(myImage);
 			while (elem.hasChildNodes()) {  
 				elem.removeChild(elem.firstChild);
+				alert("removio");
 			}
-			elem.appendChild(myImage)
 			elem.width = width;
 			elem.height = height;
 		});
@@ -246,7 +249,7 @@ var articulo =(function(){
 					var texto = theObject.usuario+" ofertó "+theObject.valor+" por "+theObject.nombreArt+". ¿Desea ofertar más?  "+'<button class="otherbutton" id="similar" onclick="articulo.addOfertaAutomatica()">Superar Oferta</button>' ;
 					notify ('notify',".myAlert-top3",texto);
 				}
-				articulo.setInfo();
+				articulo.setInfo('no');
 			});
         });
 
@@ -263,8 +266,8 @@ var articulo =(function(){
 			var id = getUrlVars()["var1"];
 			setId(id);
 		},
-		setInfo: function(){
-			articuloCliente.getArticulo(setInformacion,_id);
+		setInfo: function(state){
+			articuloCliente.getArticulo(setInformacion,_id,state);
 		},
 		addToFavorite: addToFavorite,
 		connectAndSubscribe: connectAndSubscribe,
