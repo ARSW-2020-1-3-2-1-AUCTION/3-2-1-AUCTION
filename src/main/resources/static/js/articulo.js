@@ -71,10 +71,10 @@ var articulo =(function(){
 								var texto = "Oferta aceptada por: " + cantidadAPujar + ". Se descontó de su saldo.";
 								notify('notifyOk', ".myAlert-top", texto);
 
-								$("#saldo").html(saldoUsuario - cantidadAPujar);
+								
 								recargarCliente.recarga(document.getElementById('user').innerText, -(cantidadAPujar));
 								recargarCliente.recarga(respuesta, ultimaOferta);
-
+								$("#saldo").html(saldoUsuario - cantidadAPujar);
 
 							}
 						}
@@ -116,9 +116,10 @@ var articulo =(function(){
 				var texto = "Oferta aceptada por: " + cantidadAPujar + ". Se descontó de su saldo.";
 				notify ('notifyOk',".myAlert-top",texto);
 				
-				$("#saldo").html(saldoUsuario-cantidadAPujar);
+				
 				recargarCliente.recarga(document.getElementById('user').innerText, -(cantidadAPujar));
 				recargarCliente.recarga(respuesta, ultimaOferta);
+				$("#saldo").html(saldoUsuario-cantidadAPujar);
 			}
 			else {
 				notify ('notifyNoOk',".myAlert-top2","No tiene saldo suficiente, recargue más fondos");

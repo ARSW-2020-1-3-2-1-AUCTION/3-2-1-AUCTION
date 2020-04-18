@@ -5,7 +5,7 @@ var recargar =(function(){
 		if (recarga<1){
 			notify ('notifyNoOk',".myAlert-top2","Su recarga tiene que ser mayor a 0");
 		} else {
-			recargarCliente.recarga(document.getElementById("user").innerText,recarga);
+			recargarCliente.recargaDirecta(document.getElementById("user").innerText,recarga);
 		}
 	}
 	
