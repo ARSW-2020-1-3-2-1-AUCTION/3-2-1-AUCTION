@@ -133,3 +133,14 @@ Estos atributos son los que delimitaran las caracteristicas generales, restricci
 
 [Vista escenario ](https://drive.google.com/file/d/1C09_vet5v_hho4koX7ch1eauRwT1YKmG/view)
 
+### Usabilidad:
+
+- Source: Usuario final.
+- Stimulus: Usuario que desea publicar un articulo en la aplicación.
+- Artifact:Frontend, Backend, Base de datos
+- Enviroment: Aplicación bajo condiciones normales
+- Response: La publicación se realiza y se puede visualizar  de manera exitosa.
+- Response Measure: El cliente es capaz de publiar un artículo desde la pagina principal con tan solo 12 clicks.
+
+[Vista escenario ](https://drive.google.com/file/d/1FJPpD62CW7S_7JEQNey18xL7w0t_dXVm/view)
+
