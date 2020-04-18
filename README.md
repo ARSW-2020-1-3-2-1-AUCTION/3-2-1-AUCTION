@@ -117,3 +117,19 @@ Los posibles estados de los artículos son:
 ![](/img/interes.jpg)
 
 Para ver los Mockups completos: https://ninjamock.com/s/DMX1QGx
+
+## **Atributos no funcionales**
+
+Estos atributos son los que delimitaran las caracteristicas generales, restricciones y limitaciones de nuestra aplicación.
+
+### Seguridad:
+
+- Source: Usuario final.
+- Stimulus: Crear un usuario en la aplicación cuya contraseña no pueda ser visualizada por los demas.
+- Artifact:Frontend, Backend, Base de datos
+- Enviroment: Aplicación bajo condiciones normales
+- Response: Las contraseñas deben estar encriptadas.
+- Response Measure: Las contraseñas del usuario deben aparecer en un lenguaje indistinguible para el usuario en la base de datos y en usuario.html.
+
+[Vista escenario ](https://drive.google.com/file/d/1C09_vet5v_hho4koX7ch1eauRwT1YKmG/view)
+
