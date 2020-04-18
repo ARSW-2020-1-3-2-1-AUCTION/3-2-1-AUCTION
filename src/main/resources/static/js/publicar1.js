@@ -23,7 +23,7 @@ var publicar1 =(function(){
 		descripcion = document.getElementById("descripcion").value;
 		valor = document.getElementById("valor").value;
 		usuario = document.getElementById("user").innerText;
-		imagen = document.getElementById("imagen").innerText;
+		imagen = document.getElementById("imagen").value;
 		tiempo = document.getElementById("tiempo").value;
 
 		if (nombre == "" || ubicacion == "" || categoria == "" || marca == "" || usado == "" || calendario == "" || descripcion == "" || usuario == "" || tiempo == "") {
