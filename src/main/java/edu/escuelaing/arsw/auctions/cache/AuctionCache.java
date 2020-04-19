@@ -16,4 +16,6 @@ public interface AuctionCache {
 
 	public List<Integer> getPujasEnCurso();
 
+	public boolean ofertaPermitida(int userName, int ultimaOferta, int cantidadAPujar);
+
 }

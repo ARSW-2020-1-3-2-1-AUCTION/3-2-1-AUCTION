@@ -76,6 +76,15 @@ articuloCliente = (function() {
 				},
 				async: true
 			});
+		},
+		permitida: function(user,ultimaOferta,cantidadAPujar,saldoUsuario,callback,respuesta) {
+			$.ajax({
+				url: "/usuario/ofertaPermitida/"+user+"/"+ultimaOferta+"/"+cantidadAPujar,
+				success: function (result) {
+					callback(result,ultimaOferta,cantidadAPujar,saldoUsuario,respuesta);
+				},
+				async: true
+			});
 		}
 	};
 

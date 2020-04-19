@@ -138,5 +138,17 @@ public class UsuarioController {
 	        }        
 
 	    }
+	    
+	    @RequestMapping(value = "/ofertaPermitida/{userName}/{ultimaOferta}/{cantidadAPujar}", method = RequestMethod.GET)
+	    public ResponseEntity<?> ofertaPermitida(@PathVariable(name="userName") int userName, @PathVariable(name="ultimaOferta") int ultimaOferta, @PathVariable(name="cantidadAPujar") int cantidadAPujar) {
+	        try {
+	        
+	            return new ResponseEntity<>(user.ofertaPermitida(userName,ultimaOferta,cantidadAPujar),HttpStatus.ACCEPTED);
+
+	        } catch (Exception ex) {
+	        	ex.printStackTrace(System.out);
+	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);
+	        }
+	    }
 
 }

@@ -24,5 +24,7 @@ public interface UsuarioServices {
 	public void deleteUsernameCache(String usuario);
 
 	public int getSaldo(String id);
+	
+	public boolean ofertaPermitida(int userName,int ultimaOferta,int cantidadAPujar);
 	    
 }

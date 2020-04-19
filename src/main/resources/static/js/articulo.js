@@ -6,6 +6,23 @@ var articulo =(function(){
 	var cantidadAPujar = 0;
 	var saldoUsuario = 0;
 	var usuarioConPuja = "";
+	
+	function setPermitido(result,ultimaOferta,cantidadAPujar,saldoUsuario,respuesta) {
+		if (result){
+			lista = { valorOfrecido: cantidadAPujar, valorOfertaAutomatica: cantidadAPujar, ofertaAutomatica: false, usuario: document.getElementById('user').innerText };
+			articuloCliente.saveOferta(lista, changeState, cantidadAPujar);
+
+			var texto = "Oferta aceptada por: " + cantidadAPujar + ". Se descontó de su saldo.";
+			notify('notifyOk', ".myAlert-top", texto);
+									
+			recargarCliente.recarga(document.getElementById('user').innerText, -(cantidadAPujar));
+			recargarCliente.recarga(respuesta, ultimaOferta);
+			$("#saldo").html(saldoUsuario - cantidadAPujar);
+		}
+		else {
+			notify('notifyNoOk', ".myAlert-top2", "Alguien subió la apuesta antes que usted");
+		}
+	}
 
 	function getUrlVars() {
 		var vars = {};
@@ -57,36 +74,20 @@ var articulo =(function(){
 		} else {
 			if (document.getElementById('clock').innerText.charAt(12) == "c") {
 				if (saldoUsuario >= cantidadAPujar) {
-
 					if (cantidadAPujar > ultimaOferta) {
-
 						if (document.getElementById('user').innerText != respuesta) {
-
-
 							if (cantidadAPujar < (ultimaOferta * 1.05)) {
 								var texto = "Debe pujar al menos " + (ultimaOferta * 1.05);
 								notify('notifyNoOk', ".myAlert-top2", texto);
 							}
 							else {
-								lista = { valorOfrecido: cantidadAPujar, valorOfertaAutomatica: cantidadAPujar, ofertaAutomatica: false, usuario: document.getElementById('user').innerText };
-								articuloCliente.saveOferta(lista, changeState, cantidadAPujar);
-
-								var texto = "Oferta aceptada por: " + cantidadAPujar + ". Se descontó de su saldo.";
-								notify('notifyOk', ".myAlert-top", texto);
-
-								
-								recargarCliente.recarga(document.getElementById('user').innerText, -(cantidadAPujar));
-								recargarCliente.recarga(respuesta, ultimaOferta);
-								$("#saldo").html(saldoUsuario - cantidadAPujar);
-
+								articuloCliente.permitida(_id,ultimaOferta,cantidadAPujar,saldoUsuario,setPermitido,respuesta);
 							}
 						}
 						else {
 							notify('notifyNoOk', ".myAlert-top2", "Usted posee el producto, no puede pujar de nuevo");
 						}
-
 					}
-
 					else {
 						notify ('notifyNoOk',".myAlert-top2","El monto a pujar debe ser mayor al de la última oferta");
 					}
@@ -113,16 +114,7 @@ var articulo =(function(){
 		saldoUsuario = parseInt(document.getElementById('saldo').innerText,10);
 		if (document.getElementById('clock').innerText.charAt(12) == "c") {
 			if (saldoUsuario >= cantidadAPujar) {
-				lista = { valorOfrecido: cantidadAPujar, valorOfertaAutomatica: cantidadAPujar, ofertaAutomatica: false, usuario: document.getElementById('user').innerText };
-				articuloCliente.saveOferta(lista, changeState, cantidadAPujar);
-				
-				var texto = "Oferta aceptada por: " + cantidadAPujar + ". Se descontó de su saldo.";
-				notify ('notifyOk',".myAlert-top",texto);
-				
-				
-				recargarCliente.recarga(document.getElementById('user').innerText, -(cantidadAPujar));
-				recargarCliente.recarga(respuesta, ultimaOferta);
-				$("#saldo").html(saldoUsuario-cantidadAPujar);
+				articuloCliente.permitida(_id,ultimaOferta,cantidadAPujar,saldoUsuario,setPermitido,respuesta);
 			}
 			else {
 				notify ('notifyNoOk',".myAlert-top2","No tiene saldo suficiente, recargue más fondos");

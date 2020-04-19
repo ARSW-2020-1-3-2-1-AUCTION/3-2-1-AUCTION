@@ -84,4 +84,9 @@ public class UsuarioServiceImpl implements UsuarioServices {
 		return userRepo.getSaldo(id).get(0).getSaldo();
 	}
 
+	@Override
+	public boolean ofertaPermitida(int userName, int ultimaOferta, int cantidadAPujar) {
+		return auctionCache.ofertaPermitida(userName,ultimaOferta,cantidadAPujar);
+	}
+
 }
