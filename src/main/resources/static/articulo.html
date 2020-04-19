@@ -12,7 +12,7 @@
 
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="./styles/general.css">
+	<link rel="stylesheet" href="./styles/articulo.css">
 
 	<script src="js/articulo.js"></script>
 	<script src="js/articuloCliente.js"></script>
@@ -80,47 +80,68 @@
 	</div>
 	<br></br>
 	
-	<cen><h2 id="nombre"></h2></cen>
-	<cen2><button class="otherbutton" id="favoritos" onclick="articulo.addToFavorite()">Añadir a Favoritos</button></cen2>
-	<br></br>
+	<h3 id="nombre"></h3>
+
 	
 	<div class="c">
 		<div class="row" style="margin: 2%">
 			<div class="col-lg-6">
-				<div  class="imagen" id="myImg"></div>
-				<h4 id="marca"></h4>
-				<h4 id="usuario"></h4>				
+				<div class="imagen" id="myImg"></div>
+				<button style=" position:absolute;left: 20%;" class="otherbutton" id="favoritos" onclick="articulo.addToFavorite()">Añadir a Favoritos</button>
+				<br></br>
+				<h4>Descripcion del articulo:</h4>
+				<p style="width: 100%; height: 10em" <h4 id="descripcion"></h4>
 			</div>
 			
 				
 			<div class="col-lg-15">
-				<p style="width: 100%; height: 10em" <h4 id="descripcion"></h4>
-				<h4 id="tiempo"></h4>
-				<h4 id="fecha_de_subasta"></h4>
-				<h4><span id="clock"></span></h4>
-				<h4 id="usado"></h4>
-				<h4 id="ubicacion"></h4>
-				<h4 id="oferta"></h4>
+
+				<section>
+
+					<h4 id="fecha_de_subasta"></h4>
+					<h4><span id="clock"></span></h4>
+
+					<h6 id="tiempo">  </h6>
+					<h6> Minutos de subasta</h6>
+
+
+				</section>
+
+				<section>
+					<h4 id="usuario"></h4>
+					<h4 id="oferta"></h4>
+					<h6>Ciudad: </h6>
+					<h6 id="ubicacion"></h6>
+					<br></br>
+					<h6>Marca: </h6>
+					<h6 id="marca"></h6>
+					<br></br>
+					<h6>Estado: </h6>
+					<h6 id="usado"></h6>
+
+				</section>								
+
+				<section>
+
+					<h2>Valor Actual:</h2>
+					<h2 class="valor" id="valor"></h2>
+
+
+					<form id="Ofertar" action="javascript:articulo.addOferta()">
+						<cen2><input class="inputtype" id="puja" type="number" placeholder="¿Cuánto desea ofertar?" /></cen2>
+						<cen2><button style=" position:relative;left: 18%;" class="otherbutton" id="aceptar">Aceptar</button></cen2>
+					</form>
+
+				</section>
+
+
 			</div>
 		</div>
 	</div>	
 		
 		
 	
-	<cen>
-		<h2>Valor Actual:</h2>
-		<h2 class="valor" id="valor"></h2><br></br>
-
-		<div>
-			<form id="Ofertar" action="javascript:articulo.addOferta()">
-				<cen2><input class="inputtype" id="puja" type="number" placeholder="¿Cuánto desea ofertar?" /></cen2>
-				<cen2><button class="otherbutton" id="aceptar">Aceptar</button></cen2>
-			</form>
-			
-		</div>
 	
-	
-	</cen>
 	<esq id="categoria"></esq>
 	<esq id="fecha_publicacion"></esq>
 	<esq id="imagen"></esq>

@@ -2,10 +2,12 @@ body {
 	min-width: 500px;
 }
 
-div {
-	text-align: right;
-	color: #000000;
+div.c {
+	margin: auto;
+	width: 70%;
 }
+
+
 h1 {
 	width: 100%;
 	min-width: 963px;
@@ -14,6 +16,31 @@ h1 {
 	margin-bottom: 100px;
 }
 
+h2 {
+	text-align: center;
+	font-size: 25;
+}
+
+h6 {
+	font-size: large;
+	font-style: italic;
+	display: inline;
+}
+h3 {
+	color: #000000;
+	margin-left: 240px;
+	font-style: italic;
+}
+
+h5 {
+	margin-left: 30px;
+	color: #000000;
+}
+
+h4 {
+	font-size: large;
+	font-style: italic;
+}
 .left {
 	float: left;
 	margin: 3px;
@@ -26,19 +53,116 @@ h1 {
 	float: right;
 }
 
+div.info {
+	margin-left: 1px;
+	float: left;
+}
+
+h5.info {
+	font-size: large;
+}
+
+div.valor {
+	margin-left: 1px;
+	float: left;
+}
+
+div.container {
+	padding-right: 250px;
+	padding-left: 250px;
+}
+
+div.imagen {
+	border: #b3d7ff8a 2px groove;
+	width: 305;
+	height: 305;
+}
+
+div.imagen2 {
+	width: 271;
+	height: 186;
+}
+
+section {
+	width: 100%;
+	border: 2px solid #e9ecef;
+	padding: 10px;
+
+}
+
+section2 {
+	width: 120%;
+	border: 2px solid #e9ecef;
+	padding: 10px;
+}
+
+h5.valor {
+	font-size: medium;
+}
+
+
+
+cen {
+	margin-left: 50%;
+}
+
+cen2 {
+	margin-left: 20%;
+	font-style: italic;
+}
+
 ul.breadcrumb {
 	background-color: white;
 }
 
-h2 {
-	text-align: center;
-}
-
-h5 {
+a.sesion {
 	margin-left: 30px;
-	color: #000000;
+	color: #0000ff;
 }
 
 .margen {
 	padding: 60px;
+}
+
+label {
+	display: block;
+	font: 1rem 'Fira Sans', sans-serif;
+}
+
+input, label {
+	margin: .4rem 0;
+}
+
+esq {
+	color: #ffffff;
+}
+
+h2.valor {
+	font-size: x-large;
+	font-style:italic;
+}
+
+.myAlert-top {
+	position: fixed;
+	top: 5px;
+	left: 2%;
+	width: 96%;
+}
+
+.myAlert-top2 {
+	position: fixed;
+	top: 5px;
+	left: 2%;
+	width: 96%;
+}
+
+.myAlert-top3 {
+	position: fixed;
+	top: 5px;
+	left: 2%;
+	width: 96%;
+}
+
+.alert {
+	display: none;
 }
