@@ -122,6 +122,17 @@ Para ver los Mockups completos: https://ninjamock.com/s/DMX1QGx
 
 Estos atributos son los que delimitaran las caracteristicas generales, restricciones y limitaciones de nuestra aplicación.
 
+### Disponibilidad
+
+- Source: Usuario final.
+- Stimulus: Ingresar a la aplicación de subastas.
+- Artifact:Frontend, Backend, Base de datos
+- Enviroment: Aplicación bajo condiciones normales
+- Response: Se visualizan las categorias normalmente.
+- Response Measure: Las categorias y demas funcionalidades se cargan en un promedio de 1 segundo.
+
+[Vista escenario ](https://drive.google.com/file/d/175j93QfVCg-DuxfDRKVK78QPesZoIpsV/view)
+
 ### Seguridad:
 
 - Source: Usuario final.
