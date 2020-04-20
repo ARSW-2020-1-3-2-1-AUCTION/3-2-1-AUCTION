@@ -75,7 +75,7 @@ Para ver los Mockups completos: https://ninjamock.com/s/DMX1QGx
 
 ## **Atributos no funcionales**
 
-Estos atributos son los que delimitaran las caracteristicas generales, restricciones y limitaciones de nuestra aplicación.
+Estos atributos son los que delimitarán las características generales, restricciones y limitaciones de nuestra aplicación.
 
 ### Disponibilidad
 
@@ -182,7 +182,7 @@ Escenario 1:
 - Artifact: Frontend, Backend, caché, Base de datos.
 - Enviroment: Aplicación bajo condiciones normales.
 - Response: Solo una persona se queda con la puja y todas las demás son notificadas de quién se quedó con ella.
-- Response Measure: Se informa al usuario ganador el éxito de su publicación y se informa a todos los demás sin clicks adicionales.
+- Response Measure: Se informa al usuario ganador el éxito de su oferta, y a todos los demás, la oferta ganadora sin clicks adicionales en menos de un segundo.
 
 [Vista escenario ](https://drive.google.com/file/d/1-TM3XnqXd5-N12fRK57U_uI7_clbs5P3/view)
 
