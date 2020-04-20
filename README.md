@@ -41,7 +41,7 @@ COMO Comprador
 
 - QUIERO ofertar por los articulos de interes PARA PODER adquirir un bien.
 - QUIERO recargar el saldo de mi cuenta PARA PODER ofertar por los artículos que quiero comprar.
-- QUIERO pujar automaticamente por un articulo de mi interes PARA PODER competir por él cuando no pueda estar presente en el tiempo de subasta.
+- QUIERO pujar automaticamente por un articulo de mi interes PARA PODER competir por él eficientemente.
 - QUIERO ver la fecha y hora de los artículos de mi interés PARA PODER organizar mi participaón en su subasta.
 - QUIERO tener tiempo adicional según la cantidad de pujas PARA PODER tener ventaja sobre cierta cantidad de clientes.
 - QUIERO Ver los diferentes productos por los que estoy ofertando en una sola pantalla PARA PODER llevar un control claro de mis pujas
@@ -59,7 +59,7 @@ Se ha planteado un **digrama de clases** el cual está orientado a resolver los 
 
 ![](/img/Clases.jpg)
 
-Diagrama Entidad-Relación generado por PostgresQL:
+Diagrama **Entidad-Relación** generado por PostgresQL:
 
 ![](/img/entidadRelacion.jpg)
 
@@ -71,51 +71,6 @@ Diagrama Entidad-Relación generado por PostgresQL:
 
 ![](/img/componentes.jpg)
 
-Para satisfacer el requisito de una **interfaz gráfica** agradable y sencilla, se usó la herramienta NinjaMock para diseñar su apariencia, algunas de sus vistas más importantes son:
-
-- Menú inicial en donde se muestran las categorias disponibles:
-
-![](/img/categorias.jpg)
-
-- Seleccionando la categoría automóviles:
-
-![](/img/automoviles.jpg)
-
-- Vista de un producto en específico en donde se ver las opciones de pujas manuales y automáticas:
-
-![](/img/mazda.jpg)
-
-- Artículos favoritos seleccionados, mostrando un calendario con los artículos de interés:
-
-![](/img/favoritos.jpg)
-
-- Información básica para publicar un artículo:
-
-![](/img/publicar1.jpg)
-
-- Segunda vista para publicar un artículo mostrando sugerencias:
-
-![](/img/publicar2.jpg)
-
-- Funcionalidad para publicar un artículo similar solo si su estado es "En Subasta", y notificación con la misma funcionalidad inmediatamente se relice una puja por dicho artículo:
-Los posibles estados de los artículos son:
-
-	- **Activo:** El artículo es visible por todos pero no ha iniciado el timepo de subasta
-
-	- **En Subasta:** El artículo es visible para todos y se puede ofertar por él, está dentro del tiempo de subasta. 
-
-	- **Inactivo:** La subasta del artículo ha finalizado, se puede visualizar el artículo y sus resultados finales únicamente en el histórico del vendedor y el comprador.
-
-![](/img/misPublicaciones.jpg)
-
-- Ventana con las subastas en curso y una notificación de aumento de precio:
-
-![](/img/pujasEnCurso.jpg)
-
-- Fomulario para la sugerencia de nuevos artículos:
-
-![](/img/interes.jpg)
-
 Para ver los Mockups completos: https://ninjamock.com/s/DMX1QGx
 
 ## **Atributos no funcionales**
@@ -124,27 +79,55 @@ Estos atributos son los que delimitaran las caracteristicas generales, restricci
 
 ### Disponibilidad
 
+Escenario 1:
+
 - Source: Usuario final.
 - Stimulus: Ingresar a la aplicación de subastas.
-- Artifact:Frontend, Backend, Base de datos
-- Enviroment: Aplicación bajo condiciones normales
+- Artifact:Frontend, Backend, Base de datos.
+- Enviroment: Aplicación bajo condiciones normales.
 - Response: Se visualizan las categorias normalmente.
 - Response Measure: Las categorias y demas funcionalidades se cargan en un promedio de 1 segundo.
 
 [Vista escenario ](https://drive.google.com/file/d/175j93QfVCg-DuxfDRKVK78QPesZoIpsV/view)
 
+Escenario 2:
+
+- Source: Usuario final.
+- Stimulus: .
+- Artifact: Frontend, Backend, Base de datos.
+- Enviroment: Aplicación bajo condiciones normales.
+- Response: Las contraseñas deben estar encriptadas.
+- Response Measure: Las contraseñas del usuario deben aparecer en un lenguaje indistinguible para el usuario en la base de datos y en usuario.html.
+
+[Vista escenario ]()
+
 ### Seguridad:
+
+Escenario 1:
 
 - Source: Usuario final.
 - Stimulus: Crear un usuario en la aplicación cuya contraseña no pueda ser visualizada por los demas.
-- Artifact:Frontend, Backend, Base de datos
-- Enviroment: Aplicación bajo condiciones normales
+- Artifact:Frontend, Backend, Base de datos.
+- Enviroment: Aplicación bajo condiciones normales.
 - Response: Las contraseñas deben estar encriptadas.
 - Response Measure: Las contraseñas del usuario deben aparecer en un lenguaje indistinguible para el usuario en la base de datos y en usuario.html.
 
 [Vista escenario ](https://drive.google.com/file/d/1C09_vet5v_hho4koX7ch1eauRwT1YKmG/view)
 
+Escenario 2:
+
+- Source: Usuario final.
+- Stimulus: .
+- Artifact: Frontend, Backend, Base de datos.
+- Enviroment: Aplicación bajo condiciones normales.
+- Response: Las contraseñas deben estar encriptadas.
+- Response Measure: Las contraseñas del usuario deben aparecer en un lenguaje indistinguible para el usuario en la base de datos y en usuario.html.
+
+[Vista escenario ]()
+
 ### Usabilidad:
+
+Escenario 1:
 
 - Source: Usuario final.
 - Stimulus: Usuario que desea publicar un articulo en la aplicación.
@@ -155,3 +138,61 @@ Estos atributos son los que delimitaran las caracteristicas generales, restricci
 
 [Vista escenario ](https://drive.google.com/file/d/1FJPpD62CW7S_7JEQNey18xL7w0t_dXVm/view)
 
+Escenario 2:
+
+- Source: Usuario final.
+- Stimulus: .
+- Artifact:Frontend, Backend, Base de datos
+- Enviroment: Aplicación bajo condiciones normales
+- Response: La publicación se realiza y se puede visualizar  de manera exitosa.
+- Response Measure: El cliente es capaz de publiar un artículo desde la pagina principal con tan solo 12 clicks.
+
+[Vista escenario ]()
+
+### Escalabilidad:
+
+Escenario 1:
+
+- Source: Usuario final.
+- Stimulus: .
+- Artifact:Frontend, Backend, Base de datos
+- Enviroment: Aplicación bajo condiciones normales
+- Response: La publicación se realiza y se puede visualizar  de manera exitosa.
+- Response Measure: El cliente es capaz de publiar un artículo desde la pagina principal con tan solo 12 clicks.
+
+[Vista escenario ]()
+
+Escenario 2:
+
+- Source: Usuario final.
+- Stimulus: .
+- Artifact:Frontend, Backend, Base de datos
+- Enviroment: Aplicación bajo condiciones normales
+- Response: La publicación se realiza y se puede visualizar  de manera exitosa.
+- Response Measure: .
+
+[Vista escenario ]()
+
+### Rendimiento:
+
+Escenario 1:
+
+- Source: Usuario final.
+- Stimulus: Soportar la concurrencia de varios usuarios al querer ofertar por un artículo al mismo timpo.
+- Artifact: Frontend, Backend, caché, Base de datos.
+- Enviroment: Aplicación bajo condiciones normales.
+- Response: Solo una persona se queda con la puja y todas las demás son notificadas de quién se quedó con ella.
+- Response Measure: Se informa al usuario ganador el éxito de su publicación y se informa a todos los demás sin clicks adicionales.
+
+[Vista escenario ](https://drive.google.com/file/d/1-TM3XnqXd5-N12fRK57U_uI7_clbs5P3/view)
+
+Escenario 2:
+
+- Source: Usuario final.
+- Stimulus: .
+- Artifact:Frontend, Backend, Base de datos
+- Enviroment: Aplicación bajo condiciones normales
+- Response: La publicación se realiza y se puede visualizar  de manera exitosa.
+- Response Measure: El cliente es capaz de publiar un artículo desde la pagina principal con tan solo 12 clicks.
+
+[Vista escenario ]()
