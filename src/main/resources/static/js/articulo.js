@@ -186,6 +186,7 @@ var articulo =(function(){
 			minutos = ('0' + Math.floor(faltante / 60 % 60)).slice(-2),
 			horas = ('0' + Math.floor(faltante / 3600 % 24)).slice(-2),
 			dias = Math.floor(faltante / (3600 * 24)),
+			horasAd = ('0' + Math.floor(adicional / 60 / 60 % 60)).slice(-2),
 			segundosAd = ('0' + Math.floor(adicional % 60)).slice(-2),
 			minutosAd = ('0' + Math.floor(adicional / 60 % 60)).slice(-2);
 			
@@ -197,7 +198,8 @@ var articulo =(function(){
 				dias,
 				adicional,
 				minutosAd,
-				segundosAd
+				segundosAd,
+				horasAd
 			}
 	};
 	
@@ -210,7 +212,7 @@ var articulo =(function(){
 			if (t.faltante > 1){
 				el.innerHTML = "Tiempo para iniciar subasta: "+`${t.dias} Día(s) ${t.horas}h:${t.minutos}m:${t.segundos}s`;
 			} else if (t.adicional > 0) {
-				el.innerHTML = "Tiempo para cerrar la subasta: "+`${t.minutosAd}m:${t.segundosAd}s`;
+				el.innerHTML = "Tiempo para cerrar la subasta: " + `${t.horasAd}h:${t.minutosAd}m:${t.segundosAd}s`;
 				if (primeraVez){
 					articuloCliente.setPujaEnCurso(parseInt(_id,10));
 					primeraVez = false;
