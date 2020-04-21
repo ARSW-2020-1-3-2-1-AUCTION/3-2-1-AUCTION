@@ -193,6 +193,6 @@ Escenario 2:
 - Artifact:Frontend, Backend, Base de datos
 - Enviroment: Aplicación bajo condiciones normales
 - Response: La publicación se realiza y se puede visualizar  de manera exitosa.
-- Response Measure: El cliente es capaz de publiar un artículo desde la pagina principal con tan solo 12 clicks.
+- Response Measure: El cliente es capaz de publiar un artículo desde la pagina principal con tan solo 2 clicks.
 
 [Vista escenario ]()
