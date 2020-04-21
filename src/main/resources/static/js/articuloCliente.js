@@ -1,13 +1,13 @@
 articuloCliente = (function() {
 	return {
-		saveOferta: function (Oferta,callback,valorOfrecido) {
+		saveOferta: function (Oferta,callback,valorOfrecido,respuesta,ultimaOferta) {
             $.ajax({
                 url: "/oferta",
                 type: "POST",
                 data: JSON.stringify(Oferta),
                 contentType: "application/json",
                 success: function (result) {
-					callback(result,valorOfrecido)
+					callback(result,valorOfrecido,respuesta,ultimaOferta)
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
 					var texto = "Error al realizar la puja" + textStatus + " " + errorThrown;
@@ -16,7 +16,7 @@ articuloCliente = (function() {
             });
 		},
 
-        changeState: function (result,valorOfrecido,id,usuario,nombreArt) {
+        changeState: function (result,valorOfrecido,id,usuario,nombreArt,respuesta,ultimaOferta) {
 
             $.ajax({
                 url: "/publicacion/setOferta/"+valorOfrecido+"/"+result+"/"+id,
@@ -24,7 +24,7 @@ articuloCliente = (function() {
                 data: JSON.stringify(result),
                 contentType: "application/json",
                 success: function () {
-					var lista = {valor:valorOfrecido , usuario:usuario , nombreArt:nombreArt};
+					var lista = {valor:valorOfrecido , usuario:usuario , nombreArt:nombreArt , UserADevolverSaldo:respuesta , valorADevolver:ultimaOferta};
 					stompClient.send("/articulo/"+id, {}, JSON.stringify(lista));
                 }
             })

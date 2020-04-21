@@ -10,7 +10,7 @@ var articulo =(function(){
 	function setPermitido(result,ultimaOferta,cantidadAPujar,saldoUsuario,respuesta) {
 		if (result){
 			lista = { valorOfrecido: cantidadAPujar, valorOfertaAutomatica: cantidadAPujar, ofertaAutomatica: false, usuario: document.getElementById('user').innerText };
-			articuloCliente.saveOferta(lista, changeState, cantidadAPujar);
+			articuloCliente.saveOferta(lista, changeState, cantidadAPujar,respuesta,ultimaOferta);
 
 			var texto = "Oferta aceptada por: " + cantidadAPujar + ". Se descontó de su saldo.";
 			notify('notifyOk', ".myAlert-top", texto);
@@ -132,10 +132,10 @@ var articulo =(function(){
 		}, 5000);
 	}
 	
-	function changeState(result,valorOfrecido) {
+	function changeState(result,valorOfrecido,respuesta,ultimaOferta) {
 		var usuario = document.getElementById('user').innerText;
 		var nombreArt = document.getElementById('nombre').innerText;
-		articuloCliente.changeState(result,valorOfrecido,_id,usuario,nombreArt);
+		articuloCliente.changeState(result,valorOfrecido,_id,usuario,nombreArt,respuesta,ultimaOferta);
 	}
 	
 	var setId = function (id) {
@@ -234,6 +234,9 @@ var articulo =(function(){
             console.log('Connected: ' + frame);
             stompClient.subscribe('/articulo/'+_id, function (eventbody) {
                 var theObject = JSON.parse(eventbody.body);
+				if (theObject.UserADevolverSaldo == document.getElementById('user').innerText) {
+					$("#saldo").html(parseInt(theObject.valorADevolver,10) + parseInt(document.getElementById('saldo').innerText,10));
+				}
 				if ("Publicado por: "+document.getElementById('user').innerText == document.getElementById('usuario').innerText){
 					var texto = "Ofertaron "+theObject.valor+" por "+theObject.nombreArt+". ¿Desea publicar similar?";
 					notify ('notify',".myAlert-top3",texto);
