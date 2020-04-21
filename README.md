@@ -86,18 +86,18 @@ Escenario 1:
 - Artifact:Frontend, Backend, Base de datos.
 - Enviroment: Aplicación bajo condiciones normales.
 - Response: Se visualizan las categorias normalmente.
-- Response Measure: Las categorias y demas funcionalidades se cargan en un promedio de 1 segundo.
+- Response Measure: Las categorias y demás funcionalidades se cargan en un promedio de 1 segundo.
 
 [Vista escenario ](https://drive.google.com/file/d/175j93QfVCg-DuxfDRKVK78QPesZoIpsV/view)
 
 Escenario 2:
 
 - Source: Usuario final.
-- Stimulus: .
+- Stimulus: Ingresar a la aplicación de subastas.
 - Artifact: Frontend, Backend, Base de datos.
-- Enviroment: Aplicación bajo condiciones normales.
-- Response: Las contraseñas deben estar encriptadas.
-- Response Measure: Las contraseñas del usuario deben aparecer en un lenguaje indistinguible para el usuario en la base de datos y en usuario.html.
+- Enviroment: Aplicación bajo condiciones de estrés.
+- Response: La aplicación funciona con normalidad.
+- Response Measure: Las categorias y demás funcionalidades siguen cargándose en un promedio de 1 segundo.
 
 [Vista escenario ]()
 
@@ -106,10 +106,10 @@ Escenario 2:
 Escenario 1:
 
 - Source: Usuario final.
-- Stimulus: Crear un usuario en la aplicación cuya contraseña no pueda ser visualizada por los demas.
-- Artifact:Frontend, Backend, Base de datos.
+- Stimulus: Crear un usuario en la aplicación.
+- Artifact: Frontend, Backend, Base de datos.
 - Enviroment: Aplicación bajo condiciones normales.
-- Response: Las contraseñas deben estar encriptadas.
+- Response: Las contraseñas deben estar cifradas.
 - Response Measure: Las contraseñas del usuario deben aparecer en un lenguaje indistinguible para el usuario en la base de datos y en usuario.html.
 
 [Vista escenario ](https://drive.google.com/file/d/1C09_vet5v_hho4koX7ch1eauRwT1YKmG/view)
@@ -117,11 +117,11 @@ Escenario 1:
 Escenario 2:
 
 - Source: Usuario final.
-- Stimulus: .
-- Artifact: Frontend, Backend, Base de datos.
+- Stimulus: Ingresar a funcionalidades después de haber cerrado sesión.
+- Artifact: Frontend, Backend, caché.
 - Enviroment: Aplicación bajo condiciones normales.
-- Response: Las contraseñas deben estar encriptadas.
-- Response Measure: Las contraseñas del usuario deben aparecer en un lenguaje indistinguible para el usuario en la base de datos y en usuario.html.
+- Response: No se permite ver el saldo del usuario ni ingresar a las funcionalidades de publicar y ofertar después de cerrar sesión.
+- Response Measure: Se puede cerrar sesión en un click sin importar la página en donde se encuentre.
 
 [Vista escenario ]()
 
@@ -130,18 +130,18 @@ Escenario 2:
 Escenario 1:
 
 - Source: Usuario final.
-- Stimulus: Usuario que desea publicar un articulo en la aplicación.
-- Artifact:Frontend, Backend, Base de datos
-- Enviroment: Aplicación bajo condiciones normales
-- Response: La publicación se realiza y se puede visualizar  de manera exitosa.
-- Response Measure: El cliente es capaz de publiar un artículo desde la pagina principal con tan solo 12 clicks.
+- Stimulus: Publicar un artículo en la aplicación.
+- Artifact: Frontend, Backend, Base de datos.
+- Enviroment: Aplicación bajo condiciones normales.
+- Response: La publicación se realiza y se puede visualizar de manera exitosa.
+- Response Measure: El cliente es capáz de publiar un artículo desde la página principal con tan solo 2 clicks.
 
 [Vista escenario ](https://drive.google.com/file/d/1FJPpD62CW7S_7JEQNey18xL7w0t_dXVm/view)
 
 Escenario 2:
 
 - Source: Usuario final.
-- Stimulus: Ofertar por un artículo de forma rápida y automática.
+- Stimulus: Ofertar por un artículo utilizando la puja automática.
 - Artifact: Frontend, Backend, Base de datos.
 - Enviroment: Aplicación bajo condiciones normales.
 - Response: Aparece una notificación en pantalla del artículo, el usuario y el valor por el que pujó, junto con un botón para pujar por este artículo y su valor automático asociado.
@@ -153,23 +153,23 @@ Escenario 2:
 
 Escenario 1:
 
-- Source: Usuario final.
-- Stimulus: .
-- Artifact:Frontend, Backend, Base de datos
-- Enviroment: Aplicación bajo condiciones normales
-- Response: La publicación se realiza y se puede visualizar  de manera exitosa.
-- Response Measure: El cliente es capaz de publiar un artículo desde la pagina principal con tan solo 12 clicks.
+- Source: Usuarios finales.
+- Stimulus: Sobrecargar la cantidad de usuarios finales.
+- Artifact: Heroku.
+- Enviroment: Aplicación bajo estrés.
+- Response: El dyno escala verticalmente según la sobrecarga de usuarios.
+- Response Measure: El tiempo de respuesta de cada usuario no aumenta, sigue siendo aproximadamente de un segundo.
 
 [Vista escenario ]()
 
 Escenario 2:
 
-- Source: Usuario final.
-- Stimulus: .
-- Artifact:Frontend, Backend, Base de datos
-- Enviroment: Aplicación bajo condiciones normales
-- Response: La publicación se realiza y se puede visualizar  de manera exitosa.
-- Response Measure: .
+- Source: Usuarios finales.
+- Stimulus: Sobrecargar la cantidad de usuarios finales.
+- Artifact: Heroku.
+- Enviroment: Aplicación bajo estrés.
+- Response: Se escala horizontalmente según la sobrecarga de usuarios implementando otros dynos.
+- Response Measure: El tiempo de respuesta de cada usuario no aumenta, sigue siendo aproximadamente de un segundo.
 
 [Vista escenario ]()
 
@@ -178,7 +178,7 @@ Escenario 2:
 Escenario 1:
 
 - Source: Usuario final.
-- Stimulus: Soportar la concurrencia de varios usuarios al querer ofertar por un artículo al mismo timpo.
+- Stimulus: Más de un usuario oferta por el mismo producto al mismo tiempo.
 - Artifact: Frontend, Backend, caché, Base de datos.
 - Enviroment: Aplicación bajo condiciones normales.
 - Response: Solo una persona se queda con la puja y todas las demás son notificadas de quién se quedó con ella.
@@ -189,10 +189,10 @@ Escenario 1:
 Escenario 2:
 
 - Source: Usuario final.
-- Stimulus: .
-- Artifact:Frontend, Backend, Base de datos
-- Enviroment: Aplicación bajo condiciones normales
-- Response: La publicación se realiza y se puede visualizar  de manera exitosa.
-- Response Measure: El cliente es capaz de publiar un artículo desde la pagina principal con tan solo 2 clicks.
+- Stimulus: Ofertar por un producto.
+- Artifact: Frontend, Backend, Base de datos.
+- Enviroment: Aplicación bajo condiciones normales.
+- Response: Todos los usuarios reciben una notificación de las pujas sin importar la página en donde se encuentren.
+- Response Measure: Recibir la notificación sin clicks adicionales estando en cualquier página.
 
 [Vista escenario ]()
