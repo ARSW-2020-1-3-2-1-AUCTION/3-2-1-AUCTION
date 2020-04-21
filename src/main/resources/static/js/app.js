@@ -9,15 +9,27 @@ var app =( function (){
 	var addAcount = function(){
         var id = $('#id').val();
         var contrasena = $('#contrasena').val();
-        var verificacion = $('#nuevacontrasena').val();  
+        var verificacion = $('#nuevacontrasena').val();
+		var sinEspacio = true;
+		var i;
 		
-        if (contrasena == verificacion){
+		for (i = 0; i < id.length ; i++){
+			if(id.charAt(i) == " "){
+				sinEspacio = false;
+			}
+		}
+		
+        if (contrasena == verificacion && sinEspacio){
             var hash=CryptoJS.SHA256(contrasena);
             var usuario = { "id": id, "contrasena": hash.toString(), "saldo": 0,"puntuacion":5 };
             apiCliente.saveCuenta(usuario);
         }
         else{
-			notify ('notifyNoOk',".myAlert-top2","Las contrasenas no coinciden");
+			if (!sinEspacio){
+				notify ('notifyNoOk',".myAlert-top2","El UserName no puede tener espacios");
+			} else {
+				notify ('notifyNoOk',".myAlert-top2","Las contraseñas no coinciden");
+			}
         }      
 	}
 
