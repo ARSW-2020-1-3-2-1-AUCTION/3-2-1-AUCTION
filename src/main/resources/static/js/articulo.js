@@ -76,8 +76,8 @@ var articulo =(function(){
 				if (saldoUsuario >= cantidadAPujar) {
 					if (cantidadAPujar > ultimaOferta) {
 						if (document.getElementById('user').innerText != respuesta) {
-							if (cantidadAPujar < (ultimaOferta * 1.05)) {
-								var texto = "Debe pujar al menos " + (ultimaOferta * 1.05);
+							if (cantidadAPujar < (Math.floor(ultimaOferta * 1.05))) {
+								var texto = "Debe pujar al menos " + Math.floor(ultimaOferta * 1.05);
 								notify('notifyNoOk', ".myAlert-top2", texto);
 							}
 							else {
@@ -129,7 +129,7 @@ var articulo =(function(){
 		$(alerta).show();
 		setTimeout(function(){
 			$(alerta).hide();
-		}, 5000);
+		}, 10000);
 	}
 	
 	function changeState(result,valorOfrecido,respuesta,ultimaOferta) {
@@ -241,7 +241,7 @@ var articulo =(function(){
 					var texto = "Ofertaron "+theObject.valor+" por "+theObject.nombreArt+". ¿Desea publicar similar?";
 					notify ('notify',".myAlert-top3",texto);
 				} else if (theObject.usuario != document.getElementById('user').innerText) {
-					var texto = theObject.usuario+" ofertó "+theObject.valor+" por "+theObject.nombreArt+". ¿Desea ofertar más?  "+'<button class="otherbutton" id="similar" onclick="articulo.addOfertaAutomatica()">Superar Oferta</button>' ;
+					var texto = theObject.usuario+" ofertó "+theObject.valor+" por "+theObject.nombreArt+". ¿Desea ofertar "+Math.floor(parseInt(theObject.valor,10)*1.05)+"?  "+'<button class="otherbutton" id="similar" onclick="articulo.addOfertaAutomatica()">Superar Oferta</button>' ;
 					notify ('notify',".myAlert-top3",texto);
 				}
 				articulo.setInfo('no');
