@@ -79,18 +79,18 @@ Estos atributos son los que delimitarán las características generales, restric
 
 ### Disponibilidad
 
-Escenario 1:
+Escenario 1: Ingresar correctamente a la página.
 
 - Source: Usuario final.
 - Stimulus: Ingresar a la aplicación de subastas.
-- Artifact:Frontend, Backend, Base de datos.
+- Artifact: Frontend, Backend, Base de datos.
 - Enviroment: Aplicación bajo condiciones normales.
 - Response: Se visualizan las categorias normalmente.
 - Response Measure: Las categorias y demás funcionalidades se cargan en un promedio de 1 segundo.
 
 [Vista escenario ](https://drive.google.com/file/d/175j93QfVCg-DuxfDRKVK78QPesZoIpsV/view)
 
-Escenario 2:
+Escenario 2: Ingresar correctamente a la página bajo estrés.
 
 - Source: Usuario final.
 - Stimulus: Ingresar a la aplicación de subastas.
@@ -103,7 +103,7 @@ Escenario 2:
 
 ### Seguridad:
 
-Escenario 1:
+Escenario 1: Cifrar contraseñas.
 
 - Source: Usuario final.
 - Stimulus: Crear un usuario en la aplicación.
@@ -114,7 +114,7 @@ Escenario 1:
 
 [Vista escenario ](https://drive.google.com/file/d/1C09_vet5v_hho4koX7ch1eauRwT1YKmG/view)
 
-Escenario 2:
+Escenario 2: Bloquear Funcionalidades al cerrar sesión.
 
 - Source: Usuario final.
 - Stimulus: Ingresar a funcionalidades después de haber cerrado sesión.
@@ -127,7 +127,7 @@ Escenario 2:
 
 ### Usabilidad:
 
-Escenario 1:
+Escenario 1: Publicar artículos.
 
 - Source: Usuario final.
 - Stimulus: Publicar un artículo en la aplicación.
@@ -138,7 +138,7 @@ Escenario 1:
 
 [Vista escenario ](https://drive.google.com/file/d/1FJPpD62CW7S_7JEQNey18xL7w0t_dXVm/view)
 
-Escenario 2:
+Escenario 2: Pujar automáticamente por un producto.
 
 - Source: Usuario final.
 - Stimulus: Ofertar por un artículo utilizando la puja automática.
@@ -151,7 +151,7 @@ Escenario 2:
 
 ### Escalabilidad:
 
-Escenario 1:
+Escenario 1: Escalabilidad vertical.
 
 - Source: Usuarios finales.
 - Stimulus: Sobrecargar la cantidad de usuarios finales.
@@ -162,7 +162,7 @@ Escenario 1:
 
 [Vista escenario ]()
 
-Escenario 2:
+Escenario 2: Escalabilidad horizontal.
 
 - Source: Usuarios finales.
 - Stimulus: Sobrecargar la cantidad de usuarios finales.
@@ -175,7 +175,7 @@ Escenario 2:
 
 ### Rendimiento:
 
-Escenario 1:
+Escenario 1: Ofertar concurrentemente.
 
 - Source: Usuario final.
 - Stimulus: Más de un usuario oferta por el mismo producto al mismo tiempo.
@@ -186,13 +186,13 @@ Escenario 1:
 
 [Vista escenario ](https://drive.google.com/file/d/1-TM3XnqXd5-N12fRK57U_uI7_clbs5P3/view)
 
-Escenario 2:
+Escenario 2: Conexión a socket persistente en toda la aplicación.
 
 - Source: Usuario final.
 - Stimulus: Ofertar por un producto.
 - Artifact: Frontend, Backend, Base de datos.
 - Enviroment: Aplicación bajo condiciones normales.
-- Response: Todos los usuarios reciben una notificación de las pujas sin importar la página en donde se encuentren.
+- Response: Todos los usuarios reciben notificaciones de las pujas sin importar la página en donde se encuentren.
 - Response Measure: Recibir la notificación sin clicks adicionales estando en cualquier página.
 
 [Vista escenario ]()
