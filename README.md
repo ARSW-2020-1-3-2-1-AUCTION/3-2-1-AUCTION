@@ -141,13 +141,13 @@ Escenario 1:
 Escenario 2:
 
 - Source: Usuario final.
-- Stimulus: .
-- Artifact:Frontend, Backend, Base de datos
-- Enviroment: Aplicación bajo condiciones normales
-- Response: La publicación se realiza y se puede visualizar  de manera exitosa.
-- Response Measure: El cliente es capaz de publiar un artículo desde la pagina principal con tan solo 12 clicks.
+- Stimulus: Ofertar por un artículo de forma rápida y automática.
+- Artifact: Frontend, Backend, Base de datos.
+- Enviroment: Aplicación bajo condiciones normales.
+- Response: Aparece una notificación en pantalla del artículo, el usuario y el valor por el que pujó, junto con un botón para pujar por este artículo y su valor automático asociado.
+- Response Measure: El usuario puede hacer una oferta con el valor mínimo a pujar dentro de los 10 segundos posteriores a la puja de otro usuario.
 
-[Vista escenario ]()
+[Vista escenario ](https://drive.google.com/file/d/19g02OHWkvh9Rp6udgEPVu8lNsPvCoYOh/view?usp=sharing)
 
 ### Escalabilidad:
 
