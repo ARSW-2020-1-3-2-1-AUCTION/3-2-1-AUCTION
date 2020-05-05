@@ -7,6 +7,8 @@
 
 	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	  <script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
+	  <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+	  <script src="/webjars/stomp-websocket/stomp.min.js"></script>
 	  
 	  
 	  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
@@ -22,7 +24,7 @@
 
 	</head>
 
-	<body onLoad="categorias.setUser();categorias.setHref();categorias.existUsername()">
+	<body onLoad="categorias.setUser();categorias.setHref();categorias.existUsername();publicar1.connectAndSubscribe()">
 		<div>
 			<h1 class="p-3 mb-2 bg-primary text-white">
 				<header>
@@ -43,6 +45,9 @@
 			</div>
 			<div class="myAlert-top2 alert alert-danger" id="notifyNoOk">
 			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			</div>
+			<div class="myAlert-top3 alert alert-primary" id="notify">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			</div>
 		   
 		   <div>

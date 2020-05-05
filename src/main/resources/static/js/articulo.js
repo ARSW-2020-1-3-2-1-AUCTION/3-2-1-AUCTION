@@ -135,7 +135,7 @@ var articulo =(function(){
 	function changeState(result,valorOfrecido,respuesta,ultimaOferta) {
 		var usuario = document.getElementById('user').innerText;
 		var nombreArt = document.getElementById('nombre').innerText;
-		articuloCliente.changeState(result,valorOfrecido,_id,usuario,nombreArt,respuesta,ultimaOferta);
+		articuloCliente.changeState(result,valorOfrecido,_id,usuario,nombreArt,respuesta,ultimaOferta,document.getElementById('usuario').innerText);
 	}
 	
 	var setId = function (id) {
@@ -231,15 +231,15 @@ var articulo =(function(){
         var socket = new SockJS('/stompendpoint');
         stompClient = Stomp.over(socket);
         
-        //subscribe to /articulo/id when connections succeed
+        //subscribe to /articulo connections succeed
         stompClient.connect({}, function (frame) {
             console.log('Connected: ' + frame);
-            stompClient.subscribe('/articulo/'+_id, function (eventbody) {
+            stompClient.subscribe('/articulo', function (eventbody) {
                 var theObject = JSON.parse(eventbody.body);
 				if (theObject.UserADevolverSaldo == document.getElementById('user').innerText) {
 					$("#saldo").html(parseInt(theObject.valorADevolver,10) + parseInt(document.getElementById('saldo').innerText,10));
 				}
-				if ("Publicado por: "+document.getElementById('user').innerText == document.getElementById('usuario').innerText){
+				if ("Publicado por: "+document.getElementById('user').innerText == theObject.publicadoPor){
 					var texto = "Ofertaron "+theObject.valor+" por "+theObject.nombreArt+". ¿Desea publicar similar?";
 					notify ('notify',".myAlert-top3",texto);
 				} else if (theObject.usuario != document.getElementById('user').innerText) {

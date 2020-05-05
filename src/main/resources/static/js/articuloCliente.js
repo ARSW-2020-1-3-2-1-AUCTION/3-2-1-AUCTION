@@ -16,7 +16,7 @@ articuloCliente = (function() {
             });
 		},
 
-        changeState: function (result,valorOfrecido,id,usuario,nombreArt,respuesta,ultimaOferta) {
+        changeState: function (result,valorOfrecido,id,usuario,nombreArt,respuesta,ultimaOferta,publicadoPor) {
 
             $.ajax({
                 url: "/publicacion/setOferta/"+valorOfrecido+"/"+result+"/"+id,
@@ -24,8 +24,8 @@ articuloCliente = (function() {
                 data: JSON.stringify(result),
                 contentType: "application/json",
                 success: function () {
-					var lista = {valor:valorOfrecido , usuario:usuario , nombreArt:nombreArt , UserADevolverSaldo:respuesta , valorADevolver:ultimaOferta};
-					stompClient.send("/articulo/"+id, {}, JSON.stringify(lista));
+					var lista = {valor:valorOfrecido , usuario:usuario , nombreArt:nombreArt , UserADevolverSaldo:respuesta , valorADevolver:ultimaOferta, publicadoPor:publicadoPor};
+					stompClient.send("/articulo", {}, JSON.stringify(lista));
                 }
             })
         },
