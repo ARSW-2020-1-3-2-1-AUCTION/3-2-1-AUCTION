@@ -123,7 +123,7 @@ Escenario 2: Bloquear Funcionalidades al cerrar sesión.
 - Response: No se permite ver el saldo del usuario ni ingresar a las funcionalidades de publicar y ofertar después de cerrar sesión.
 - Response Measure: Se puede cerrar sesión en un click sin importar la página en donde se encuentre.
 
-[Vista escenario ]()
+[Vista escenario ](https://drive.google.com/file/d/1wcvY2xQ3OSorBxiJPwwO3dZPjeL6HDNK/view)
 
 ### Usabilidad:
 
