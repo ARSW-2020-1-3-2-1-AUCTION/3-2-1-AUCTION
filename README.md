@@ -99,7 +99,7 @@ Escenario 2: Ingresar correctamente a la página bajo estrés.
 - Response: La aplicación funciona con normalidad.
 - Response Measure: Las categorias y demás funcionalidades siguen cargándose en un promedio de 1 segundo.
 
-[Vista escenario ]()
+[Vista escenario ](https://drive.google.com/file/d/12euhioUIayr-oB_jWEIRrzLl4iA6Un5Y/view?usp=sharing)
 
 ### Seguridad:
 
@@ -195,4 +195,4 @@ Escenario 2: Conexión a socket persistente en toda la aplicación.
 - Response: Todos los usuarios reciben notificaciones de las pujas sin importar la página en donde se encuentren.
 - Response Measure: Recibir la notificación sin clicks adicionales estando en cualquier página.
 
-[Vista escenario ]()
+[Vista escenario ](https://drive.google.com/file/d/1-HfSVK7TLY4a4KFG2iJjGbvNjvKOxgst/view?usp=sharing)
