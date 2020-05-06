@@ -55,6 +55,17 @@ public class Publicacion implements Serializable{
         @Column(name="tiempo")
         String tiempo;
         
+        @Column(name="valor_inicial")
+        String valorInicial;
+        
+        public String getValorInicial() {
+			return valorInicial;
+		}
+
+		public void setValorInicial(String valorInicial) {
+			this.valorInicial = valorInicial;
+		}
+        
         public String getImagen() {
 			return imagen;
 		}

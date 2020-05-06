@@ -58,12 +58,10 @@ public class AuctionCacheImpl implements AuctionCache {
 
 	@Override
 	public boolean ofertaPermitida(int userName, int ultimaOferta, int cantidadAPujar) {
-		System.out.println("verifica: "+userName+" y "+ultimaOferta);
 		if (tieneOferta.containsKey(userName)) {
 			if (tieneOferta.get(userName) == ultimaOferta) {
 				tieneOferta.remove(userName);
 				tieneOferta.put(userName,cantidadAPujar);
-				System.out.println("Metió: "+userName+" y "+cantidadAPujar);
 				return true;
 			}
 		}

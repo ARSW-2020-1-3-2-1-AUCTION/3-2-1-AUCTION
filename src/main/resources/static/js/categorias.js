@@ -103,7 +103,7 @@ var categorias =(function(){
 					$("#saldo").html(parseInt(theObject.valorADevolver,10) + parseInt(document.getElementById('saldo').innerText,10));
 				}
 				if ("Publicado por: "+document.getElementById('user').innerText == theObject.publicadoPor){
-					var texto = "Ofertaron "+theObject.valor+" por "+theObject.nombreArt+". ¿Desea publicar similar?";
+					var texto = "Ofertaron "+theObject.valor+" por "+theObject.nombreArt+". ¿Desea publicar similar?  "+'<button class="otherbutton" id="simi" onclick="articuloCliente.addSimilar('+theObject.id+')">Publicar Similar</button>';
 					notify ('notify',".myAlert-top3",texto);
 				} else if (theObject.usuario != document.getElementById('user').innerText) {
 					var texto = theObject.usuario+" ofertó "+theObject.valor+" por "+theObject.nombreArt+". ¿Desea ofertar "+Math.floor(parseInt(theObject.valor,10)*1.05)+"?  "+'<button class="otherbutton" id="similar" onclick="articulo.addOfertaAutomatica()">Superar Oferta</button>' ;

@@ -19,7 +19,7 @@ public class PublicacionRepositoryImpl implements PublicacionRepositoryCustom {
 	
 	@Override
 	public void addPublicacion(Publicacion publicacion) {
-		Query query = entityManager.createNativeQuery("insert into publicacion values(NEXTVAL('serial'),?,?,?,?,?,?,?,?,?,?,?,?,?,?)",Publicacion.class);
+		Query query = entityManager.createNativeQuery("insert into publicacion values(NEXTVAL('serial'),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",Publicacion.class);
 		 
 		 query.setParameter(1, publicacion.getDescripcion())
 		 	  .setParameter(2, publicacion.getValor() )
@@ -34,7 +34,8 @@ public class PublicacionRepositoryImpl implements PublicacionRepositoryCustom {
 		 	  .setParameter(11, publicacion.getUbicacion() )
               .setParameter(12, publicacion.getMarca() )
               .setParameter(13, publicacion.getImagen() )
-		 	  .setParameter(14, publicacion.getTiempo()).executeUpdate();
+              .setParameter(14, publicacion.getTiempo() )
+		 	  .setParameter(15, publicacion.getValor()).executeUpdate();
 	}
 
 	@Override
@@ -83,6 +84,27 @@ public class PublicacionRepositoryImpl implements PublicacionRepositoryCustom {
              .setParameter(2, ofertaid )
              .setParameter(3, publicacionId).executeUpdate();
 		
+	}
+
+	@Override
+	public void addSimilar(Publicacion publicacion) {
+		Query query = entityManager.createNativeQuery("insert into publicacion values(NEXTVAL('serial'),?,CAST (? AS INTEGER),?,?,?,?,?,?,?,?,?,?,?,?,?)",Publicacion.class);
+		 
+		 query.setParameter(1, publicacion.getDescripcion())
+		 	  .setParameter(2, publicacion.getValorInicial() )
+		 	  .setParameter(3, new Date())
+		 	  .setParameter(4, publicacion.getFechadeSubasta())
+		 	  .setParameter(5, publicacion.getUsado() )
+		 	  .setParameter(6, "Activo" )
+		 	  .setParameter(7, 1)
+		 	  .setParameter(8, publicacion.getCategoria() )
+		 	  .setParameter(9, publicacion.getUsuario() )
+		 	  .setParameter(10, publicacion.getNombre() )
+		 	  .setParameter(11, publicacion.getUbicacion() )
+             .setParameter(12, publicacion.getMarca() )
+             .setParameter(13, publicacion.getImagen() )
+             .setParameter(14, publicacion.getTiempo() )
+		 	  .setParameter(15, publicacion.getValorInicial()).executeUpdate();
 	}
 
 }

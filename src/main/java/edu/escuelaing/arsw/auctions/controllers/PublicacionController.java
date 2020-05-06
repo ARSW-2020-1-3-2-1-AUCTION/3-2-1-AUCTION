@@ -147,5 +147,17 @@ public class PublicacionController {
 	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);
 	        }
 	    }
+	    
+	    @RequestMapping(path = "/addSimilar/{id}",method = RequestMethod.POST)	
+	    public ResponseEntity<?> addSimilar(@PathVariable(name="id") int id){
+	        
+	        try {
+	            publication.addSimilar(id);
+	            return new ResponseEntity<>(HttpStatus.CREATED);
+	        } catch (Exception ex) {
+	            Logger.getLogger(PublicacionController.class.getName()).log(Level.SEVERE, null, ex);
+	            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);
+	        }
+	    }
 	
 }

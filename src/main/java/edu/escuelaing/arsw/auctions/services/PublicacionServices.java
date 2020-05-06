@@ -29,5 +29,7 @@ public interface PublicacionServices {
 	public void deletePujaEnCurso(int id);
 
 	public List<Publicacion> getPujasEnCurso();
+
+	public void addSimilar(int id);
 }
 

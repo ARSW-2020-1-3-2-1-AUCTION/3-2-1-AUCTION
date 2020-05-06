@@ -24,7 +24,7 @@ articuloCliente = (function() {
                 data: JSON.stringify(result),
                 contentType: "application/json",
                 success: function () {
-					var lista = {valor:valorOfrecido , usuario:usuario , nombreArt:nombreArt , UserADevolverSaldo:respuesta , valorADevolver:ultimaOferta, publicadoPor:publicadoPor};
+					var lista = {valor:valorOfrecido , usuario:usuario , nombreArt:nombreArt , UserADevolverSaldo:respuesta , valorADevolver:ultimaOferta, publicadoPor:publicadoPor, id:id};
 					stompClient.send("/articulo", {}, JSON.stringify(lista));
                 }
             })
@@ -82,6 +82,15 @@ articuloCliente = (function() {
 				url: "/usuario/ofertaPermitida/"+user+"/"+ultimaOferta+"/"+cantidadAPujar,
 				success: function (result) {
 					callback(result,ultimaOferta,cantidadAPujar,saldoUsuario,respuesta);
+				},
+				async: true
+			});
+		},
+		addSimilar: function(id) {
+			$.ajax({
+				url: "/publicacion/addSimilar/"+id,
+				type: "POST",
+				success: function () {
 				},
 				async: true
 			});

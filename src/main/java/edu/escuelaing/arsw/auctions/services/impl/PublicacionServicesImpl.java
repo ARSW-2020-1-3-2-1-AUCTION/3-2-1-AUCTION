@@ -89,4 +89,10 @@ public class PublicacionServicesImpl implements PublicacionServices {
 		
 	}
 
+	@Override
+	public void addSimilar(int id) {
+		Publicacion pu = publicacionRepo.findById(id).get();
+		publicacionRepo.addSimilar(pu);
+	}
+
 }

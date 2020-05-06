@@ -22,4 +22,7 @@ public interface PublicacionRepositoryCustom {
 	 
 	 @Transactional
 	 public void setOferta(int valor, int ofertaid, int publicacionId);
+	 
+	 @Transactional
+	public void addSimilar(Publicacion publicacion);
 }
