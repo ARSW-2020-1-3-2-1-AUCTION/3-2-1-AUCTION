@@ -160,7 +160,7 @@ Escenario 1: Escalabilidad vertical.
 - Response: El dyno escala verticalmente según la sobrecarga de usuarios.
 - Response Measure: El tiempo de respuesta de cada usuario no aumenta, sigue siendo aproximadamente de un segundo.
 
-[Vista escenario ]()
+[Vista escenario ](https://drive.google.com/open?id=18sEXPTouPaTWopTAGyE4jThbAYe_t3MH)
 
 Escenario 2: Escalabilidad horizontal.
 
@@ -171,7 +171,7 @@ Escenario 2: Escalabilidad horizontal.
 - Response: Se escala horizontalmente según la sobrecarga de usuarios implementando otros dynos.
 - Response Measure: El tiempo de respuesta de cada usuario no aumenta, sigue siendo aproximadamente de un segundo.
 
-[Vista escenario ]()
+[Vista escenario ](https://drive.google.com/open?id=1_KWqrSmY0HjxOgsh0r-Zzu4W8uJIQNiz)
 
 ### Rendimiento:
 
