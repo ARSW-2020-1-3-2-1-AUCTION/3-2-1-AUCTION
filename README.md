@@ -114,16 +114,16 @@ Escenario 1: Cifrar contraseñas.
 
 [Vista escenario ](https://drive.google.com/file/d/1C09_vet5v_hho4koX7ch1eauRwT1YKmG/view)
 
-Escenario 2: Bloquear Funcionalidades al cerrar sesión.
+Escenario 2: Evitar la vulnerabilidad Open Redirect.
 
 - Source: Usuario final.
-- Stimulus: Ingresar a funcionalidades después de haber cerrado sesión.
-- Artifact: Frontend, Backend, caché.
-- Enviroment: Aplicación bajo condiciones normales.
-- Response: No se permite ver el saldo del usuario ni ingresar a las funcionalidades de publicar y ofertar después de cerrar sesión.
-- Response Measure: Se puede cerrar sesión en un click sin importar la página en donde se encuentre.
+- Stimulus: Dirigirse a cualquier link propio de la aplicación.
+- Artifact: Frontend.
+- Enviroment: Aplicación bajo condiciones normales desplegada en Azure.
+- Response: Redireccionamiento al inicio de sesión de Microsoft.
+- Response Measure: No se permite el consumo de recursos de la aplicación sin previa autorización.
 
-[Vista escenario ](https://drive.google.com/file/d/1wcvY2xQ3OSorBxiJPwwO3dZPjeL6HDNK/view)
+[Vista escenario ](https://drive.google.com/file/d/1EAGNSeHOq1pWtneP7wMIEVeFTj6_J2-j/view?usp=sharing)
 
 ### Usabilidad:
 
