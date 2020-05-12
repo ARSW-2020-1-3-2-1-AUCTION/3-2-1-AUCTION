@@ -52,6 +52,8 @@ COMO Comprador
 
 ![](/img/CasosVendedor.jpg)
 
+COMO Vendedor
+
 - QUIERO ofrecer los productos de mi pertenencia PARA PODER lograr un beneficio económico
 - QUIERO publicar otro producto similar al que estoy subastando el cual está siendo muy apetecido PARA PODER maximizar los beneficios obtenidos
 
@@ -79,16 +81,16 @@ Estos atributos son los que delimitarán las características generales, restric
 
 ### Disponibilidad
 
-Escenario 1: Ingresar correctamente a la página.
+Escenario 1: Indisponibilidad máxima.
 
 - Source: Usuario final.
-- Stimulus: Ingresar a la aplicación de subastas.
-- Artifact: Frontend, Backend, Base de datos.
-- Enviroment: Aplicación bajo condiciones normales.
-- Response: Se visualizan las categorias normalmente.
-- Response Measure: Las categorias y demás funcionalidades se cargan en un promedio de 1 segundo.
+- Stimulus: Escalar verticalmente el plan de la App Service al que pertenece.
+- Artifact: Microsoft Azure, Frontend.
+- Enviroment: Aplicación bajo peticiones automatizadas.
+- Response: Se carga correctamente la aplicación.
+- Response Measure: La aplicación está disponible nuevamente en máximo 3 minutos.
 
-[Vista escenario ](https://drive.google.com/file/d/175j93QfVCg-DuxfDRKVK78QPesZoIpsV/view)
+[Vista escenario ](https://drive.google.com/file/d/1G_18iZfUOaLqZfBmwMJ1FE2hz9hUg4Yj/view?usp=sharing)
 
 Escenario 2: Ingresar correctamente a la página bajo estrés.
 
@@ -121,7 +123,7 @@ Escenario 2: Evitar la vulnerabilidad Open Redirect.
 - Artifact: Frontend.
 - Enviroment: Aplicación bajo condiciones normales desplegada en Azure.
 - Response: Redireccionamiento al inicio de sesión de Microsoft.
-- Response Measure: No se permite el consumo de recursos de la aplicación sin previa autorización.
+- Response Measure: No se permite el consumo de recursos de la aplicación sin previa identificación.
 
 [Vista escenario ](https://drive.google.com/file/d/1EAGNSeHOq1pWtneP7wMIEVeFTj6_J2-j/view?usp=sharing)
 
@@ -182,7 +184,7 @@ Escenario 1: Ofertar concurrentemente.
 - Artifact: Frontend, Backend, caché, Base de datos.
 - Enviroment: Aplicación bajo condiciones normales.
 - Response: Solo una persona se queda con la puja y todas las demás son notificadas de quién se quedó con ella.
-- Response Measure: Se informa al usuario ganador el éxito de su oferta, y a todos los demás, la oferta ganadora sin clicks adicionales en menos de un segundo.
+- Response Measure: Se informa al usuario ganador el éxito de su oferta, y a todos los demás, la oferta ganadora sin clicks adicionales.
 
 [Vista escenario ](https://drive.google.com/file/d/1-TM3XnqXd5-N12fRK57U_uI7_clbs5P3/view)
 
