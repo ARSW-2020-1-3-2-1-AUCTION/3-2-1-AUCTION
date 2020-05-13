@@ -198,3 +198,7 @@ Escenario 2: Conexión a socket persistente en toda la aplicación.
 - Response Measure: Recibir la notificación sin clicks adicionales estando en cualquier página.
 
 [Vista escenario ](https://drive.google.com/file/d/1-HfSVK7TLY4a4KFG2iJjGbvNjvKOxgst/view?usp=sharing)
+
+## **Indicaciones Básicas de Uso**
+
+[Funcionalidades Disponibles ](https://drive.google.com/file/d/1skdq2dziLmByYtJypSreTtLY-c75ClPL/view?usp=sharing)
