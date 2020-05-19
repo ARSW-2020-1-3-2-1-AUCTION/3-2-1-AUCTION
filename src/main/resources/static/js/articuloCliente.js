@@ -91,6 +91,7 @@ articuloCliente = (function() {
 				url: "/publicacion/addSimilar/"+id,
 				type: "POST",
 				success: function () {
+					location.href = "/publicaciones.html?user=" + sessionStorage.getItem('currentUser');
 				},
 				async: true
 			});
