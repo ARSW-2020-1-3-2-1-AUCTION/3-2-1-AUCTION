@@ -157,7 +157,7 @@ Escenario 1: Escalabilidad vertical.
 
 - Source: Usuarios finales.
 - Stimulus: Sobrecargar la cantidad de usuarios finales.
-- Artifact: Heroku.
+- Artifact: Azure.
 - Enviroment: Aplicación bajo estrés.
 - Response: El dyno escala verticalmente según la sobrecarga de usuarios.
 - Response Measure: El tiempo de respuesta de cada usuario no aumenta, sigue siendo aproximadamente de un segundo.
@@ -168,7 +168,7 @@ Escenario 2: Escalabilidad horizontal.
 
 - Source: Usuarios finales.
 - Stimulus: Sobrecargar la cantidad de usuarios finales.
-- Artifact: Heroku.
+- Artifact: Azure.
 - Enviroment: Aplicación bajo estrés.
 - Response: Se escala horizontalmente según la sobrecarga de usuarios implementando otros dynos.
 - Response Measure: El tiempo de respuesta de cada usuario no aumenta, sigue siendo aproximadamente de un segundo.
